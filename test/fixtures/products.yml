@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  productarticul: MyString
+  productname: MyString
+  distributor: MyString
+  price: 1.5
+  nalichie: MyString
+
+two:
+  productarticul: MyString
+  productname: MyString
+  distributor: MyString
+  price: 1.5
+  nalichie: MyString
