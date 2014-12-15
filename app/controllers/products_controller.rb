@@ -7,10 +7,15 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def search
+    @table = Product.arel_table
+    @products = Product.where(@table[:productname].matches("%#{params[:stext]}%").or(@table[:productarticul].matches("%#{params[:stext]}%")))
+    render :index
+  end
   # GET /products/1
   # GET /products/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /products/new
   def new
@@ -18,8 +23,8 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /products
   # POST /products.json

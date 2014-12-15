@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Добавлено мной
+#
+# Полнотекстовый поиск (ferret как)
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

@@ -1,4 +1,10 @@
-<h1>Listing products</h1>
+<h1>Товары</h1>
+
+<%= form_tag("/products/search", :method => "get") do %>
+  <%= label_tag(:stext, "Поле поиска:") %>
+  <%= text_field_tag(:stext) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <table>
   <thead>
