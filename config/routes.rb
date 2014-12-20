@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get 'search'
+      get 'parse'
     end
   end
 

@@ -12,6 +12,14 @@ class ProductsController < ApplicationController
     @products = Product.where(@table[:productname].matches("%#{params[:stext]}%").or(@table[:productarticul].matches("%#{params[:stext]}%")))
     render :index
   end
+
+  def parse
+    file_path = "/home/krulov/price_merlion_msk.xls"
+    file = Roo::Excel.new(file_path)
+    file.row(15)[7]
+    file.row(25)[8]
+    redirect_to products_path
+  end
   # GET /products/1
   # GET /products/1.json
   # def show

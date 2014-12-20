@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Добавлено мной
 #
 # Полнотекстовый поиск (ferret как)
+# parse xls
+gem 'roo'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
