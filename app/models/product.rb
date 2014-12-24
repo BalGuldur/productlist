@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
   def uploadcsvmerlion
     pricelist = File.new("price_merlion.csv")
     pricelist.each do |line|
+      puts line
       line.chomp!
       line.tr_s!("\"",'')
       linehash = line.split(',')
