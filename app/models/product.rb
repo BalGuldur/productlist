@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   def uploadcsvmerlion
-    pricelist = File.new("price_merlion.csv")
+    pricelist = File.new("/home/krulov/RoRapp/productlist/price_merlion.csv")
     pricelist.each do |line|
       puts line
       line.encode!('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')

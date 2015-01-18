@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def destroyall
-    product = Product.destroyall
+    product = Product.all.destroy_all
   end
   # GET /products/1
   # GET /products/1.json
