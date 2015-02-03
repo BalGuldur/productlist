@@ -8,10 +8,16 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @producthash = Hash.new
-    @table = Product.arel_table
-    stext = params[:stext]
-      @products = Product.where(@table[:productname].matches("%"+stext+"%").or(@table[:productarticul].matches("%"+stext+"%")))
+#    @producthash = Hash.new
+#    @table = Product.arel_table
+    @stext = params[:stext]
+    stexthash = @stext.split(' ')
+    if !stexthash.empty? then
+      stexthash.map! {|textpce| textpce = "%"+textpce+"%" }
+      @products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}
+    else
+      @products = Product.all
+    end
     render :index
   end
 

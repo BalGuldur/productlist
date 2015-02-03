@@ -2,7 +2,7 @@
 
 <%= form_tag("/products/search", :method => "get") do %>
   <%= label_tag(:stext, "Поле поиска:") %>
-  <%= text_field_tag(:stext) %>
+  <%= text_field_tag(:stext, @stext) %>
   <%= submit_tag("Search") %>
 <% end %>
 

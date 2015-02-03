@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Добавлено мной
+gem 'squeel'
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
