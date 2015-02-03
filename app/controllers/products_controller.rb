@@ -8,20 +8,13 @@ class ProductsController < ApplicationController
   end
 
   def search
+    @producthash = Hash.new
     @table = Product.arel_table
-    @products = Product.where(@table[:productname].matches("%#{params[:stext]}%").or(@table[:productarticul].matches("%#{params[:stext]}%")))
+    stext = params[:stext]
+      @products = Product.where(@table[:productname].matches("%"+stext+"%").or(@table[:productarticul].matches("%"+stext+"%")))
     render :index
   end
 
-  def parse
-    product = Product.new
-    product.uploadcsvmerlion
-    redirect_to products_path
-  end
-
-  def destroyall
-    product = Product.all.destroy_all
-  end
   # GET /products/1
   # GET /products/1.json
   # def show
