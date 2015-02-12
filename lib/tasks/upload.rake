@@ -1,8 +1,10 @@
-task :upload => :environment do
+task :uploadmerlion => :environment do
   pricelist = File.new("/home/krulov/RoRapp/productlist/price_merlion.csv")
 #  i=0
 #  puts "start/n"
-  pricelist.first(300).each do |line|
+  @products = Product.where{distributor.eq 'merlion'}
+  @products.delete_all
+  pricelist.first(1000).each do |line|
     line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     line.tr_s!("\"",'')
