@@ -8,15 +8,18 @@ class ProductsController < ApplicationController
   end
 
   def search
-#    @producthash = Hash.new
-#    @table = Product.arel_table
+    #@producthash = Hash.new
+    #@table = Product.arel_table
+    orders = ['price']
     @stext = params[:stext]
     stexthash = @stext.split(' ')
-    if !stexthash.empty? then
-      stexthash.map! {|textpce| textpce = "%"+textpce+"%" }
-      @products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}
-    else
+    if stexthash.empty? then
       @products = Product.all
+    else
+      stexthash.map! {|textpce| textpce = "%"+textpce+"%" }
+      #evstring = 'Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}'
+      #orders.each {|ordtxt| evstring = evstring + tdtxt + "{.asc}"}
+      @products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}.order{price.asc}.order{productname.asc}
     end
     render :index
   end
