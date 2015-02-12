@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # Добавлено мной
 gem 'squeel'
-#
+# Позволяет просто писать SQL запросы используется после where
+gem 'wice_grid'
 # Полнотекстовый поиск (ferret как)
 # parse xls
 gem 'roo'

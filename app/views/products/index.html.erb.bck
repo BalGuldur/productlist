@@ -1,25 +1,5 @@
 <h1>Товары</h1>
 
-<%# show_filters: :when_filtered %>
-<%=
-  grid(@grid) do |g|
-    g.column name: 'Артикул продукта', attribute: 'productarticul' do |p|
-      p.productarticul
-    end
-    g.column name: 'productname' do |p|
-      p.productname
-    end
-    g.column name: 'distributor' do |p|
-      p.distributor
-    end
-    g.column name: 'price' do |p|
-      p.price
-    end
-    g.column name: 'nalichie' do |p|
-      p.nalichie
-    end
-  end
--%>
 <%= form_tag("/products/search", :method => "get") do %>
   <%= label_tag(:stext, "Поле поиска:") %>
   <%= text_field_tag(:stext, @stext) %>

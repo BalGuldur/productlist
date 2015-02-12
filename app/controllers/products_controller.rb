@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @grid = initialize_grid(Product)
     @products = Product.all
     @orders = ['price']
   end
