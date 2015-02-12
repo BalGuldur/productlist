@@ -2,6 +2,8 @@
 2.clean products view (show, destroy and i.e.) "V"
 3.create parse 2-3 source "in work (merlion)"
  create rake task for upload
-4.change search upcase
-5.change two or more word
+4.change search upcase "V"
+5.change two or more word "V"
+6.add sort by column
+7.add sources
 5.create auto upload 2-3 source
