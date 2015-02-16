@@ -4,7 +4,7 @@ task :uploadmerlion => :environment do
 #  puts "start/n"
   @products = Product.where{distributor.eq 'merlion'}
   @products.delete_all
-  pricelist.each do |line|
+  pricelist.first(300).each do |line|
     line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     line.tr_s!("\"",'')
