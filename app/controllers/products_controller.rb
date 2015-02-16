@@ -1,45 +1,41 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :set_order
-  def set_order
-    @orders = ['price']
-  end
 
   # GET /products
   # GET /products.json
-  def index
-    @products = Product.all
-    @orders = ['price']
-  end
 
-  def search
+  def index
     #@producthash = Hash.new
     #@table = Product.arel_table
     @stext = params[:stext]
     #@orders = ['price']
-    stexthash = @stext.split(' ')
-    if stexthash.empty? then
-      @products = Product.all
+    if @stext.nil? then
+      evstring = 'Product.all.limit(300)'
     else
+      stexthash = @stext.split(' ')
       stexthash.map! {|textpce| textpce = "%"+textpce+"%" }
-      evstring = 'Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}'
-      @orders.each {|ordtxt| evstring = evstring + ".order{" + ordtxt + "}"}
-      @products = eval (evstring)
-      #@products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}.order{price.asc}.order{productname.asc}
+      evstring = 'Product.where{(productname.like_all stexthash) | (productarticul.like_all stexthash)}'
     end
-    render :index
+    @orders = params[:order]
+    @orders=[] if @orders.nil?
+    @orders.each {|ordtxt| evstring = evstring + ".order{" + ordtxt + "}"}
+    @products = eval (evstring)
+    #@products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}.order{price.asc}.order{productname.asc}
   end
 
   def setorder
-    ord = params[:setorder]
-    if @orders.include?(ord) then
-      @orders.map! {|order| order == ord ? ord+'.desc' : order}
-    elsif @orders.include?(ord+'.desc')
-      @orders.delete(ord+'.desc')
+    @orders = params[:order]
+    @stext = params[:stext]
+    @setorder = params[:setorder]
+    @orders = [] if @orders.nil?
+    if @orders.include?(@setorder)
+      @orders.map!{|ord|ord==@setorder ? ord=@setorder+'.desc':ord=ord}
+    elsif @orders.include?(@setorder+'.desc')
+      @orders.delete(@setorder+'.desc')
     else
-      @orders.push(ord)
+      @orders.push (@setorder)
     end
-    render :index
+    redirect_to :controller => 'products', :action => 'index', :order => @orders, :stext => @stext
   end
   # GET /products/1
   # GET /products/1.json

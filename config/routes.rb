@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'parse'
       get 'destroyall'
+      get 'setorder'
     end
   end
 

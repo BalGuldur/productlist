@@ -1,18 +1,37 @@
 <h1>Товары</h1>
 
-<%= form_tag("/products/search", :method => "get") do %>
+<%= form_tag("/products", :method => "get") do %>
   <%= label_tag(:stext, "Поле поиска:") %>
   <%= text_field_tag(:stext, @stext) %>
   <%= submit_tag("Search") %>
 <% end %>
 
+<h1><%= @orders %></h1>
+<h1><%= @ord %></h1>
+
 <table>
   <thead>
     <tr>
-      <th>Productarticul</th>
-      <th>Productname</th>
-      <th>Distributor</th>
-      <th>Price</th>
+      <th>
+        <%= link_to 'Артикул продукта', setorder_products_path(params.merge(:setorder => 'productarticul'))%>
+        <%= 'V' if @orders.include?('productarticul') %>
+        <%= '^' if @orders.include?('productarticul.desc') %>
+      </th>
+      <th>
+        <%= link_to 'Название', setorder_products_path(params.merge(:setorder => 'productname'))%>
+        <%= 'V' if @orders.include?('productname') %>
+        <%= '^' if @orders.include?('productname.desc') %>
+      </th>
+      <th>
+        <%= link_to 'Дистрибьютор', setorder_products_path(params.merge(:setorder => 'distributor')) %>
+        <%= 'V' if @orders.include?('distributor') %>
+        <%= '^' if @orders.include?('distributor.desc') %>
+      </th>
+      <th>
+        <%= link_to 'Цена', setorder_products_path(params.merge(:setorder => 'price')) %>
+        <%= 'V' if @orders.include?('price') %>
+        <%= '^' if @orders.include?('price.desc') %>
+      </th>
       <th>Nalichie</th>
       <th colspan="3"></th>
     </tr>
