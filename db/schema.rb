@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141210163211) do
     t.string   "productarticul"
     t.string   "productname"
     t.string   "distributor"
-    t.float    "price"
+    t.float    "price",          limit: 24
     t.string   "nalichie"
     t.datetime "created_at"
     t.datetime "updated_at"
