@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141210163211) do
 
   create_table "products", force: true do |t|
     t.string   "productarticul"
-    t.string   "productname"
+    t.text     "productname"
     t.string   "distributor"
     t.float    "price",          limit: 24
     t.string   "nalichie"
