@@ -28,9 +28,14 @@
         <%= '^' if @orders.include?('distributor.desc') %>
       </th>
       <th>
-        <%= link_to 'Цена', setorder_products_path(params.merge(:setorder => 'price')) %>
-        <%= 'V' if @orders.include?('price') %>
-        <%= '^' if @orders.include?('price.desc') %>
+        <%= link_to 'Цена $', setorder_products_path(params.merge(:setorder => 'pricedoll')) %>
+        <%= 'V' if @orders.include?('pricedoll') %>
+        <%= '^' if @orders.include?('pricedoll.desc') %>
+      </th>
+      <th>
+        <%= link_to 'Цена руб', setorder_products_path(params.merge(:setorder => 'pricerub')) %>
+        <%= 'V' if @orders.include?('pricerub') %>
+        <%= '^' if @orders.include?('pricerub.desc') %>
       </th>
       <th>Nalichie</th>
       <th colspan="3"></th>

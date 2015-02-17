@@ -11,7 +11,7 @@ task :uploadmerlion => :environment do
     line.scan(/[[:print:]]/).join
     linehash = line.split(',')
     if linehash[7]!= nil
-      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", price: linehash[9], nalichie: linehash[13])
+      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], nalichie: linehash[13])
       product.save
 #      puts "add product/n"
 #      i+=1
