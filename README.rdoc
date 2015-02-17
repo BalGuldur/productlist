@@ -1,5 +1,8 @@
 == README
 
+Tools for convert
+xlsx2csv
+catdoc - in this packet xls2csv tools
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

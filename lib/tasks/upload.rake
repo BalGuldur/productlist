@@ -4,7 +4,7 @@ task :uploadmerlion => :environment do
 #  puts "start/n"
   @products = Product.where{distributor.eq 'merlion'}
   @products.delete_all
-  pricelist.each do |line|
+  pricelist.first(300) do |line|
     line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     line.tr_s!("\"",'')
@@ -17,6 +17,23 @@ task :uploadmerlion => :environment do
 #      i+=1
     end
 #    break if i==10
+  end
+end
+
+task :uploadtaleon => :environment do
+  pricelist = File.new("Teolancat.csv")
+  @products = Product.where{distributor.eq 'teolan'}
+  @products.delete_all
+  pricelist.first(300) do |line|
+    line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    linehash = line.split(';')
+    if linehash[1]!=nil
+      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "teolan", pricedoll: linehash[6], nalichie: linehash[7])
+      product.save
+    end
   end
 end
 
