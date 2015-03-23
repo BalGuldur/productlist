@@ -1,3 +1,29 @@
+task :uploadmaltima => :environment do
+  pricelist = File.new("/home/krulov/RoRapp/productlist/PriceListMaltima.csv")
+  @products = Product.where{distributor.eq 'maltima'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    line.tr_s!("\"",'')
+    line.tr_s!(", ",';')
+    line.scan(/[[:print:]]/).join
+    linehash = line.split(',')
+    if linehash[6]!= nil
+      product = Product.new(productname: linehash[1], distributor: "maltima", )
+      # Комментарий
+      # Артикула в таблице нет
+      # В таблице нет наличия
+      if linehash[10]=='RUR'
+        product.pricerub = linehash[9]
+      else
+        product.pricedoll = linehash[9]
+      end
+      product.save
+    end
+  end
+end
+
 task :uploadmarvel => :environment do
   pricelist = File.new("/home/krulov/RoRapp/productlist/PriceListMarvel.csv")
   @products = Product.where{distributor.eq 'marvel'}
