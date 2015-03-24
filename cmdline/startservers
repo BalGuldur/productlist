@@ -1,0 +1,5 @@
+rails s -p 8081 -P tmp/pids/server2.pid -d
+devel
+
+rails s -p 8080 -e production -d
+poruct

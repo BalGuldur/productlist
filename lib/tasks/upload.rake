@@ -3,22 +3,18 @@ task :uploadmaltima => :environment do
   @products = Product.where{distributor.eq 'maltima'}
   @products.delete_all
   pricelist.each do |line|
-    line.encode!('UTF-8','binary', invalid: :replace, undef: :replace, replace: '')
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     line.tr_s!("\"",'')
-    line.tr_s!(", ",';')
+    line.gsub!(/,\s/,";")
     line.scan(/[[:print:]]/).join
     linehash = line.split(',')
-    if linehash[6]!= nil
-      product = Product.new(productname: linehash[1], distributor: "maltima", )
+    if linehash[1]!= nil && linehas[1]!=""
+      product = Product.new(productname: linehash[1], distributor: "maltima", pricedoll: linehash[2], pricerub: linehash[7])
       # Комментарий
-      # Артикула в таблице нет
-      # В таблице нет наличия
-      if linehash[10]=='RUR'
-        product.pricerub = linehash[9]
-      else
-        product.pricedoll = linehash[9]
-      end
+      # В таблице нет артикула
+      print linehash[1]
+      print linehash
       product.save
     end
   end

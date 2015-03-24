@@ -15,7 +15,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: products
+  database: productsdevel
   pool: 5
   username: rails
   password: railspass
@@ -30,4 +30,12 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+#  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: products
+  pool: 5
+  username: rails
+  password: railspass
+  host: localhost
