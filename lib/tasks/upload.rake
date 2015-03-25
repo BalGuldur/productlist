@@ -1,5 +1,5 @@
 task :uploadmaltima => :environment do
-  pricelist = File.new("/home/krulov/RoRapp/productlist/PriceListMaltima.csv")
+  pricelist = File.new("PriceLists/PriceListMaltima.csv")
   @products = Product.where{distributor.eq 'maltima'}
   @products.delete_all
   pricelist.each do |line|
@@ -7,6 +7,8 @@ task :uploadmaltima => :environment do
     line.chomp!
     line.tr_s!("\"",'')
     line.gsub!(/,\s/,";")
+    line.gsub!(/,"/,";")
+    # попробовать line.gsub!(/,[\s"]/,";")
     line.scan(/[[:print:]]/).join
     linehash = line.split(',')
     if linehash[1]!= nil && linehash[1]!=""
@@ -19,7 +21,7 @@ task :uploadmaltima => :environment do
 end
 
 task :uploadmarvel => :environment do
-  pricelist = File.new("/home/krulov/RoRapp/productlist/PriceListMarvel.csv")
+  pricelist = File.new("PriceLists/PriceListMarvel.csv")
   @products = Product.where{distributor.eq 'marvel'}
   @products.delete_all
   pricelist.each do |line|
@@ -43,7 +45,7 @@ task :uploadmarvel => :environment do
 end
 
 task :uploadelko => :environment do
-  pricelist = File.new("/home/krulov/RoRapp/productlist/PriceListElko.csv")
+  pricelist = File.new("PriceLists/PriceListElko.csv")
   @products = Product.where{distributor.eq 'elko'}
   @products.delete_all
   pricelist.each do |line|
@@ -61,7 +63,7 @@ task :uploadelko => :environment do
 end
 
 task :uploadmerlion => :environment do
-  pricelist = File.new("/home/krulov/RoRapp/productlist/price_merlion.csv")
+  pricelist = File.new("PriceLists/price_merlion.csv")
 #  i=0
 #  puts "start/n"
   @products = Product.where{distributor.eq 'merlion'}
@@ -82,18 +84,22 @@ task :uploadmerlion => :environment do
   end
 end
 
-task :uploadteolan => :environment do
-  pricelist = File.new("Teolancat.csv")
-  @products = Product.where{distributor.eq 'teolan'}
+task :uploadtreolan => :environment do
+  pricelist = File.new("PriceLists/Treolancat.csv")
+  @products = Product.where{distributor.eq 'treolan'}
   @products.delete_all
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
+    # print line + "\n"
+    line.gsub!(/; /,', ')
+    line.gsub!(/;";/,',";')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
+    # print line + "\n"
     linehash = line.split(';')
     if linehash[1]!=nil && linehash[1]!=""
-      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "teolan", pricedoll: linehash[6],pricerub: linehash[7], nalichie: linehash[3])
+      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "treolan", pricedoll: linehash[6],pricerub: linehash[7], nalichie: linehash[3])
       #print linehash[3]
       product.save
     end

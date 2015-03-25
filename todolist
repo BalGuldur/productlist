@@ -10,3 +10,7 @@
 when autoupload need replace or delete old
 9.highlight search results
 10.change base to mysql "v"
+
+ideii
+pri razbore csv zameniat /, / na /; / i zam /;/ na /,/ tak chtobi
+stolbci razdelialis tolko znakom ; a vnutri polei bil tolko znak ,
