@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
       evstring = 'Product.where{(productname.like_all stexthash) | (productarticul.like_all stexthash)}'
     end
     @orders = params[:order]
-    @orders=['pricedoll'] if @orders.nil?
+    @orders=['pricedoll', 'pricerub'] if @orders.nil?
     @orders.each {|ordtxt| evstring = evstring + ".order{" + ordtxt + "}"}
     @products = eval (evstring)
     #@products = Product.where{(productname.like_all stexthash) | (productarticul.like_any stexthash)}.order{price.asc}.order{productname.asc}

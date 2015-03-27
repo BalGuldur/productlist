@@ -14,3 +14,5 @@ when autoupload need replace or delete old
 ideii
 pri razbore csv zameniat /, / na /; / i zam /;/ na /,/ tak chtobi
 stolbci razdelialis tolko znakom ; a vnutri polei bil tolko znak ,
+
+zavesti otdelnii google drive, i cherez nego sinhronizirovat price

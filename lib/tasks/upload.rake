@@ -21,7 +21,13 @@ task :uploadmaltima => :environment do
 end
 
 task :uploadmarvel => :environment do
-  pricelist = File.new("PriceLists/PriceListMarvel.csv")
+  status = `cp ~/grive/MiraclePrices/Marvel.xlsx PriceLists/Marvel.xlsx`
+  # print status+"\n"
+  status2 = `cp PriceLists/Marvel.csv PriceLists/Marvel.csv.bak`
+  # print status2+"\n"
+  status3 = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Marvel.xlsx > PriceLists/Marvel.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Marvel.csv")
   @products = Product.where{distributor.eq 'marvel'}
   @products.delete_all
   pricelist.each do |line|
@@ -85,7 +91,13 @@ task :uploadmerlion => :environment do
 end
 
 task :uploadtreolan => :environment do
-  pricelist = File.new("PriceLists/Treolancat.csv")
+  status = `cp ~/grive/MiraclePrices/Treolan.xlsx PriceLists/Treolan.xlsx`
+  # print status+"\n"
+  status2 = `cp PriceLists/Treolan.csv PriceLists/Treolan.csv.bak`
+  # print status2+"\n"
+  status3 = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Treolan.xlsx > PriceLists/Treolan.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Treolan.csv")
   @products = Product.where{distributor.eq 'treolan'}
   @products.delete_all
   pricelist.each do |line|
@@ -104,6 +116,86 @@ task :uploadtreolan => :environment do
       product.save
     end
   end
+end
+
+task :uploadocs => :environment do
+  status = `cp ~/grive/MiraclePrices/Ocs.xls PriceLists/Ocs.xls`
+  # print status+"\n"
+  status2 = `cp PriceLists/Ocs.csv PriceLists/Ocs.csv.bak`
+  # print status2+"\n"
+  status3 = `xlhtml -xp:2 -csv PriceLists/Ocs.xls > PriceLists/Ocs.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Ocs.csv")
+  @products = Product.where{distributor.eq 'ocs'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    #print line + "\n"
+    # line.gsub!(/, /,'; ')
+    line.gsub!(/,",/,';",')
+    line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    #print line + "\n"
+    linehash = line.split(',')
+    if linehash[4]!=nil && linehash[4]!=""
+      product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "ocs", nalichie: linehash[11])
+      if linehash[8]=='RUR'
+        product.pricerub = linehash[7]
+      else
+        product.pricedoll = linehash[7]
+      end
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
+
+task :uploadkoodoo => :environment do
+  status = `cp ~/grive/MiraclePrices/Koodoo.xls PriceLists/Koodoo.xls`
+  # print status+"\n"
+  status2 = `cp PriceLists/Koodoo.csv PriceLists/Koodoo.csv.bak`
+  # print status2+"\n"
+  status3 = `xlhtml -xp:0 -csv PriceLists/Koodoo.xls > PriceLists/Koodoo.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Koodoo.csv")
+  @products = Product.where{distributor.eq 'koodoo'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    #print line + "\n"
+    # line.gsub!(/, /,'; ')
+    line.gsub!(/,",/,';",')
+    line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    #print line + "\n"
+    linehash = line.split(',')
+    if linehash[6]!=nil && linehash[6]!="" && linehash[6]!="Описание"
+      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "koodoo", pricedoll: linehash[8], nalichie: linehash[10])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
+task :uploadall => :environment do
+  #status = `cp log/uploadtreolan.log log/uploadtreolan.log.bak`
+  #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
+  #print "uploadtreolan process start"+status2+"\n"
+  #status = `cp log/uploadkoodoo.log log/uploadkookoo.log.bak`
+  #status2 = `rake uploadkoodoo > log/uploadkoodoo.log &`
+  #print "uploadkoodoo process start"+status2+"\n"
+  #status = `cp log/uploadocs.log log/uploadocs.log.bak`
+  #status2 = `rake uploadocs > log/uploadocs.log &`
+  #print "uploadocs process start"+status2+"\n"
+  status = `cp log/uloadmarvel.log log/uploadmarvel.log.bak`
+  status2 = `rake uploadmarvel > log/uploadmarvel.log &`
+  print "uploadmarvel process start"
+  #dobavit print vremia zapuska
 end
 
 task :destroyall => :environment do

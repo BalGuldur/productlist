@@ -1786,3 +1786,1620 @@ Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-25 17:5
 
 
 Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-25 17:55:21 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-25 17:55:21 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-25 17:55:21 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-25 17:55:21 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-25 17:55:21 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=APC&commit=Search" for 192.168.151.91 at 2015-03-25 18:16:05 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"APC", "commit"=>"Search"}
+  [1m[36mProduct Load (17.1ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%APC%') OR (`products`.`productarticul` LIKE '%APC%')))  ORDER BY `products`.`pricedoll`[0m
+  Rendered products/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 82ms (Views: 64.1ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:07 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=7557&commit=Search" for 192.168.151.91 at 2015-03-25 18:16:26 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"7557", "commit"=>"Search"}
+  [1m[35mProduct Load (14.4ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%7557%') OR (`products`.`productarticul` LIKE '%7557%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 53ms (Views: 37.8ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-25 18:16:27 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 17:54:23 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.3ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 17:54:24 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:37:47 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:37:49 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:37:50 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:38:26 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.5ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:27 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=APC&commit=Search" for 192.168.151.91 at 2015-03-26 19:38:37 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"APC", "commit"=>"Search"}
+  [1m[36mProduct Load (46.5ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%APC%') OR (`products`.`productarticul` LIKE '%APC%')))  ORDER BY `products`.`pricedoll`[0m
+  Rendered products/index.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 89ms (Views: 41.4ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:38 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=APC&commit=Search" for 192.168.151.91 at 2015-03-26 19:38:41 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"APC", "commit"=>"Search"}
+  [1m[35mProduct Load (2.4ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%APC%') OR (`products`.`productarticul` LIKE '%APC%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:42 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=APC&commit=Search" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"APC", "commit"=>"Search"}
+  [1m[36mProduct Load (2.5ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%APC%') OR (`products`.`productarticul` LIKE '%APC%')))  ORDER BY `products`.`pricedoll`[0m
+  Rendered products/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:45 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:38:52 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:39:15 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.0ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:39:16 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (3.8ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:40:47 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 30.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:22 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:46:26 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:46:27 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:47:13 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:14 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:47:17 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:47:18 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:52:08 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.2ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:52:09 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 19:53:12 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 19:53:13 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:23:48 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.6ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 149ms (Views: 146.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:23:50 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:24:44 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:24:45 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:25:47 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:47 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:47 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:47 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:48 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:48 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:48 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:48 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:48 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.1ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:25:58 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:38:27 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.7ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:28 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=E900&commit=Search" for 192.168.151.91 at 2015-03-26 20:38:34 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"E900", "commit"=>"Search"}
+  [1m[35mProduct Load (1.8ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%E900%') OR (`products`.`productarticul` LIKE '%E900%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:38:35 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=&commit=Search" for 192.168.151.91 at 2015-03-26 20:38:52 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"", "commit"=>"Search"}
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`[0m
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') OR ()))  ORDER BY `products`.`pricedoll`' at line 1: SELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') OR ()))  ORDER BY `products`.`pricedoll`' at line 1: SELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`):
+    43:   </thead>
+    44: 
+    45:   <tbody>
+    46:     <% @products.each do |product| %>
+    47:       <tr>
+    48:         <td><%= product.productarticul %></td>
+    49:         <td><%= product.productname %></td>
+  app/views/products/index.html.erb:46:in `_app_views_products_index_html_erb___3257680223727649312_33596100'
+
+
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:38:59 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.8ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:39:00 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:41:50 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.2ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:41:51 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:46:24 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.9ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:25 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:46:32 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.4ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 56ms (Views: 52.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:33 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:46:36 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:37 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:46:40 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.6ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:41 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:46:48 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.7ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:46:49 +0300
+
+
+Started GET "/products/setorder?setorder=pricedoll" for 192.168.151.91 at 2015-03-26 20:47:04 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll" for 192.168.151.91 at 2015-03-26 20:47:04 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll"]}
+  [1m[35mProduct Load (2.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 20:47:08 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 20:47:08 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[36mProduct Load (3.0ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 20:50:03 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[35mProduct Load (3.0ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300
+  Rendered products/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:04 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:50:07 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.7ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.3ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:50:08 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=AM-AF&commit=Search" for 192.168.151.91 at 2015-03-26 20:52:57 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"AM-AF", "commit"=>"Search"}
+  [1m[36mProduct Load (1.4ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%AM-AF%') OR (`products`.`productarticul` LIKE '%AM-AF%')))  ORDER BY `products`.`pricedoll`[0m
+  Rendered products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:52:58 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=AM-AF&commit=Search" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"AM-AF", "commit"=>"Search"}
+  [1m[35mProduct Load (1.6ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%AM-AF%') OR (`products`.`productarticul` LIKE '%AM-AF%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:02 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:03 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:03 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=&commit=Search" for 192.168.151.91 at 2015-03-26 20:53:30 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"", "commit"=>"Search"}
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`[0m
+Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') OR ()))  ORDER BY `products`.`pricedoll`' at line 1: SELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Mysql2::Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') OR ()))  ORDER BY `products`.`pricedoll`' at line 1: SELECT `products`.* FROM `products`  WHERE ((() OR ()))  ORDER BY `products`.`pricedoll`):
+    43:   </thead>
+    44: 
+    45:   <tbody>
+    46:     <% @products.each do |product| %>
+    47:       <tr>
+    48:         <td><%= product.productarticul %></td>
+    49:         <td><%= product.productname %></td>
+  app/views/products/index.html.erb:46:in `_app_views_products_index_html_erb___3257680223727649312_33596100'
+
+
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/krulov/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (3.2ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:53:36 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 20:57:21 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.9ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 20:57:22 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 21:02:45 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.2ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:46 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=AM-AF&commit=Search" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"AM-AF", "commit"=>"Search"}
+  [1m[36mProduct Load (1.4ms)[0m  [1mSELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%AM-AF%') OR (`products`.`productarticul` LIKE '%AM-AF%')))  ORDER BY `products`.`pricedoll`[0m
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:02:55 +0300
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=AM-AF&commit=Search" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"AM-AF", "commit"=>"Search"}
+  [1m[35mProduct Load (0.7ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%AM-AF%') OR (`products`.`productarticul` LIKE '%AM-AF%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:26 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.0ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (1.3ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:33 +0300
+
+
+Started GET "/" for 192.168.151.91 at 2015-03-26 21:03:55 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.8ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:03:56 +0300
+
+
+Started GET "/products/setorder?setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:07 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:07 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll"]}
+  [1m[35mProduct Load (2.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 61ms (Views: 57.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:09 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 21:04:09 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[36mProduct Load (2.9ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 68ms (Views: 63.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll.desc&setorder=productarticul" for 192.168.151.91 at 2015-03-26 21:04:13 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll.desc"], "setorder"=>"productarticul"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul" for 192.168.151.91 at 2015-03-26 21:04:13 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc", "productarticul"]}
+  [1m[35mProduct Load (4.8ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC, `products`.`productarticul` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 74ms (Views: 68.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul&setorder=productarticul" for 192.168.151.91 at 2015-03-26 21:04:21 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll.desc", "productarticul"], "setorder"=>"productarticul"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul.desc
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul.desc" for 192.168.151.91 at 2015-03-26 21:04:21 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc", "productarticul.desc"]}
+  [1m[36mProduct Load (4.9ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC, `products`.`productarticul` DESC LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 74ms (Views: 68.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll.desc&order%5B%5D=productarticul.desc&setorder=productarticul" for 192.168.151.91 at 2015-03-26 21:04:24 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll.desc", "productarticul.desc"], "setorder"=>"productarticul"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 21:04:24 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[35mProduct Load (2.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300
+  Rendered products/index.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll.desc&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:26 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll.desc"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 192.168.151.91 at 2015-03-26 21:04:26 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.8ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products/setorder?setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:29 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:29 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll"]}
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:33 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 21:04:33 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 75ms (Views: 74.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll.desc&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:04:35 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll.desc"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for 192.168.151.91 at 2015-03-26 21:04:35 +0300
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 83ms (Views: 81.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 192.168.151.91 at 2015-03-26 21:26:12 +0300
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.7ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/assets/application.js?body=1" for 192.168.151.91 at 2015-03-26 21:26:14 +0300
+
+
+Started GET "/products/setorder?setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:27:09 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll" for 192.168.151.91 at 2015-03-26 21:27:09 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll"]}
+  [1m[35mProduct Load (2.9ms)[0m  SELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` LIMIT 300
+  Rendered products/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 73ms (Views: 69.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/setorder?order%5B%5D=pricedoll&setorder=pricedoll" for 192.168.151.91 at 2015-03-26 21:27:12 +0300
+Processing by ProductsController#setorder as HTML
+  Parameters: {"order"=>["pricedoll"], "setorder"=>"pricedoll"}
+Redirected to http://192.168.151.2:8081/products?order%5B%5D=pricedoll.desc
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/products?order%5B%5D=pricedoll.desc" for 192.168.151.91 at 2015-03-26 21:27:12 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"order"=>["pricedoll.desc"]}
+  [1m[36mProduct Load (2.8ms)[0m  [1mSELECT  `products`.* FROM `products`   ORDER BY `products`.`pricedoll` DESC LIMIT 300[0m
+  Rendered products/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&stext=STKER&commit=Search" for 192.168.151.91 at 2015-03-26 21:29:07 +0300
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "stext"=>"STKER", "commit"=>"Search"}
+  [1m[35mProduct Load (24.4ms)[0m  SELECT `products`.* FROM `products`  WHERE (((`products`.`productname` LIKE '%STKER%') OR (`products`.`productarticul` LIKE '%STKER%')))  ORDER BY `products`.`pricedoll`
+  Rendered products/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 66ms (Views: 40.1ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/assets/products.css?body=1" for 192.168.151.91 at 2015-03-26 21:29:09 +0300
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.151.91 at 2015-03-26 21:29:09 +0300
+
+
+Started GET "/assets/application.css?body=1" for 192.168.151.91 at 2015-03-26 21:29:09 +0300
+
+
+Started GET "/assets/products.js?body=1" for 192.168.151.91 at 2015-03-26 21:29:09 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.151.91 at 2015-03-26 21:29:09 +0300

@@ -17,3 +17,6 @@
 
 # Ignore prices from distributors
 /PriceLists
+
+# Ignore folder with mails from distributors
+/Mails

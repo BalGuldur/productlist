@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Добавлено мной
 gem 'squeel'
+gem 'mailman'
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
