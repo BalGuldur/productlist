@@ -69,7 +69,13 @@ task :uploadelko => :environment do
 end
 
 task :uploadmerlion => :environment do
-  pricelist = File.new("PriceLists/price_merlion.csv")
+  status = `cp ~/grive/MiraclePrices/Merlion.xls PriceLists/Merlion.xls`
+  # print status+"\n"
+  status2 = `cp PriceLists/Merlion.csv PriceLists/Merlion.csv.bak`
+  # print status2+"\n"
+  status3 = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Merlion.csv")
 #  i=0
 #  puts "start/n"
   @products = Product.where{distributor.eq 'merlion'}
@@ -183,18 +189,24 @@ task :uploadkoodoo => :environment do
 end
 
 task :uploadall => :environment do
-  #status = `cp log/uploadtreolan.log log/uploadtreolan.log.bak`
-  #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
-  #print "uploadtreolan process start"+status2+"\n"
-  #status = `cp log/uploadkoodoo.log log/uploadkookoo.log.bak`
+  #status = `cd /home/krulov/grive/`
+  #status = `grive`
+  status = `cd /home/krulov/RoRapp/productlist/`
+  status = `cp log/uploadtreolan.log log/uploadtreolan.log.bak`
+  status2 = `rake uploadtreolan > log/uploadtreolan.log &`
+  print "uploadtreolan process start"+status2+"\n"
+  status = `cp log/uploadkoodoo.log log/uploadkookoo.log.bak`
   #status2 = `rake uploadkoodoo > log/uploadkoodoo.log &`
   #print "uploadkoodoo process start"+status2+"\n"
-  #status = `cp log/uploadocs.log log/uploadocs.log.bak`
-  #status2 = `rake uploadocs > log/uploadocs.log &`
-  #print "uploadocs process start"+status2+"\n"
+  status = `cp log/uploadocs.log log/uploadocs.log.bak`
+  status2 = `rake uploadocs > log/uploadocs.log &`
+  print "uploadocs process start"+status2+"\n"
   status = `cp log/uloadmarvel.log log/uploadmarvel.log.bak`
-  status2 = `rake uploadmarvel > log/uploadmarvel.log &`
-  print "uploadmarvel process start"
+  #status2 = `rake uploadmarvel > log/uploadmarvel.log &`
+  #print "uploadmarvel process start"
+  status = `cp log/uploadmerlion.log log/uploadmerlion.log.bak`
+  status2 = `rake uploadmerlion > log/uploadmerlion.log &`
+  print "uploadmerlion process start"
   #dobavit print vremia zapuska
 end
 
