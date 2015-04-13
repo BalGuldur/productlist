@@ -14,10 +14,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/bak
+/bak/*
 
 # Ignore prices from distributors
-/PriceLists
+/PriceLists/*
 
 # Ignore folder with mails from distributors
 /Mails
