@@ -29,10 +29,13 @@ task :uploadabn => :environment do
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
+    line.gsub!(/""/,'inch')
+    line.gsub!(/; /,', ')
+    line.gsub!(/;";/,',";')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
     linehash = line.split(';')
-    if linehash[1]!= nil && linehash[1]!=""
+    if linehash[5]!=nil && linehash[5]!=""
       product = Product.new(productarticul: linehash[7], productname: linehash[1], distributor: "abn", pricedoll: linehash[5], nalichie: linehash[2])
       # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
       product.save
@@ -205,6 +208,56 @@ task :uploadkoodoo => :environment do
   end
 end
 
+task :uploadsofttronic => :environment do
+  status = `xlhtml -xp:1 -csv PriceLists/Softtronic.xls > PriceLists/Softtronic.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Softtronic.csv")
+  @products = Product.where{distributor.eq 'softtronic'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    #print line + "\n"
+    # line.gsub!(/, /,'; ')
+    line.gsub!(/,",/,';",')
+    line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    #print line + "\n"
+    linehash = line.split(',')
+    if linehash[3]!=nil && linehash[3]!=""
+      product = Product.new(productarticul: linehash[2], productname: linehash[3], distributor: "softtronic", pricedoll: linehash[5])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
+task :uploadresursmedia => :environment do
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Resursmedia.xlsx > PriceLists/Resursmedia.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Resursmedia.csv")
+  @products = Product.where{distributor.eq 'resursmedia'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    # print line + "\n"
+    line.gsub!(/; /,', ')
+    line.gsub!(/;";/,',";')
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    # print line + "\n"
+    linehash = line.split(';')
+    if linehash[7]!=nil && linehash[7]!=""
+      product = Product.new(productarticul: linehash[5], productname: linehash[6], distributor: "resursmedia", pricedoll: linehash[8], pricerub: linehash[9], nalichie: linehash[10])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
+
 task :uploadall => :environment do
   #status = `cd /home/krulov/grive/`
   #status = `grive`
@@ -238,6 +291,12 @@ task :uploadall => :environment do
   end
   if prices.include?("Abn")
     status2 = `rake uploadabn > log/uploadabn.log &`
+  end
+  if prices.include?("Softtronic")
+    status2 = `rake uploadsofttronic > log/uploadsofttronic.log &`
+  end
+  if prices.include?("Resursmedia")
+    status2 = `rake uploadresursmedia > log/uploadresursmedia.log &`
   end
 
   #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
