@@ -1,31 +1,28 @@
-task :uploadmaltima => :environment do
-  pricelist = File.new("PriceLists/PriceListMaltima.csv")
-  @products = Product.where{distributor.eq 'maltima'}
-  @products.delete_all
-  pricelist.each do |line|
-    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
-    line.chomp!
-    line.tr_s!("\"",'')
-    line.gsub!(/,\s/,";")
-    line.gsub!(/,"/,";")
-    # попробовать line.gsub!(/,[\s"]/,";")
-    line.scan(/[[:print:]]/).join
-    linehash = line.split(',')
-    if linehash[1]!= nil && linehash[1]!=""
-      product = Product.new(productname: linehash[1], distributor: "maltima", pricedoll: linehash[2], pricerub: linehash[7])
-      # Комментарий
-      # В таблице нет артикула
-      product.save
-    end
-  end
-end
+#task :uploadmaltima => :environment do
+#  pricelist = File.new("PriceLists/PriceListMaltima.csv")
+#  @products = Product.where{distributor.eq 'maltima'}
+#  @products.delete_all
+#  pricelist.each do |line|
+#    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+#    line.chomp!
+#    line.tr_s!("\"",'')
+#    line.gsub!(/,\s/,";")
+#    line.gsub!(/,"/,";")
+#    # попробовать line.gsub!(/,[\s"]/,";")
+#    line.scan(/[[:print:]]/).join
+#    linehash = line.split(',')
+#    if linehash[1]!= nil && linehash[1]!=""
+#      product = Product.new(productname: linehash[1], distributor: "maltima", pricedoll: linehash[2], pricerub: linehash[7])
+#      # Комментарий
+#      # В таблице нет артикула
+#      product.save
+#    end
+#  end
+#end
+
 
 task :uploadmarvel => :environment do
-  status = `cp ~/grive/MiraclePrices/Marvel.xlsx PriceLists/Marvel.xlsx`
-  # print status+"\n"
-  status2 = `cp PriceLists/Marvel.csv PriceLists/Marvel.csv.bak`
-  # print status2+"\n"
-  status3 = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Marvel.xlsx > PriceLists/Marvel.csv`
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Marvel.xlsx > PriceLists/Marvel.csv`
   # print status3+"\n"
   pricelist = File.new("PriceLists/Marvel.csv")
   @products = Product.where{distributor.eq 'marvel'}
@@ -50,37 +47,34 @@ task :uploadmarvel => :environment do
   end
 end
 
-task :uploadelko => :environment do
-  pricelist = File.new("PriceLists/PriceListElko.csv")
-  @products = Product.where{distributor.eq 'elko'}
-  @products.delete_all
-  pricelist.each do |line|
-    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
-    line.chomp!
-    line.tr_s!("\"",'')
-    line.scan(/[[:print:]]/).join
-    linehash = line.split(';')
-    if linehash[7]!= nil && linehash[7]!=""
-      product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "elko", pricerub: linehash[7], nalichie: linehash[8])
-      # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
-      product.save
-    end
-  end
-end
+#task :uploadelko => :environment do
+#  pricelist = File.new("PriceLists/PriceListElko.csv")
+#  @products = Product.where{distributor.eq 'elko'}
+#  @products.delete_all
+#  pricelist.each do |line|
+#    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+#    line.chomp!
+#    line.tr_s!("\"",'')
+#    line.scan(/[[:print:]]/).join
+#    linehash = line.split(';')
+#    if linehash[7]!= nil && linehash[7]!=""
+#      product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "elko", pricerub: linehash[7], nalichie: linehash[8])
+#      # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
+#      product.save
+#    end
+#  end
+#end
 
 task :uploadmerlion => :environment do
-  status = `cp ~/grive/MiraclePrices/Merlion.xls PriceLists/Merlion.xls`
-  # print status+"\n"
-  status2 = `cp PriceLists/Merlion.csv PriceLists/Merlion.csv.bak`
-  # print status2+"\n"
-  status3 = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
+  #status = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
+  status = `../../xlsx2csv/xlsx2csv.py -d ',' -s 1 PriceLists/Merlion.xlsx > PriceLists/Merlion1.csv`
+  status2 = `../../xlsx2csv/xlsx2csv.py -d ',' -s 2 PriceLists/Merlion.xlsx > PriceLists/Merlion2.csv`
   # print status3+"\n"
-  pricelist = File.new("PriceLists/Merlion.csv")
-#  i=0
-#  puts "start/n"
+  pricelist1 = File.new("PriceLists/Merlion1.csv")
+  pricelist2 = File.new("PriceLists/Merlion2.csv")
   @products = Product.where{distributor.eq 'merlion'}
   @products.delete_all
-  pricelist.each do |line|
+  pricelist1.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     line.tr_s!("\"",'')
@@ -92,16 +86,26 @@ task :uploadmerlion => :environment do
 #      puts "add product/n"
 #      i+=1
     end
+  end
+  pricelist2.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    linehash = line.split(',')
+    if linehash[7]!= nil && linehash[7]!=""
+      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], nalichie: linehash[13])
+      product.save
+#      puts "add product/n"
+#      i+=1
+    end
+
 #    break if i==10
   end
 end
 
 task :uploadtreolan => :environment do
-  status = `cp ~/grive/MiraclePrices/Treolan.xlsx PriceLists/Treolan.xlsx`
-  # print status+"\n"
-  status2 = `cp PriceLists/Treolan.csv PriceLists/Treolan.csv.bak`
-  # print status2+"\n"
-  status3 = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Treolan.xlsx > PriceLists/Treolan.csv`
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Treolan.xlsx > PriceLists/Treolan.csv`
   # print status3+"\n"
   pricelist = File.new("PriceLists/Treolan.csv")
   @products = Product.where{distributor.eq 'treolan'}
@@ -125,11 +129,7 @@ task :uploadtreolan => :environment do
 end
 
 task :uploadocs => :environment do
-  status = `cp ~/grive/MiraclePrices/Ocs.xls PriceLists/Ocs.xls`
-  # print status+"\n"
-  status2 = `cp PriceLists/Ocs.csv PriceLists/Ocs.csv.bak`
-  # print status2+"\n"
-  status3 = `xlhtml -xp:2 -csv PriceLists/Ocs.xls > PriceLists/Ocs.csv`
+  status = `xlhtml -xp:2 -csv PriceLists/Ocs.xls > PriceLists/Ocs.csv`
   # print status3+"\n"
   pricelist = File.new("PriceLists/Ocs.csv")
   @products = Product.where{distributor.eq 'ocs'}
@@ -160,11 +160,7 @@ end
 
 
 task :uploadkoodoo => :environment do
-  status = `cp ~/grive/MiraclePrices/Koodoo.xls PriceLists/Koodoo.xls`
-  # print status+"\n"
-  status2 = `cp PriceLists/Koodoo.csv PriceLists/Koodoo.csv.bak`
-  # print status2+"\n"
-  status3 = `xlhtml -xp:0 -csv PriceLists/Koodoo.xls > PriceLists/Koodoo.csv`
+  status = `xlhtml -xp:0 -csv PriceLists/Koodoo.xls > PriceLists/Koodoo.csv`
   # print status3+"\n"
   pricelist = File.new("PriceLists/Koodoo.csv")
   @products = Product.where{distributor.eq 'koodoo'}
@@ -191,22 +187,42 @@ end
 task :uploadall => :environment do
   #status = `cd /home/krulov/grive/`
   #status = `grive`
-  status = `cd /home/krulov/RoRapp/productlist/`
-  status = `cp log/uploadtreolan.log log/uploadtreolan.log.bak`
-  status2 = `rake uploadtreolan > log/uploadtreolan.log &`
-  print "uploadtreolan process start"+status2+"\n"
-  status = `cp log/uploadkoodoo.log log/uploadkookoo.log.bak`
+  #status = `cd /home/krulov/RoRapp/productlist/`
+  status = `bash grive.sh`
+  status = `mv log/* bak/log/ -f`
+  status = `mv PriceLists/* bak/PriceLists/ -f`
+  status = `mv ../../grive/MiraclePrices/* PriceLists`
+  status = `bash grive.sh`
+ 
+  status = `ls PriceLists`
+  prices = status.split("\n")
+  prices.each {|price| price.gsub!(/\.xls.*/) {|match| match=""}}
+  if prices.include?("Treolan")
+    status2 = `rake uploadtreolan > log/uploadtreolan.log &`
+  end
+  if prices.include?("Ocs")
+    status2 = `rake uploadocs > log/uploadocs.log &`
+  end
+  if prices.include?("Marvel")
+    status2 = `rake uploadmarvel > log/uploadmarvel.log &`
+  end
+  if prices.include?("Koodoo")
+    status2 = `rake uploadkoodoo > log/uploadkoodoo.log &`
+  end
+  if prices.include?("Merlion")
+    status2 = `rake uploadmerlion > log/uploadmerlion.log &`
+  end
+
+  #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
+  #print "uploadtreolan process start"+status2+"\n"
   #status2 = `rake uploadkoodoo > log/uploadkoodoo.log &`
   #print "uploadkoodoo process start"+status2+"\n"
-  status = `cp log/uploadocs.log log/uploadocs.log.bak`
-  status2 = `rake uploadocs > log/uploadocs.log &`
-  print "uploadocs process start"+status2+"\n"
-  status = `cp log/uloadmarvel.log log/uploadmarvel.log.bak`
+  #status2 = `rake uploadocs > log/uploadocs.log &`
+  #print "uploadocs process start"+status2+"\n"
   #status2 = `rake uploadmarvel > log/uploadmarvel.log &`
   #print "uploadmarvel process start"
-  status = `cp log/uploadmerlion.log log/uploadmerlion.log.bak`
-  status2 = `rake uploadmerlion > log/uploadmerlion.log &`
-  print "uploadmerlion process start"
+  #status2 = `rake uploadmerlion > log/uploadmerlion.log &`
+  #print "uploadmerlion process start"
   #dobavit print vremia zapuska
 end
 
