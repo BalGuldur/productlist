@@ -20,6 +20,25 @@
 #  end
 #end
 
+task :uploadabn => :environment do
+  status = `../../xlsx2csv/xlsx2csv.py -s 2 -d ';' PriceLists/Abn.xlsx > PriceLists/Abn.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Abn.csv")
+  @products = Product.where{distributor.eq 'abn'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    linehash = line.split(';')
+    if linehash[1]!= nil && linehash[1]!=""
+      product = Product.new(productarticul: linehash[7], productname: linehash[1], distributor: "abn", pricedoll: linehash[5], nalichie: linehash[2])
+      # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
+      product.save
+    end
+  end
+end
 
 task :uploadmarvel => :environment do
   status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Marvel.xlsx > PriceLists/Marvel.csv`
@@ -47,23 +66,25 @@ task :uploadmarvel => :environment do
   end
 end
 
-#task :uploadelko => :environment do
-#  pricelist = File.new("PriceLists/PriceListElko.csv")
-#  @products = Product.where{distributor.eq 'elko'}
-#  @products.delete_all
-#  pricelist.each do |line|
-#    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
-#    line.chomp!
-#    line.tr_s!("\"",'')
-#    line.scan(/[[:print:]]/).join
-#    linehash = line.split(';')
-#    if linehash[7]!= nil && linehash[7]!=""
-#      product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "elko", pricerub: linehash[7], nalichie: linehash[8])
-#      # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
-#      product.save
-#    end
-#  end
-#end
+task :uploadelko => :environment do
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Elko.xlsx > PriceLists/Elko.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Elko.csv")
+  @products = Product.where{distributor.eq 'elko'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    linehash = line.split(';')
+    if linehash[7]!= nil && linehash[7]!=""
+      product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "elko", pricerub: linehash[7], nalichie: linehash[8])
+      # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
+      product.save
+    end
+  end
+end
 
 task :uploadmerlion => :environment do
   #status = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
@@ -211,6 +232,12 @@ task :uploadall => :environment do
   end
   if prices.include?("Merlion")
     status2 = `rake uploadmerlion > log/uploadmerlion.log &`
+  end
+  if prices.include?("Elko")
+    status2 = `rake uploadelko > log/uploadelko.log &`
+  end
+  if prices.include?("Abn")
+    status2 = `rake uploadabn > log/uploadabn.log &`
   end
 
   #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
