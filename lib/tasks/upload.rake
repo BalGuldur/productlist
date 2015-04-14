@@ -257,6 +257,56 @@ task :uploadresursmedia => :environment do
   end
 end
 
+task :uploadnetlab => :environment do
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Netlab.xlsx > PriceLists/Netlab.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Netlab.csv")
+  @products = Product.where{distributor.eq 'netlab'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    # print line + "\n"
+    line.gsub!(/; /,', ')
+    line.gsub!(/;";/,',";')
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    # print line + "\n"
+    linehash = line.split(';')
+    if linehash[16]!=nil && linehash[16]!=""
+      product = Product.new(productarticul: linehash[16], productname: linehash[5], distributor: "netlab", pricerub: linehash[12], pricedoll: linehash[11], nalichie: linehash[0])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
+task :uploadsds => :environment do
+  status = `xlhtml -xp:0 -csv PriceLists/Sds_network.xls > PriceLists/Sds_network.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Sds_network.csv")
+  @products = Product.where{distributor.eq 'sds'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    # print line + "\n"
+    # line.gsub!(/, /,'; ')
+    line.gsub!(/\d,\d/) {|match|match.gsub!(/,/,'')}
+    line.gsub!(/,",/,';",')
+    line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    # print line + "\n"
+    linehash = line.split(',')
+    if linehash[1]!=nil && linehash[1]!=""
+      product = Product.new(productname: linehash[1], distributor: "sds", pricerub: linehash[4], nalichie: linehash[3])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
 
 task :uploadall => :environment do
   #status = `cd /home/krulov/grive/`
@@ -297,6 +347,16 @@ task :uploadall => :environment do
   end
   if prices.include?("Resursmedia")
     status2 = `rake uploadresursmedia > log/uploadresursmedia.log &`
+  end
+  if prices.include?("Netlab")
+    status2 = `rake uploadnetlab > log/uploadnetlab.log &`
+  end
+  if prices.include?("Technotrade")
+    status2 = `rake uploadtechnotrade > log/uploadtechnotrade.log &`
+    #еще не реализован и метод не написан
+  end
+  if prices.include?("Sds_network")
+    status2 = `rake uploadsds > log/uploadsds.log &`
   end
 
   #status2 = `rake uploadtreolan > log/uploadtreolan.log &`
