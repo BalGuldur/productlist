@@ -15,11 +15,11 @@
 /log/*.log
 /tmp
 /bak/*
-/bak/PriceLists/*
-/bak/log/*
+/bak/PriceLists/*.*
+/bak/log/*.*
 
 # Ignore prices from distributors
-/PriceLists/*
+/PriceLists
 
 # Ignore folder with mails from distributors
 /Mails
