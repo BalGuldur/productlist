@@ -145,7 +145,7 @@ task :uploadtreolan => :environment do
     # print line + "\n"
     linehash = line.split(';')
     if linehash[1]!=nil && linehash[1]!=""
-      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "treolan", pricedoll: linehash[6],pricerub: linehash[7], nalichie: linehash[3])
+      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "treolan", pricedoll: linehash[4],pricerub: linehash[5], nalichie: linehash[2])
       #print linehash[3]
       product.save
     end
