@@ -336,6 +336,30 @@ end
 #end
 #
 
+task :uploadbecompact => :environment do
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Becompact.xlsx > PriceLists/Becompact.csv`
+  # print status3+"\n"
+  pricelist = File.new("PriceLists/Becompact.csv")
+  @products = Product.where{distributor.eq 'becompact'}
+  @products.delete_all
+  pricelist.each do |line|
+    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    line.chomp!
+    # print line + "\n"
+    line.gsub!(/; /,', ')
+    line.gsub!(/;";/,',";')
+    line.tr_s!("\"",'')
+    line.scan(/[[:print:]]/).join
+    # print line + "\n"
+    linehash = line.split(';')
+    if linehash[2]!=nil && linehash[2]!=""
+      product = Product.new(productarticul: linehash[1], productname: linehash[2]+linehash[3], distributor: "becompact", pricerub: linehash[10], pricedoll: linehash[11], nalichie: linehash[12])
+      #print linehash[3]
+      product.save
+    end
+  end
+end
+
 task :uploadall => :environment do
   #status = `cd /home/krulov/grive/`
   #status = `grive`
