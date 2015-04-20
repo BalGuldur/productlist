@@ -161,13 +161,15 @@ task :uploadocs => :environment do
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    #print line + "\n"
+    print line + "\n"
     # line.gsub!(/, /,'; ')
     line.gsub!(/,",/,';",')
+    line.gsub!(/ , /,' ; ')
+    line.gsub!(/[a-z,A-Z,\d],/) {|match|match.gsub!(/,/,';')}
     line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    #print line + "\n"
+    print line + "\n"
     linehash = line.split(',')
     if linehash[4]!=nil && linehash[4]!=""
       product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "ocs", nalichie: linehash[11])
@@ -307,6 +309,32 @@ task :uploadsds => :environment do
   end
 end
 
+#task :uploadtechnotrade => :environment do
+# status = `xlhtml -xp:0 -csv PriceLists/Technotrade.xls > PriceLists/Technotrade.csv`
+# # print status3+"\n"
+# pricelist = File.new("PriceLists/Technotrade.csv")
+# @products = Product.where{distributor.eq 'technotrade'}
+# @products.delete_all
+# pricelist.each do |line|
+#   line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+#   line.chomp!
+#   # print line + "\n"
+#   # line.gsub!(/, /,'; ')
+#   line.gsub!(/\d,\d/) {|match|match.gsub!(/,/,'')}
+#   line.gsub!(/,",/,';",')
+#   line.gsub!(/,"[^"]+?,[^"]+?",/) {|match1|match1.gsub!(/"[^"]*"/) {|match2|'"'+match2.tr_s!(",",";")+'"'}}
+#   line.tr_s!("\"",'')
+#   line.scan(/[[:print:]]/).join
+#   # print line + "\n"
+#   linehash = line.split(',')
+#   if linehash[1]!=nil && linehash[1]!=""
+#     product = Product.new(productname: linehash[1], distributor: "technotrade", pricerub: linehash[4], nalichie: linehash[3])
+#     #print linehash[3]
+#     product.save
+#   end
+# end
+#end
+#
 
 task :uploadall => :environment do
   #status = `cd /home/krulov/grive/`
