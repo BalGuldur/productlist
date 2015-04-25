@@ -345,12 +345,12 @@ task :uploadbecompact => :environment do
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    # print line + "\n"
-    line.gsub!(/; /,', ')
-    line.gsub!(/;";/,',";')
-    line.tr_s!("\"",'')
+    print line + "\n"
+    #line.gsub!(/; /,', ')
+    #line.gsub!(/;";/,',";')
+    #line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    # print line + "\n"
+    print line + "\n"
     linehash = line.split(';')
     if linehash[2]!=nil && linehash[2]!=""
       product = Product.new(productarticul: linehash[1], productname: linehash[2]+linehash[3], distributor: "becompact", pricerub: linehash[10], pricedoll: linehash[11], nalichie: linehash[12])
