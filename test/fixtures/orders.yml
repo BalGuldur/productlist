@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager_id: 1
+  numbill: 1
+  purchaser_id: 1
+  shipprice: 1
+  addrate: 1
+  datetimedone: MyString
+  margin: 1
+  statereser_id: 1
+  comments: 
+
+two:
+  manager_id: 1
+  numbill: 1
+  purchaser_id: 1
+  shipprice: 1
+  addrate: 1
+  datetimedone: MyString
+  margin: 1
+  statereser_id: 1
+  comments: 

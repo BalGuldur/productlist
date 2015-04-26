@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @statereserv.status %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @statereserv.color %>
+</p>
+
+<%= link_to 'Edit', edit_statereserv_path(@statereserv) %> |
+<%= link_to 'Back', statereservs_path %>

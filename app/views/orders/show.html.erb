@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @order.manager_id %>
+</p>
+
+<p>
+  <strong>Numbill:</strong>
+  <%= @order.numbill %>
+</p>
+
+<p>
+  <strong>Purchaser:</strong>
+  <%= @order.purchaser_id %>
+</p>
+
+<p>
+  <strong>Shipprice:</strong>
+  <%= @order.shipprice %>
+</p>
+
+<p>
+  <strong>Addrate:</strong>
+  <%= @order.addrate %>
+</p>
+
+<p>
+  <strong>Datetimedone:</strong>
+  <%= @order.datetimedone %>
+</p>
+
+<p>
+  <strong>Margin:</strong>
+  <%= @order.margin %>
+</p>
+
+<p>
+  <strong>Statereser:</strong>
+  <%= @order.statereser_id %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @order.comments %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

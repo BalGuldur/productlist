@@ -1,0 +1,2 @@
+module StatereservsHelper
+end

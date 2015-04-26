@@ -1,0 +1,65 @@
+<%= form_for(@orderpart) do |f| %>
+  <% if @orderpart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orderpart.errors.count, "error") %> prohibited this orderpart from being saved:</h2>
+
+      <ul>
+      <% @orderpart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :partnumber %><br>
+    <%= f.text_field :partnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :partdescr %><br>
+    <%= f.text_area :partdescr %>
+  </div>
+  <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :pricesell %><br>
+    <%= f.text_field :pricesell %>
+  </div>
+  <div class="field">
+    <%= f.label :priceship %><br>
+    <%= f.text_field :priceship %>
+  </div>
+  <div class="field">
+    <%= f.label :shipper %><br>
+    <%= f.text_field :shipper %>
+  </div>
+  <div class="field">
+    <%= f.label :beznal %><br>
+    <%= f.number_field :beznal %>
+  </div>
+  <div class="field">
+    <%= f.label :convert %><br>
+    <%= f.text_field :convert %>
+  </div>
+  <div class="field">
+    <%= f.label :predatetime %><br>
+    <%= f.text_field :predatetime %>
+  </div>
+  <div class="field">
+    <%= f.label :faktdatetime %><br>
+    <%= f.text_field :faktdatetime %>
+  </div>
+  <div class="field">
+    <%= f.label :statereserv_id %><br>
+    <%= f.number_field :statereserv_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nds %><br>
+    <%= f.number_field :nds %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

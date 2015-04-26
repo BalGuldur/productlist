@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Partnumber:</strong>
+  <%= @orderpart.partnumber %>
+</p>
+
+<p>
+  <strong>Partdescr:</strong>
+  <%= @orderpart.partdescr %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @orderpart.qty %>
+</p>
+
+<p>
+  <strong>Pricesell:</strong>
+  <%= @orderpart.pricesell %>
+</p>
+
+<p>
+  <strong>Priceship:</strong>
+  <%= @orderpart.priceship %>
+</p>
+
+<p>
+  <strong>Shipper:</strong>
+  <%= @orderpart.shipper %>
+</p>
+
+<p>
+  <strong>Beznal:</strong>
+  <%= @orderpart.beznal %>
+</p>
+
+<p>
+  <strong>Convert:</strong>
+  <%= @orderpart.convert %>
+</p>
+
+<p>
+  <strong>Predatetime:</strong>
+  <%= @orderpart.predatetime %>
+</p>
+
+<p>
+  <strong>Faktdatetime:</strong>
+  <%= @orderpart.faktdatetime %>
+</p>
+
+<p>
+  <strong>Statereserv:</strong>
+  <%= @orderpart.statereserv_id %>
+</p>
+
+<p>
+  <strong>Nds:</strong>
+  <%= @orderpart.nds %>
+</p>
+
+<%= link_to 'Edit', edit_orderpart_path(@orderpart) %> |
+<%= link_to 'Back', orderparts_path %>

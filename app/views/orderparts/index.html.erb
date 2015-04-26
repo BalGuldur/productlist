@@ -1,0 +1,47 @@
+<h1>Listing orderparts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partnumber</th>
+      <th>Partdescr</th>
+      <th>Qty</th>
+      <th>Pricesell</th>
+      <th>Priceship</th>
+      <th>Shipper</th>
+      <th>Beznal</th>
+      <th>Convert</th>
+      <th>Predatetime</th>
+      <th>Faktdatetime</th>
+      <th>Statereserv</th>
+      <th>Nds</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orderparts.each do |orderpart| %>
+      <tr>
+        <td><%= orderpart.partnumber %></td>
+        <td><%= orderpart.partdescr %></td>
+        <td><%= orderpart.qty %></td>
+        <td><%= orderpart.pricesell %></td>
+        <td><%= orderpart.priceship %></td>
+        <td><%= orderpart.shipper %></td>
+        <td><%= orderpart.beznal %></td>
+        <td><%= orderpart.convert %></td>
+        <td><%= orderpart.predatetime %></td>
+        <td><%= orderpart.faktdatetime %></td>
+        <td><%= orderpart.statereserv_id %></td>
+        <td><%= orderpart.nds %></td>
+        <td><%= link_to 'Show', orderpart %></td>
+        <td><%= link_to 'Edit', edit_orderpart_path(orderpart) %></td>
+        <td><%= link_to 'Destroy', orderpart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Orderpart', new_orderpart_path %>

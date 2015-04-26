@@ -1,0 +1,53 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :manager_id %><br>
+    <%= f.number_field :manager_id %>
+  </div>
+  <div class="field">
+    <%= f.label :numbill %><br>
+    <%= f.number_field :numbill %>
+  </div>
+  <div class="field">
+    <%= f.label :purchaser_id %><br>
+    <%= f.number_field :purchaser_id %>
+  </div>
+  <div class="field">
+    <%= f.label :shipprice %><br>
+    <%= f.number_field :shipprice %>
+  </div>
+  <div class="field">
+    <%= f.label :addrate %><br>
+    <%= f.number_field :addrate %>
+  </div>
+  <div class="field">
+    <%= f.label :datetimedone %><br>
+    <%= f.text_field :datetimedone %>
+  </div>
+  <div class="field">
+    <%= f.label :margin %><br>
+    <%= f.number_field :margin %>
+  </div>
+  <div class="field">
+    <%= f.label :statereser_id %><br>
+    <%= f.number_field :statereser_id %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

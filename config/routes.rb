@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :orders
+
+  resources :orderparts
+
+  resources :managers
+
+  resources :statereservs
+
   resources :products do
     collection do
       get 'search'

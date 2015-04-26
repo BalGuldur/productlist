@@ -1,0 +1,27 @@
+<h1>Listing statereservs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statereservs.each do |statereserv| %>
+      <tr>
+        <td><%= statereserv.status %></td>
+        <td><%= statereserv.color %></td>
+        <td><%= link_to 'Show', statereserv %></td>
+        <td><%= link_to 'Edit', edit_statereserv_path(statereserv) %></td>
+        <td><%= link_to 'Destroy', statereserv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Statereserv', new_statereserv_path %>

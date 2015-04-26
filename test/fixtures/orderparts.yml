@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partnumber: MyString
+  partdescr: MyText
+  qty: 1
+  pricesell: 1.5
+  priceship: 1.5
+  shipper: MyString
+  beznal: 1
+  convert: 1.5
+  predatetime: MyString
+  faktdatetime: MyString
+  statereserv_id: 1
+  nds: 1
+
+two:
+  partnumber: MyString
+  partdescr: MyText
+  qty: 1
+  pricesell: 1.5
+  priceship: 1.5
+  shipper: MyString
+  beznal: 1
+  convert: 1.5
+  predatetime: MyString
+  faktdatetime: MyString
+  statereserv_id: 1
+  nds: 1
