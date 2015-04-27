@@ -5,6 +5,14 @@ Rails.application.routes.draw do
 
   resources :statereservs
 
+  resources :intproducts
+
+  resources :prodtypes
+
+  resources :employees
+
+  resources :departments
+
   resources :products do
     collection do
       get 'search'

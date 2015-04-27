@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @intproduct.name %>
+</p>
+
+<p>
+  <strong>Partnumber:</strong>
+  <%= @intproduct.partnumber %>
+</p>
+
+<p>
+  <strong>Serialnumber:</strong>
+  <%= @intproduct.serialnumber %>
+</p>
+
+<p>
+  <strong>Prodtype:</strong>
+  <%= @intproduct.prodtype_id %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @intproduct.employee_id %>
+</p>
+
+<%= link_to 'Edit', edit_intproduct_path(@intproduct) %> |
+<%= link_to 'Back', intproducts_path %>
