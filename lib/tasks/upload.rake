@@ -101,10 +101,14 @@ task :uploadmerlion => :environment do
   pricelist1.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
+    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
+    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
+    line.gsub!(/"";/,'",')
+    line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
     linehash = line.split(';')
     if linehash[7]!= nil && linehash[7]!=""
-      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], nalichie: linehash[13])
+      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], pricerub: linehash[10], nalichie: linehash[11])
       product.save
 #      puts "add product/n"
 #      i+=1
@@ -113,6 +117,9 @@ task :uploadmerlion => :environment do
   pricelist2.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
+    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
+    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
+    line.gsub!(/"";/,'",')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
     linehash = line.split(',')
