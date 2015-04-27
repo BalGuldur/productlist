@@ -20,7 +20,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.employee.fio %></td>
+        <td><%= order.manager_id %></td>
         <td><%= order.numbill %></td>
         <td><%= order.purchaser.name %></td>
         <td><%= order.doner_id %></td>
