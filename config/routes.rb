@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :employees
+
+  resources :departments
+
   resources :products do
     collection do
       get 'search'
