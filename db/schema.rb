@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150427015304) do
 
   create_table "purchasers", force: true do |t|
     t.string   "name"
+    t.string   "fio"
     t.string   "phone"
     t.integer  "employee_id"
     t.datetime "created_at"

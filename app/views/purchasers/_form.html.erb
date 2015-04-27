@@ -16,12 +16,16 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :fio %><br>
+    <%= f.text_field :fio %>
+  </div>
+  <div class="field">
     <%= f.label :phone %><br>
     <%= f.text_field :phone %>
   </div>
   <div class="field">
     <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
+    <%= f.collection_select(:employee_id, Department.find_by(name: "Отдел продаж").employees, :id, :fio) %>
   </div>
   <div class="actions">
     <%= f.submit %>
