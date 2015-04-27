@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :purchasers
+
   resources :orders
 
   resources :orderparts

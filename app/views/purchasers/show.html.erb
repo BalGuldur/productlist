@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @purchaser.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @purchaser.phone %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @purchaser.employee_id %>
+</p>
+
+<%= link_to 'Edit', edit_purchaser_path(@purchaser) %> |
+<%= link_to 'Back', purchasers_path %>
