@@ -1,0 +1,39 @@
+<%= form_for(@intproduct) do |f| %>
+  <% if @intproduct.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@intproduct.errors.count, "error") %> prohibited this intproduct from being saved:</h2>
+
+      <ul>
+      <% @intproduct.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :partnumber %><br>
+    <%= f.text_field :partnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :serialnumber %><br>
+    <%= f.text_field :serialnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :prodtype_id %><br>
+    <%#= f.number_field :prodtype_id %>
+    <%= f.collection_select(:prodtype_id, Prodtype.all, :id, :name, include_blank:true) %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%#= f.number_field :employee_id %>
+    <%= f.collection_select(:employee_id, Employee.all, :id, :fio, include_blank:true) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

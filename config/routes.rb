@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :intproducts
+
+  resources :prodtypes
+
   resources :employees
 
   resources :departments

@@ -1,0 +1,2 @@
+module IntproductsHelper
+end

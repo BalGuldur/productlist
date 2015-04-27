@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  partnumber: MyString
+  serialnumber: MyString
+  prodtype_id: 1
+  employee_id: 1
+
+two:
+  name: MyString
+  partnumber: MyString
+  serialnumber: MyString
+  prodtype_id: 1
+  employee_id: 1
