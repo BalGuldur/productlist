@@ -11,12 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :manager_id %><br>
-    <%#= f.number_field :manager_id %>
-    <%= f.collection_select(:manager_id, Department.find_by(name: "Отдел продаж").employees, :id, :fio) %>
-  </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :numbill %><br>
     <%= f.number_field :numbill %>
   </div>
@@ -26,24 +21,9 @@
     <%= f.collection_select(:purchaser_id, Purchaser.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :shipprice %><br>
-    <%= f.number_field :shipprice %>
-  </div>
-  <div class="field">
-    <%= f.label :addrate %><br>
-    <%= f.number_field :addrate %>
-  </div>
-  <div class="field">
-    <%= f.label :datetimedone %><br>
-    <%= f.text_field :datetimedone %>
-  </div>
-  <div class="field">
-    <%= f.label :margin %><br>
-    <%= f.number_field :margin %>
-  </div>
-  <div class="field">
-    <%= f.label :statereser_id %><br>
-    <%= f.number_field :statereser_id %>
+    <%= f.label :manager_id %><br>
+    <%#= f.number_field :manager_id %>
+    <%= f.collection_select(:manager_id, Department.find_by(name: "Отдел продаж").employees, :id, :fio) %>
   </div>
   <div class="field">
     <%= f.label :comments %><br>
