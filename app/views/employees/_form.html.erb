@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fio %><br>
+    <%= f.label "Фамилия Имя Отчество" %><br>
     <%= f.text_field :fio %>
   </div>
   <div class="field">
-    <%= f.label :department_id %><br>
+    <%= f.label :Отдел %><br>
     <%#= f.number_field :department_id %>
     <%= f.collection_select(:department_id, Department.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
+    <%= f.label "Внут. тел." %><br>
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :mobphone %><br>
+    <%= f.label "Моб. тел." %><br>
     <%= f.text_field :mobphone %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label "e-mail" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :job %><br>
+    <%= f.label :Должность %><br>
     <%= f.text_field :job %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Создать" %>
   </div>
 <% end %>
