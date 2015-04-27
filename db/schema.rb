@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426063855) do
+ActiveRecord::Schema.define(version: 20150427005535) do
+
+  create_table "departments", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "employees", force: true do |t|
+    t.string   "fio"
+    t.integer  "department_id"
+    t.string   "phone"
+    t.string   "mobphone"
+    t.string   "email"
+    t.string   "job"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "intproducts", force: true do |t|
+    t.string   "name"
+    t.string   "partnumber"
+    t.string   "serialnumber"
+    t.integer  "prodtype_id"
+    t.integer  "employee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "managers", force: true do |t|
     t.string   "name"
@@ -47,6 +74,12 @@ ActiveRecord::Schema.define(version: 20150426063855) do
     t.integer  "margin"
     t.integer  "statereser_id"
     t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prodtypes", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
