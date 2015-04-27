@@ -91,8 +91,8 @@ end
 
 task :uploadmerlion => :environment do
   #status = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
-  status = `../../xlsx2csv/xlsx2csv.py -d ',' -s 1 PriceLists/Merlion.xlsx > PriceLists/Merlion1.csv`
-  status2 = `../../xlsx2csv/xlsx2csv.py -d ',' -s 2 PriceLists/Merlion.xlsx > PriceLists/Merlion2.csv`
+  status = `../../xlsx2csv/xlsx2csv.py -d ';' -s 1 PriceLists/Merlion.xlsx > PriceLists/Merlion1.csv`
+  status2 = `../../xlsx2csv/xlsx2csv.py -d ';' -s 2 PriceLists/Merlion.xlsx > PriceLists/Merlion2.csv`
   # print status3+"\n"
   pricelist1 = File.new("PriceLists/Merlion1.csv")
   pricelist2 = File.new("PriceLists/Merlion2.csv")
@@ -101,9 +101,8 @@ task :uploadmerlion => :environment do
   pricelist1.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    linehash = line.split(',')
+    linehash = line.split(';')
     if linehash[7]!= nil && linehash[7]!=""
       product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], nalichie: linehash[13])
       product.save
@@ -145,7 +144,7 @@ task :uploadtreolan => :environment do
     # print line + "\n"
     linehash = line.split(';')
     if linehash[1]!=nil && linehash[1]!=""
-      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "treolan", pricedoll: linehash[4],pricerub: linehash[5], nalichie: linehash[2])
+      product = Product.new(productarticul: linehash[0], productname: linehash[1], distributor: "treolan", pricedoll: linehash[5],pricerub: linehash[6], nalichie: linehash[2])
       #print linehash[3]
       product.save
     end
