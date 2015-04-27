@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   resources :orderparts
 
-  resources :managers
-
   resources :statereservs
 
   resources :products do
