@@ -137,8 +137,9 @@ task :uploadtreolan => :environment do
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
     # print line + "\n"
-    line.gsub!(/; /,', ')
-    line.gsub!(/;";/,',";')
+    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
+    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
+    line.gsub!(/"";/,'",')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
     # print line + "\n"
