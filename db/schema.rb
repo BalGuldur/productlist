@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20150428211444) do
     t.integer  "addrate"
     t.string   "datetimedone"
     t.integer  "margin"
-    t.integer  "statereserv_id"
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
