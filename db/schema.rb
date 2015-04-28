@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427030435) do
+ActiveRecord::Schema.define(version: 20150428211444) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -72,11 +72,12 @@ ActiveRecord::Schema.define(version: 20150427030435) do
     t.integer  "addrate"
     t.string   "datetimedone"
     t.integer  "margin"
-    t.integer  "statereser_id"
+    t.integer  "statereserv_id"
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "doner_id"
+    t.integer  "statereserv_id"
   end
 
   create_table "prodtypes", force: true do |t|

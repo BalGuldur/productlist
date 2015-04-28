@@ -37,6 +37,7 @@
     <%= f.text_field :job %>
   </div>
   <div class="actions">
-    <%= f.submit "Создать" %>
+    <%#= f.submit (f.object.new_record? ? "Создать" : "Обновить") %>
+    <%= f.submit %>
   </div>
 <% end %>

@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+en:
+  helpers:
+    submit:
+      create: "Создать"
+      update: "Изменить"

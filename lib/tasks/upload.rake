@@ -91,46 +91,33 @@ end
 
 task :uploadmerlion => :environment do
   #status = `xlhtml -xp:0 -csv PriceLists/Merlion.xls > PriceLists/Merlion.csv`
-  status = `../../xlsx2csv/xlsx2csv.py -d ';' -s 1 PriceLists/Merlion.xlsx > PriceLists/Merlion1.csv`
-  status2 = `../../xlsx2csv/xlsx2csv.py -d ';' -s 2 PriceLists/Merlion.xlsx > PriceLists/Merlion2.csv`
+  #status = `../../xlsx2csv/xlsx2csv.py -d '!' -s 0 PriceLists/Merlion.xlsx > PriceLists/Merlion2.csv`
+  status2 = `../../xlsx2csv/xlsx2csv.py -d ':' PriceLists/Merlion.xlsx > PriceLists/Merlion1.csv`
   # print status3+"\n"
   pricelist1 = File.new("PriceLists/Merlion1.csv")
-  pricelist2 = File.new("PriceLists/Merlion2.csv")
+  #pricelist2 = File.new("PriceLists/Merlion2.csv")
   @products = Product.where{distributor.eq 'merlion'}
   @products.delete_all
   pricelist1.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
+    print line+"\n"
+    line.gsub!(/:".*?:.*?":/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(":",'.')}}
     # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
-    line.gsub!(/"";/,'",')
+    line.gsub!(/"":/,'",')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    linehash = line.split(';')
+    print "BEFSPLIT= "+line+"\n"
+    linehash = line.split(':')
     if linehash[7]!= nil && linehash[7]!=""
+      if linehash[7]=="+"
+        print line
+      end
       product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], pricerub: linehash[10], nalichie: linehash[11])
       product.save
 #      puts "add product/n"
 #      i+=1
     end
-  end
-  pricelist2.each do |line|
-    line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
-    line.chomp!
-    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
-    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
-    line.gsub!(/"";/,'",')
-    line.tr_s!("\"",'')
-    line.scan(/[[:print:]]/).join
-    linehash = line.split(',')
-    if linehash[7]!= nil && linehash[7]!=""
-      product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], nalichie: linehash[13])
-      product.save
-#      puts "add product/n"
-#      i+=1
-    end
-
-#    break if i==10
   end
 end
 
@@ -352,12 +339,16 @@ task :uploadbecompact => :environment do
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    print line + "\n"
+    #print line + "\n"
     #line.gsub!(/; /,', ')
     #line.gsub!(/;";/,',";')
     #line.tr_s!("\"",'')
+    line.gsub!(/;".*?;.*?";/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(";",',')}}
+    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
+    line.gsub!(/"";/,'",')
+    line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    print line + "\n"
+    #print line + "\n"
     linehash = line.split(';')
     if linehash[2]!=nil && linehash[2]!=""
       product = Product.new(productarticul: linehash[1], productname: linehash[2]+linehash[3], distributor: "becompact", pricerub: linehash[10], pricedoll: linehash[11], nalichie: linehash[12])
@@ -381,7 +372,8 @@ task :uploadall => :environment do
   status = `mv log/* bak/log/ -f`
   status = `mv PriceLists/* bak/PriceLists/ -f`
   status = `mv ../../YD/MiraclePrices/* PriceLists`
-  status = `yandex-disk sync`
+  # status = `yandex-disk sync`
+  # Временно закомментил, так надо =)
   status = `ls PriceLists`
   prices = status.split("\n")
   prices.each {|price| price.gsub!(/\.xls.*/) {|match| match=""}}
@@ -421,6 +413,9 @@ task :uploadall => :environment do
   end
   if prices.include?("Sds_network")
     status2 = `rake uploadsds > log/uploadsds.log &`
+  end
+  if prices.include?("Becompact")
+    status2= `rake uploadbecompact > log/uploadbecompact &`
   end
 
   #status2 = `rake uploadtreolan > log/uploadtreolan.log &`

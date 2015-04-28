@@ -19,16 +19,16 @@
 
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.manager.fio%></td>
+      <tr bgcolor="<%= order.statereserv_id!=nil ? order.statereserv.color : "white" %>">
+        <td><%= order.manager_id!=nil ? order.manager.fio : "" %></td>
         <td><%= order.numbill %></td>
-        <td><%= order.purchaser.name %></td>
-        <td><%= order.doner.fio %></td>
+        <td><%= order.purchaser_id!=nil ? order.purchaser.name : "" %></td>
+        <td><%= order.doner_id!=nil ? order.doner.fio : "" %></td>
         <td><%= order.shipprice %></td>
         <td><%= order.addrate %></td>
         <td><%= order.datetimedone %></td>
         <td><%= order.margin %></td>
-        <td><%= order.statereser_id %></td>
+        <td><%= order.statereserv_id!=nil ? order.statereserv.status : "" %></td>
         <td><%= order.comments %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>

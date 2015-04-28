@@ -40,8 +40,9 @@
     <%= f.number_field :margin %>
   </div>
   <div class="field">
-    <%= f.label :statereser_id %><br>
-    <%= f.number_field :statereser_id %>
+    <%= f.label :statereserv_id %><br>
+    <%#= f.number_field :statereserv_id %>
+    <%= f.collection_select(:statereserv_id, Statereserv.all, :id, :status) %>
   </div>
   <div class="field">
     <%= f.label :comments %><br>
