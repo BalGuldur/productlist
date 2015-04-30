@@ -70,17 +70,25 @@ task :uploadmarvel => :environment do
 end
 
 task :uploadelko => :environment do
-  status = `../../xlsx2csv/xlsx2csv.py -d ';' PriceLists/Elko.xlsx > PriceLists/Elko.csv`
+  status = `../../xlsx2csv/xlsx2csv.py -d ':' PriceLists/Elko.xlsx > PriceLists/Elko.csv`
   # print status3+"\n"
   pricelist = File.new("PriceLists/Elko.csv")
   @products = Product.where{distributor.eq 'elko'}
   @products.delete_all
   pricelist.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+    print "BEFORE  " + line + "\n"
     line.chomp!
-    line.tr_s!("\"",'')
+    line.gsub!(/""/,'')
+    print "BEFGSU  " + line + "\n"
+    line.gsub!(/":.+:/){|match|match.gsub!(/".+?("|$)/){|match2|match2.gsub!(/:/,',')}}
+    #line.gsub!(/:".*?:.*?":/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(":",'.')}}
+    # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
+    #line.gsub!(/"":/,'",')
+    #line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    linehash = line.split(';')
+    print "END  " + line + "\n\n"
+    linehash = line.split(':')
     if linehash[7]!= nil && linehash[7]!=""
       product = Product.new(productarticul: linehash[4], productname: linehash[5], distributor: "elko", pricerub: linehash[7], nalichie: linehash[8])
       # Наличие взято по полю В наличии MOS. Есть еще поле наличие SPB.
@@ -101,16 +109,16 @@ task :uploadmerlion => :environment do
   pricelist1.each do |line|
     line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
     line.chomp!
-    print line+"\n"
+    #print line+"\n"
     line.gsub!(/:".*?:.*?":/){|match|match.gsub!(/".+?"/){|match2|match2.tr_s!(":",'.')}}
     # Самый правильный вариант если будет подлагивать заменит вначале на /;".+?";/ но будет дольше
     line.gsub!(/"":/,'",')
     line.tr_s!("\"",'')
     line.scan(/[[:print:]]/).join
-    print "BEFSPLIT= "+line+"\n"
+    #print "BEFSPLIT= "+line+"\n"
     linehash = line.split(':')
     if linehash[7]!= nil && linehash[7]!=""
-      if linehash[7]=="+"
+      if linehash[7]=="+ "
         print line
       end
       product = Product.new(productarticul: linehash[6], productname: linehash[7], distributor: "merlion", pricedoll: linehash[9], pricerub: linehash[10], nalichie: linehash[11])
