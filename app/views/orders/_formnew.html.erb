@@ -15,12 +15,7 @@
     <%= f.label :numbill %><br>
     <%= f.number_field :numbill %>
   </div>
-  <div class="field">
-    <%= f.label :purchaser_id %><br>
-    <%#= f.number_field :purchaser_id %>
-    <%= f.collection_select(:purchaser_id, Purchaser.all, :id, :name) %>
-  </div>
-  <div class="field">
+ <div class="field">
     <%= f.label :manager_id %><br>
     <%#= f.number_field :manager_id %>
     <%= f.collection_select(:manager_id, Department.find_by(name: "Отдел продаж").employees, :id, :fio) %>
