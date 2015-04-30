@@ -21,6 +21,14 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def editm
+    @order=Order.find(params[:id])
+  end
+
+  def editz
+    
+  end
+
   # POST /orders
   # POST /orders.json
   def create

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :purchasers
 
-  resources :orders
+  resources :orders do
+    member do
+      get 'editm'
+      get 'editz'
+    end
+  end
 
   resources :orderparts
 
