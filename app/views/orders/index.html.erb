@@ -5,9 +5,7 @@
     <tr>
       <th>Manager</th>
       <th>Numbill</th>
-      <th>Purchaser</th>
       <th>Ответственный ОЗ</th>
-      <th>Shipprice</th>
       <th>Addrate</th>
       <th>Datetimedone</th>
       <th>Margin</th>
@@ -22,9 +20,9 @@
       <tr bgcolor="<%= order.statereserv_id!=nil ? order.statereserv.color : "white" %>">
         <td><%= order.manager_id!=nil ? order.manager.fio : "" %></td>
         <td><%= order.numbill %></td>
-        <td><%= order.purchaser_id!=nil ? order.purchaser.name : "" %></td>
+        <%# убрал purchaser т.к. это будет уже в отгрузке не забыть удалить из модели%>
         <td><%= order.doner_id!=nil ? order.doner.fio : "" %></td>
-        <td><%= order.shipprice %></td>
+        <%# убрал shipprice т.к. это будет в кажой позиции %>
         <td><%= order.addrate %></td>
         <td><%= order.datetimedone %></td>
         <td><%= order.margin %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428211444) do
+ActiveRecord::Schema.define(version: 20150430211812) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -67,11 +67,10 @@ ActiveRecord::Schema.define(version: 20150428211444) do
   create_table "orders", force: true do |t|
     t.integer  "manager_id"
     t.integer  "numbill"
-    t.integer  "purchaser_id"
     t.integer  "shipprice"
-    t.integer  "addrate"
     t.string   "datetimedone"
     t.integer  "margin"
+    t.integer  "statereser_id"
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
