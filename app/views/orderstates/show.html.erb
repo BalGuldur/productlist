@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State:</strong>
+  <%= @orderstate.state %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @orderstate.color %>
+</p>
+
+<%= link_to 'Edit', edit_orderstate_path(@orderstate) %> |
+<%= link_to 'Back', orderstates_path %>

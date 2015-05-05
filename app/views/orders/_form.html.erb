@@ -1,0 +1,53 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="for manager">
+  <div class="field">
+    <%= f.label "Номер счета" %><br>
+    <%= f.text_field :numbill %>
+  <div class="field">
+    <%= f.label :Менеджер %><br>
+    <%#= f.number_field :manager_id %>
+    <%= f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %>
+  </div>
+  <div class="field">
+    <%= f.label "Отв закупщик" %><br>
+    <%#= f.number_field :doner_id %>
+    <%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio %>
+  </div>
+  <div class="field">
+    <%= f.label :Статус %><br>
+    <%#= f.number_field :orderstate_id %>
+    <%= f.collection_select :orderstate_id, Orderstate.all, :id, :state %>
+  </div>
+  <div class="field">
+    <%= f.label "Доп расход" %><br>
+    <%= f.number_field :addrate %>
+  </div>
+  <div class="field">
+    <%= f.label "Сумма зак." %><br>
+    <%= f.number_field :sum %>
+  </div>
+  <div class="field">
+    <%= f.label "Предв. маржа" %><br>
+    <%= f.number_field :pmargin %>
+  </div>
+  <div class="field">
+    <%= f.label :Комментарий %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </div>
+<% end %>

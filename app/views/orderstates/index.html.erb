@@ -1,0 +1,27 @@
+<h1>Listing orderstates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orderstates.each do |orderstate| %>
+      <tr>
+        <td><%= orderstate.state %></td>
+        <td><%= orderstate.color %></td>
+        <td><%= link_to 'Show', orderstate %></td>
+        <td><%= link_to 'Edit', edit_orderstate_path(orderstate) %></td>
+        <td><%= link_to 'Destroy', orderstate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Orderstate', new_orderstate_path %>

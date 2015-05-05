@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numbill:</strong>
+  <%= @order.numbill %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @order.manager_id %>
+</p>
+
+<p>
+  <strong>Doner:</strong>
+  <%= @order.doner_id %>
+</p>
+
+<p>
+  <strong>Orderstate:</strong>
+  <%= @order.orderstate_id %>
+</p>
+
+<p>
+  <strong>Addrate:</strong>
+  <%= @order.addrate %>
+</p>
+
+<p>
+  <strong>Sum:</strong>
+  <%= @order.sum %>
+</p>
+
+<p>
+  <strong>Pmargin:</strong>
+  <%= @order.pmargin %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @order.comment %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
