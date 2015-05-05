@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @employee.phone %>
+  <strong>Intphone:</strong>
+  <%= @employee.intphone %>
 </p>
 
 <p>
@@ -21,13 +21,23 @@
 </p>
 
 <p>
+  <strong>Job:</strong>
+  <%= @employee.job %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @employee.email %>
 </p>
 
 <p>
-  <strong>Job:</strong>
-  <%= @employee.job %>
+  <strong>Enable:</strong>
+  <%= @employee.enable %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @employee.comment %>
 </p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |

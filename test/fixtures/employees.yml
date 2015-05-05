@@ -3,15 +3,19 @@
 one:
   fio: MyString
   department_id: 1
-  phone: MyString
+  intphone: MyString
   mobphone: MyString
-  email: MyString
   job: MyString
+  email: MyString
+  enable: false
+  comment: MyText
 
 two:
   fio: MyString
   department_id: 1
-  phone: MyString
+  intphone: MyString
   mobphone: MyString
-  email: MyString
   job: MyString
+  email: MyString
+  enable: false
+  comment: MyText

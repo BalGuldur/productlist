@@ -12,29 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fio %><br>
+    <%= f.label :ФИО %><br>
     <%= f.text_field :fio %>
   </div>
   <div class="field">
-    <%= f.label :department_id %><br>
+    <%= f.label :Отдел %><br>
     <%#= f.number_field :department_id %>
-    <%= f.collection_select(:department_id, Department.all, :id, :name) %>
+    <%= f.collection_select :department_id, Department.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.label "Вунтр. телефон" %><br>
+    <%= f.text_field :intphone %>
   </div>
   <div class="field">
-    <%= f.label :mobphone %><br>
+    <%= f.label "Моб. телефон" %><br>
     <%= f.text_field :mobphone %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :Должность %><br>
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label "e-mail" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :job %><br>
-    <%= f.text_field :job %>
+    <%= f.label :Вкл? %><br>
+    <%= f.check_box :enable %>
+  </div>
+  <div class="field">
+    <%= f.label :Комментарии %><br>
+    <%= f.text_area :comment %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -9,8 +9,8 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1
   # GET /employees/1.json
-  #def show
-  #end
+  def show
+  end
 
   # GET /employees/new
   def new
@@ -29,10 +29,10 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.save
         format.html { redirect_to :employees, notice: 'Employee was successfully created.' }
-        format.json { render :index, status: :created, location: @employee }
+        #format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
+        #format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +43,10 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to :employees, notice: 'Employee was successfully updated.' }
-        format.json { render :index, status: :ok, location: @employee }
+        #format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
+        #format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +57,7 @@ class EmployeesController < ApplicationController
     @employee.destroy
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
 
@@ -69,6 +69,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:fio, :department_id, :phone, :mobphone, :email, :job)
+      params.require(:employee).permit(:fio, :department_id, :intphone, :mobphone, :job, :email, :enable, :comment)
     end
 end
