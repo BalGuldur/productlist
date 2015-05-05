@@ -1,9 +1,11 @@
-<h1>Listing departments</h1>
+<h1>Список отедлов</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Название отд.</th>
+      <th>Продают?</th>
+      <th>Закупают?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +14,11 @@
     <% @departments.each do |department| %>
       <tr>
         <td><%= department.name %></td>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= department.saleright %></td>
+        <td><%= department.purchaserright %></td>
+        <td><%= link_to 'Показать', department %></td>
+        <td><%= link_to 'Изменит', edit_department_path(department) %></td>
+        <td><%= link_to 'Удалить', department, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Department', new_department_path %>
+<%= link_to 'Создать отдел', new_department_path %>

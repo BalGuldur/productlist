@@ -2,6 +2,10 @@
 
 one:
   name: MyString
+  saleright: false
+  purchaserright: false
 
 two:
   name: MyString
+  saleright: false
+  purchaserright: false

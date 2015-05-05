@@ -5,5 +5,15 @@
   <%= @department.name %>
 </p>
 
+<p>
+  <strong>Saleright:</strong>
+  <%= @department.saleright %>
+</p>
+
+<p>
+  <strong>Purchaserright:</strong>
+  <%= @department.purchaserright %>
+</p>
+
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>

@@ -28,11 +28,11 @@ class DepartmentsController < ApplicationController
 
     respond_to do |format|
       if @department.save
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
-        format.json { render :show, status: :created, location: @department }
+        format.html { redirect_to :departments, notice: 'Department was successfully created.' }
+        #format.json { render :show, status: :created, location: @department }
       else
         format.html { render :new }
-        format.json { render json: @department.errors, status: :unprocessable_entity }
+        #format.json { render json: @department.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +42,11 @@ class DepartmentsController < ApplicationController
   def update
     respond_to do |format|
       if @department.update(department_params)
-        format.html { redirect_to @department, notice: 'Department was successfully updated.' }
-        format.json { render :show, status: :ok, location: @department }
+        format.html { redirect_to :departments, notice: 'Department was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @department }
       else
         format.html { render :edit }
-        format.json { render json: @department.errors, status: :unprocessable_entity }
+        #format.json { render json: @department.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +69,6 @@ class DepartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:name)
+      params.require(:department).permit(:name, :saleright, :purchaserright)
     end
 end

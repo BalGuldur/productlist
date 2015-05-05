@@ -12,8 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "Назв отдела" %><br>
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Продают?" %><br>
+    <%= f.check_box :saleright %>
+  </div>
+  <div class="field">
+    <%= f.label "Закупают?" %><br>
+    <%= f.check_box :purchaserright %>
   </div>
   <div class="actions">
     <%= f.submit %>
