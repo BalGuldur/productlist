@@ -40,44 +40,6 @@ ActiveRecord::Schema.define(version: 20150427005535) do
     t.datetime "updated_at"
   end
 
-  create_table "managers", force: true do |t|
-    t.string   "name"
-    t.string   "sourname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "orderparts", force: true do |t|
-    t.string   "partnumber"
-    t.text     "partdescr"
-    t.integer  "qty"
-    t.float    "pricesell",      limit: 24
-    t.float    "priceship",      limit: 24
-    t.string   "shipper"
-    t.integer  "beznal"
-    t.float    "convert",        limit: 24
-    t.string   "predatetime"
-    t.string   "faktdatetime"
-    t.integer  "statereserv_id"
-    t.integer  "nds"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "orders", force: true do |t|
-    t.integer  "manager_id"
-    t.integer  "numbill"
-    t.integer  "purchaser_id"
-    t.integer  "shipprice"
-    t.integer  "addrate"
-    t.string   "datetimedone"
-    t.integer  "margin"
-    t.integer  "statereser_id"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "prodtypes", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -92,13 +54,6 @@ ActiveRecord::Schema.define(version: 20150427005535) do
     t.float    "pricedoll",      limit: 24
     t.float    "pricerub",       limit: 24
     t.string   "nalichie"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "statereservs", force: true do |t|
-    t.string   "status"
-    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
