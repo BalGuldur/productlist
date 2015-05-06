@@ -1,0 +1,29 @@
+<%= form_for(@moneytype) do |f| %>
+  <% if @moneytype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moneytype.errors.count, "error") %> prohibited this moneytype from being saved:</h2>
+
+      <ul>
+      <% @moneytype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :znak %><br>
+    <%= f.text_field :znak %>
+  </div>
+  <div class="field">
+    <%= f.label :curse %><br>
+    <%= f.text_field :curse %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

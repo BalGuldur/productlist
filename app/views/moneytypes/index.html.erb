@@ -1,0 +1,29 @@
+<h1>Listing moneytypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Znak</th>
+      <th>Curse</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moneytypes.each do |moneytype| %>
+      <tr>
+        <td><%= moneytype.name %></td>
+        <td><%= moneytype.znak %></td>
+        <td><%= moneytype.curse %></td>
+        <td><%= link_to 'Show', moneytype %></td>
+        <td><%= link_to 'Edit', edit_moneytype_path(moneytype) %></td>
+        <td><%= link_to 'Destroy', moneytype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Moneytype', new_moneytype_path %>

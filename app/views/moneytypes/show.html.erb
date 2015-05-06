@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @moneytype.name %>
+</p>
+
+<p>
+  <strong>Znak:</strong>
+  <%= @moneytype.znak %>
+</p>
+
+<p>
+  <strong>Curse:</strong>
+  <%= @moneytype.curse %>
+</p>
+
+<%= link_to 'Edit', edit_moneytype_path(@moneytype) %> |
+<%= link_to 'Back', moneytypes_path %>
