@@ -1,0 +1,93 @@
+<%= form_for(@orderpart) do |f| %>
+  <% if @orderpart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orderpart.errors.count, "error") %> prohibited this orderpart from being saved:</h2>
+
+      <ul>
+      <% @orderpart.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :partnum %><br>
+    <%= f.text_field :partnum %>
+  </div>
+  <div class="field">
+    <%= f.label :descr %><br>
+    <%= f.text_area :descr %>
+  </div>
+  <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :psaleprice %><br>
+    <%= f.number_field :psaleprice %>
+  </div>
+  <div class="field">
+    <%= f.label :distrib %><br>
+    <%= f.text_field :distrib %>
+  </div>
+  <div class="field">
+    <%= f.label :doner_id %><br>
+    <%= f.number_field :doner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :state_id %><br>
+    <%= f.number_field :state_id %>
+  </div>
+  <div class="field">
+    <%= f.label :panswtime_id %><br>
+    <%= f.number_field :panswtime_id %>
+  </div>
+  <div class="field">
+    <%= f.label :rezprice %><br>
+    <%= f.number_field :rezprice %>
+  </div>
+  <div class="field">
+    <%= f.label :rezpricetype_id %><br>
+    <%= f.number_field :rezpricetype_id %>
+  </div>
+  <div class="field">
+    <%= f.label :reztime_id %><br>
+    <%= f.number_field :reztime_id %>
+  </div>
+  <div class="field">
+    <%= f.label :nds %><br>
+    <%= f.number_field :nds %>
+  </div>
+  <div class="field">
+    <%= f.label :beznal %><br>
+    <%= f.number_field :beznal %>
+  </div>
+  <div class="field">
+    <%= f.label :pshiptime_id %><br>
+    <%= f.number_field :pshiptime_id %>
+  </div>
+  <div class="field">
+    <%= f.label :shipprice %><br>
+    <%= f.number_field :shipprice %>
+  </div>
+  <div class="field">
+    <%= f.label :convertion %><br>
+    <%= f.text_field :convertion %>
+  </div>
+  <div class="field">
+    <%= f.label :pmargin %><br>
+    <%= f.number_field :pmargin %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.number_field :order_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

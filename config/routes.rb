@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orderparts
+
   resources :moneytypes
 
   resources :ourtimes

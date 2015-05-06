@@ -19,6 +19,7 @@ one:
   convertion: 1.5
   pmargin: 1
   comment: MyText
+  order_id: 1
 
 two:
   partnum: MyString
@@ -39,3 +40,4 @@ two:
   convertion: 1.5
   pmargin: 1
   comment: MyText
+  order_id: 1

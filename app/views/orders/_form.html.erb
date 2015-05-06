@@ -11,43 +11,39 @@
     </div>
   <% end %>
 
-  <div class="for manager">
-  <div class="field">
-    <%= f.label "Номер счета" %><br>
-    <%= f.text_field :numbill %>
-  <div class="field">
-    <%= f.label :Менеджер %><br>
-    <%#= f.number_field :manager_id %>
-    <%= f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %>
-  </div>
-  <div class="field">
-    <%= f.label "Отв закупщик" %><br>
-    <%#= f.number_field :doner_id %>
-    <%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio %>
-  </div>
-  <div class="field">
-    <%= f.label :Статус %><br>
-    <%#= f.number_field :orderstate_id %>
-    <%= f.collection_select :orderstate_id, Orderstate.all, :id, :state %>
-  </div>
-  <div class="field">
-    <%= f.label "Доп расход" %><br>
-    <%= f.number_field :addrate %>
-  </div>
-  <div class="field">
-    <%= f.label "Сумма зак." %><br>
-    <%= f.number_field :sum %>
-  </div>
-  <div class="field">
-    <%= f.label "Предв. маржа" %><br>
-    <%= f.number_field :pmargin %>
-  </div>
-  <div class="field">
-    <%= f.label :Комментарий %><br>
-    <%= f.text_area :comment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  </div>
+<table>
+  <thead bgcolor="<%= @order.orderstate==nil ? "" : @order.orderstate.color %>">
+    <tr>
+      <th>Номер счет</th>
+      <th>Менеджер</th>
+      <th>Ответ. закупщик</th>
+      <th>Статус</th>
+      <th>Доп. расход</th>
+      <th>Сумма зак.</th>
+      <th>Пред. маржа</th>
+      <th>Комментарии</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><div class="field"><%= f.text_field :numbill %></div></td>
+        <td><div class="field"><%=  f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %></div></td>
+        <td><div class="field"><%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio %></div></td>
+        <td><div class="field"><%= f.collection_select :orderstate_id, Orderstate.all, :id, :state %></div></td>
+        <td><div class="field"><%= f.number_field :addrate %></div></td>
+      </tr>
+      <tr>
+        <th>Сумма</th>
+        <th>Предв. маржа</th>
+        <th>Комментарий</th>
+      </tr>
+      <tr>
+        <td><div><%= @order.sum %></div></td>
+        <td><div><%= @order.pmargin %></div></td>
+        <td><div><%= f.text_field :comment %></div></td>
+        <td><div class="actions"><%= f.submit %></div></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
