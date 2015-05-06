@@ -1,0 +1,31 @@
+<h1>Listing ourtimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rez</th>
+      <th>Answ</th>
+      <th>Ship</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ourtimes.each do |ourtime| %>
+      <tr>
+        <td><%= ourtime.name %></td>
+        <td><%= ourtime.rez %></td>
+        <td><%= ourtime.answ %></td>
+        <td><%= ourtime.ship %></td>
+        <td><%= link_to 'Show', ourtime %></td>
+        <td><%= link_to 'Edit', edit_ourtime_path(ourtime) %></td>
+        <td><%= link_to 'Destroy', ourtime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ourtime', new_ourtime_path %>
