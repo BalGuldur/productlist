@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partnum: MyString
+  descr: MyText
+  qty: 1
+  psaleprice: 1
+  distrib: MyString
+  doner_id: 1
+  state_id: 1
+  panswtime_id: 1
+  rezprice: 1
+  rezpricetype_id: 1
+  reztime_id: 1
+  nds: 1
+  beznal: 1
+  pshiptime_id: 1
+  shipprice: 1
+  convertion: 1.5
+  pmargin: 1
+  comment: MyText
+
+two:
+  partnum: MyString
+  descr: MyText
+  qty: 1
+  psaleprice: 1
+  distrib: MyString
+  doner_id: 1
+  state_id: 1
+  panswtime_id: 1
+  rezprice: 1
+  rezpricetype_id: 1
+  reztime_id: 1
+  nds: 1
+  beznal: 1
+  pshiptime_id: 1
+  shipprice: 1
+  convertion: 1.5
+  pmargin: 1
+  comment: MyText

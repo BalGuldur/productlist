@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506171409) do
+ActiveRecord::Schema.define(version: 20150506173204) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -48,6 +48,29 @@ ActiveRecord::Schema.define(version: 20150506171409) do
     t.string   "name"
     t.string   "znak"
     t.float    "curse",      limit: 24
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orderparts", force: true do |t|
+    t.string   "partnum"
+    t.text     "descr"
+    t.integer  "qty"
+    t.integer  "psaleprice"
+    t.string   "distrib"
+    t.integer  "doner_id"
+    t.integer  "state_id"
+    t.integer  "panswtime_id"
+    t.integer  "rezprice"
+    t.integer  "rezpricetype_id"
+    t.integer  "reztime_id"
+    t.integer  "nds"
+    t.integer  "beznal"
+    t.integer  "pshiptime_id"
+    t.integer  "shipprice"
+    t.float    "convertion",      limit: 24
+    t.integer  "pmargin"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
