@@ -19,7 +19,6 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= employee.fio %></td>
-        <td><%= employee.department_id %></td>
         <td><%= employee.department==nil ? "" : employee.department.name %></td>
         <td><%= employee.intphone %></td>
         <td><%= employee.mobphone %></td>
