@@ -19,7 +19,7 @@ class CreateOrderparts < ActiveRecord::Migration
       t.float :convertion
       t.integer :pmargin
       t.text :comment
-      t.integer :order_id
+      t.references :order, index: true
 
       t.timestamps
     end
