@@ -1,7 +1,10 @@
 <h1>Editing order</h1>
 
 <%= render 'form' %>
-<%= render template: "orderparts/index" %>
+<%  @order.orderparts.each do |orderpart| %>
+  <% @orderpart=orderpart %>
+  <%= render template: order_url+"/indexford" %>
+<% end %>
 
 <%= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>
