@@ -1,11 +1,55 @@
-<h1>Часть резерва</h1>
+<h1>Часть резерва, вид менеджера</h1>
 
+<table>
+  <tr>
+    <th>Партномер</th>
+    <th>Описание</th>
+    <th>Кол-во</th>
+    <th>Предв цена продажи</th>
+    <th>Поставщик</th>
+  </tr>
+  <tr>
+    <td><%= @orderpart.partnum %></td>
+    <td><%= @orderpart.descr %></td>
+    <td><%= @orderpart.qty %></td>
+    <td><%= @orderpart.psaleprice %></td>
+    <td><%= @orderpart.distrib %></td>
+  </tr>
+  <tr>
+    <th>Ответственный</th>
+    <th>Статус</th>
+    <th>Предв время ответа</th>
+    <th>Цена резерва</th>
+    <th>Вал рез</th>
+    <th>Срок рез</th>
+  </tr>
+  <tr>
+    <td><%= @orderpart.doner!=nil ? @orderpart.doner.fio : "" %></td>
+    <td><%= @orderpart.state!=nil ? @orderpart.state.state : "" %></td>
+    <td><%= @orderpart.panswtime!=nil ? @orderpart.panswtime.name : "" %></td>
+    <td><%= @orderpart.rezprice %></td>
+    <td><%= @orderpart.rezpricetype!=nil ? @orderpart.rezpricetype.name : "" %></td>
+    <td><%= @orderpart.reztime!=nil ? @orderpart.reztime.name : "" %></td>
+  </tr>
+  <tr>
+    <th>НДС</th>
+    <th>Безнал</th>
+    <th>Цена доставки</th>
+    <th>Прим Срок доставки</th>
+    <th>Конвертация</th>
+    <th>Предв маржа</th>
+  </tr>
+  <tr>
+    <td><%= @orderpart.nds %></td>
+    <td><%= @orderpart.beznal %></td>
+    <td><%= @orderpart.shipprice %></td>
+    <td><%= @orderpart.pshiptime!=nil ? @order.pshiptime.name : "" %></td>
+    <td><%= @orderpart.convertion %></td>
+    <td><%= @orderpart.pmargin %></td>
+  </tr>
+</table>
 <%= form_for([@order, @orderpart]) do |f| %>
-  <%= f.text_field :partnum %>
-  <%= f.text_field :descr %>
-  <%= f.text_field :qty %>
-  <%= f.text_field :psaleprice %>
-  <%= f.text_field :distrib %>
+  <%= f.label :Комментарий %>
   <%= f.text_field :comment %>
   <%= f.submit %>
 <% end %>
