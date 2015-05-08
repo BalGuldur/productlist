@@ -1,0 +1,13 @@
+<h1>Часть резерва</h1>
+
+<%= form_for([@order, @orderpart]) do |f| %>
+  <%= f.text_field :partnum %>
+  <%= f.text_field :descr %>
+  <%= f.text_field :qty %>
+  <%= f.text_field :psaleprice %>
+  <%= f.text_field :distrib %>
+  <%= f.text_field :comment %>
+  <%= f.submit %>
+<% end %>
+<p>
+  <%= link_to :Back, :back %> 
