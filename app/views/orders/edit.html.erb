@@ -1,10 +1,55 @@
 <h1>Editing order</h1>
 
 <%= render 'form' %>
-<%  @order.orderparts.each do |orderpart| %>
-  <% @orderpart=orderpart %>
-  <%= render template: order_url+"/indexford" %>
-<% end %>
 
-<%= link_to 'Show', @order %> |
+<h2>List orderparts</h2>
+<table>
+  <tr>
+    <th>Партномер</th>
+    <th>Описание</th>
+    <th>Кол-во</th>
+    <th>Пред цен прод</th>
+    <th>Поставщик</th>
+    <th>Ответственный</th>
+    <th>Статус</th>
+    <th>Срок резерв</th>
+    <th>Пр срок достав</th>
+    <th>Пред маржа</th>
+    <th>Комментарии</th>
+  </tr>
+  <% @order.orderparts.each do |orderpart| %>
+    <tr>
+      <th><%= orderpart.partnum %></th>
+      <th><%= orderpart.descr %></th>
+      <th><%= orderpart.qty %></th>
+      <th><%= orderpart.psaleprice %></th>
+      <th><%= orderpart.distrib %></th>
+      <th><%= orderpart.doner==nil ? "" : orderpart.doner.fio %></th>
+      <th><%= orderpart.state==nil ? "" : orderpart.state.state %></th>
+      <th><%= orderpart.reztime==nil ? "" : orderpart.reztime.name %></th>
+      <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
+      <th><%= orderpart.pmargin %></th>
+      <th><%= orderpart.comment %></th>
+      <th></th>
+    </tr>
+  <% end %>
+  <tr>
+    <%= form_for([@order, @order.orderparts.build]) do |f| %>
+      <td><%= f.text_field :partnum %></td>
+      <td><%= f.text_field :descr %></td>
+      <td><%= f.text_field :qty %></td>
+      <td><%= f.text_field :psaleprice %></td>
+      <td><%= f.text_field :distrib %></td>
+      <td></td>
+      <td>Передано в ОЗ</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= f.text_field :comment %></td>
+      <td><%= f.submit %></td>
+    <% end %>
+  </tr>
+</table>
+
+<%#= link_to 'Show', @order %> |
 <%= link_to 'Back', orders_path %>

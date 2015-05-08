@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :ourtimes
 
-  resources :orders
+  resources :orders do
+    resources :orderparts
+  end
 
   resources :orderstates
 
