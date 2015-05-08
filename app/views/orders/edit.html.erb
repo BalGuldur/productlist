@@ -8,7 +8,7 @@
     <th>Партномер</th>
     <th>Описание</th>
     <th>Кол-во</th>
-    <th>Пред цен прод</th>
+    <th>Пред цен прод (руб)</th>
     <th>Поставщик</th>
     <th>Ответственный</th>
     <th>Статус</th>
@@ -38,8 +38,8 @@
     <%= form_for([@order, @order.orderparts.build]) do |f| %>
       <td><%= f.text_field :partnum %></td>
       <td><%= f.text_field :descr %></td>
-      <td><%= f.text_field :qty %></td>
-      <td><%= f.text_field :psaleprice %></td>
+      <td><%= f.number_field :qty %></td>
+      <td><%= f.number_field :psaleprice %></td>
       <td><%= f.text_field :distrib %></td>
       <td></td>
       <td>Передано в ОЗ</td>

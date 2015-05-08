@@ -1,6 +1,15 @@
 <h1>Заявки на резервирование</h1>
 
-<%= link_to 'Создать заявку на резерв', new_order_path %>
+<%#= link_to 'Создать заявку на резерв', new_order_path %>
+<%= form_for(Order.new) do |f| %>
+  <div class="field">
+    <%= f.label :Менеджер %>
+    <%= f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %>
+    <%= f.label "Номер счет" %>
+    <%= f.text_field :numbill %>
+    <%= f.submit %>
+  </div>
+<% end %>  
 
 <table>
   <thead>
