@@ -30,7 +30,8 @@
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
       <th><%= orderpart.pmargin %></th>
       <th><%= orderpart.comment %></th>
-      <th></th>
+      <th><%= link_to "Менеджер", [@order, orderpart] %></th>
+      <th><%= link_to "Закупщик", [:edit, @order, orderpart] %></th>
     </tr>
   <% end %>
   <tr>
