@@ -10,17 +10,27 @@ class OrderpartsController < ApplicationController
   def show
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
+    @order.checkstate
   end
 
   def edit
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
+    @order.checkstate
   end
 
   def otkaz
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
     @orderpart.state = Orderstate.find_by(state: "Отказ в резерве")
+    @orderpart.save
+    redirect_to edit_order_path(@order)
+  end
+
+  def otkazm
+    @order = Order.find(params[:order_id])
+    @orderpart = Orderpart.find(params[:id])
+    @orderpart.state = Orderstate.find_by(state: "Удалено менеджером")
     @orderpart.save
     redirect_to edit_order_path(@order)
   end

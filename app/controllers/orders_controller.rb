@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
     @orderparts = @order.orderparts
+    @order.checkstate
   end
 
   # POST /orders
@@ -63,6 +64,7 @@ class OrdersController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])

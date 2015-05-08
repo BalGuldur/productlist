@@ -32,6 +32,7 @@
       <th><%= orderpart.comment %></th>
       <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
       <th><%= button_to "Закупщик", [:edit, @order, orderpart], :method => 'get' %></th>
+      <th><%= button_to "Отказ. менеджер", [:otkazm, @order, orderpart], method: 'get' %></th>
     </tr>
   <% end %>
   <tr>

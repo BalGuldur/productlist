@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :orderparts do
       member do
         get 'otkaz'
+        get 'otkazm'
       end
     end
   end
