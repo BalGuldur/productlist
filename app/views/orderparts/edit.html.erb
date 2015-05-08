@@ -1,0 +1,51 @@
+<h1>Обработка резерва товара, вид ОЗ</h1>
+
+<%= form_for([@order, @orderpart]) do |f| %>
+<table>
+  <tr>
+    <th>Партномер<br><div><%= @orderpart.partnum %></div></th>
+    <th>Описание<br><div><%= @orderpart.descr %></div></th>
+    <th>Кол-во<br><div><%= @orderpart.qty %></div></th>
+    <th>Предв цена продажи<br><%= @orderpart.psaleprice %></th>
+  </tr>
+  <tr>
+    <th>
+      <%= f.label :Ответственный %><br>
+      <%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio, include_blank: true  %>
+    </th>
+    <th>
+      Статус<br>
+      <%= @orderpart.state!=nil ? @orderpart.state.state : "" %>
+      <%#= f.label :Статус %><br>
+      <%#= f.collection_select :state_id, Orderstate.all, :id, :fio %>
+    </th>
+    <th>
+      Предв время ответа<br>
+      <%= f.collection_select :panswtime_id, Ourtime.where(:answ => true), :id, :name, include_blank: true %>
+    </th>
+  </tr>
+  <tr>
+    <th><%= f.label "Поставщик" %><br><%= f.text_field :distrib %></th>
+    <th>Цена резерва|Вал|Конвертация<br><%= f.number_field :rezprice %>|<%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|<%= f.number_field :convertion, step: 0.1 %></th>
+    <th>
+      Срок резерва<br>
+      <%= f.collection_select :reztime_id, Ourtime.where(rez: true), :id, :name, include_blank: true %>
+    </th>
+    <th>Безнал<br><%= f.number_field :beznal %>%</th>
+    <th>
+      НДС<br>
+      <%= f.select :nds, options_for_select([['',nil],['13%',18],['7%',7],['без НДС',0]],@orderpart.nds)  %>
+    </th>
+  </tr>
+  <tr>
+    <th>Цена доставки<br><%= f.number_field :shipprice %></th>
+    <th>
+      Срок доставки<br>
+      <%= f.collection_select :pshiptime_id, Ourtime.where(ship: true), :id, :name, include_blank: true %>
+    </th>
+  <tr>
+    <th><%= f.submit %></th>
+<% end %>
+    <th><%= button_to "Отказать в резерве", [:otkaz, @order, @orderpart], method: 'get' %></th>
+  </tr>
+</table>

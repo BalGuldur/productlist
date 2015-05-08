@@ -18,7 +18,7 @@
     <th>Комментарии</th>
   </tr>
   <% @order.orderparts.each do |orderpart| %>
-    <tr>
+    <tr bgcolor="<%= orderpart.state!=nil ? orderpart.state.color : "" %>">
       <th><%= orderpart.partnum %></th>
       <th><%= orderpart.descr %></th>
       <th><%= orderpart.qty %></th>
@@ -30,8 +30,8 @@
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
       <th><%= orderpart.pmargin %></th>
       <th><%= orderpart.comment %></th>
-      <th><%= link_to "Менеджер", [@order, orderpart] %></th>
-      <th><%= link_to "Закупщик", [:edit, @order, orderpart] %></th>
+      <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
+      <th><%= button_to "Закупщик", [:edit, @order, orderpart], :method => 'get' %></th>
     </tr>
   <% end %>
   <tr>

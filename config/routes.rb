@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :ourtimes
 
   resources :orders do
-    resources :orderparts
+    resources :orderparts do
+      member do
+        get 'otkaz'
+      end
+    end
   end
 
   resources :orderstates
