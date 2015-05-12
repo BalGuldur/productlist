@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.10)
     builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -39,6 +40,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    devise (3.4.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
     ffi (1.9.8)
@@ -73,6 +81,7 @@ GEM
     mysql2 (0.3.17)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    orm_adapter (0.5.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     rack (1.5.2)
@@ -100,6 +109,8 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     ref (1.0.5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     roo (1.13.2)
       nokogiri
       rubyzip
@@ -146,6 +157,8 @@ GEM
     uglifier (2.6.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     whenever (0.9.4)
       chronic (>= 0.6.3)
     xml-simple (1.1.5)
@@ -155,6 +168,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  devise
   jbuilder (~> 2.0)
   jquery-rails
   mailman

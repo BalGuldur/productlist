@@ -6,6 +6,7 @@ gem 'mailman'
 gem 'nokogiri'
 gem 'xml-simple'
 gem 'whenever', require: false
+gem 'devise'
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
