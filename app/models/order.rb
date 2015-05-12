@@ -32,5 +32,17 @@ class Order < ActiveRecord::Base
         self.orderstate=Orderstate.find_by(state: "Отказано во всем")
       end
       self.save
+      self.updatemargin
+  end
+  
+  def updatemargin
+    @summargin=0
+    self.orderparts.each do |orderpart|
+      if orderpart.state.state!="Отказ в резерве" && orderpart.state.state!="Удалено менеджером"
+        orderpart.pmargin!=nil ? @summargin=@summargin+orderpart.pmargin : ""
+      end
+    end
+    self.pmargin=@summargin
+    self.save
   end
 end

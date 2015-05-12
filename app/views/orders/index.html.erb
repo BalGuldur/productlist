@@ -39,7 +39,7 @@
         <td><%= order.comment %></td>
         <td><%= link_to 'Показать', order %></td>
         <td><%= link_to 'Изменить', edit_order_path(order) %></td>
-        <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%#= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
