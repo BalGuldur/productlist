@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # Добавлено мной
 gem 'squeel'
 gem 'mailman'
+gem 'nokogiri'
+gem 'xml-simple'
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
