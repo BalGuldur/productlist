@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if user_signed_in? %>
+  <span>Здравствуйте, <%= current_user.email %></span>
+  <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to 'Войти', new_user_session_path %>
+<% end %>
+<br>
+<table>
+  <th>
+    <div style="display:inline-block;"><%= button_to "Главная", :root, method: 'get' %></div>
+    <div style="display:inline-block;"><%= button_to "Резервирование", :orders, method: 'get' %></div>
+    <div style="display:inline-block;"><%= button_to "Сотрудники", :employees, method: 'get' %></div>
+  </th>
+</table>
 
 <%= yield %>
 

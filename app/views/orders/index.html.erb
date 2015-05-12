@@ -1,10 +1,4 @@
 <h1>Заявки на резервирование</h1>
-<% if user_signed_in? %>
-  <span>Здравствуйте, <%= current_user.email %></span>
-  <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to 'Войти', new_user_session_path %>
-<% end %>
 
 <%#= link_to 'Создать заявку на резерв', new_order_path %>
 <%= form_for(Order.new) do |f| %>
