@@ -27,10 +27,10 @@
         <td><%= employee.enable %></td>
         <td><%= employee.comment %></td>
         <td><%#= link_to 'Показать', employee %></td>
-        <%# if user_signed_in? && current_user.employee.admin!=true %>
+        <% if user_signed_in? && current_user.employee.admin==true %>
           <td><%= link_to 'Изменить', edit_employee_path(employee) %></td>
           <td><%= link_to 'Удалить', employee, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-        <%# end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
