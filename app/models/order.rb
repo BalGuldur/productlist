@@ -36,6 +36,7 @@ class Order < ActiveRecord::Base
   end
   
   def updatemarginandsum
+    if self.orderparts!=nil
     @summargin=0
     @sumrash=0
     self.orderparts.each do |orderpart|
@@ -44,9 +45,10 @@ class Order < ActiveRecord::Base
         @sumrash=@sumrash+orderpart.rashod
       end
     end
-    self.pmargin=@summargin-self.addrate
-    self.sum=@sumrash+self.addrate
+    self.addrate!=nil ? self.pmargin=@summargin-self.addrate : ""
+    self.addrate!=nil ? self.sum=@sumrash+self.addrate : ""
     self.save
+    end
   end
 
 end
