@@ -26,7 +26,11 @@
       <th><%= orderpart.distrib %></th>
       <th><%= orderpart.doner==nil ? "" : orderpart.doner.fio %></th>
       <th><%= orderpart.state==nil ? "" : orderpart.state.state %></th>
-      <th><%= orderpart.reztime==nil ? "" : orderpart.reztime.name %></th>
+      <% @bgcolreztime="" %>
+      <% if orderpart.reztime!=nil %>
+        <% orderpart.reztime<DateTime.now.to_date ? @bgcolreztime="red" : @bgcolreztime="" %>
+      <% end %>
+      <th bgcolor="<%= @bgcolreztime %>"><%= orderpart.reztime %></th>
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
       <th><%= orderpart.pmargin %></th>
       <th><%= orderpart.comment %></th>

@@ -32,17 +32,21 @@ class Order < ActiveRecord::Base
         self.orderstate=Orderstate.find_by(state: "Отказано во всем")
       end
       self.save
-      self.updatemargin
+      self.updatemarginandsum
   end
   
-  def updatemargin
+  def updatemarginandsum
     @summargin=0
+    @sumrash=0
     self.orderparts.each do |orderpart|
       if orderpart.state.state!="Отказ в резерве" && orderpart.state.state!="Удалено менеджером"
         orderpart.pmargin!=nil ? @summargin=@summargin+orderpart.pmargin : ""
+        @sumrash=@sumrash+orderpart.rashod
       end
     end
-    self.pmargin=@summargin
+    self.pmargin=@summargin-self.addrate
+    self.sum=@sumrash+self.addrate
     self.save
   end
+
 end

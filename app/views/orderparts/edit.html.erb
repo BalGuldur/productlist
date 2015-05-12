@@ -29,7 +29,7 @@
     <th>Цена резерва|Вал|Конвертация<br><%= f.number_field :rezprice %>|<%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|<%= f.number_field :convertion, step: 0.1 %>%</th>
     <th>
       Срок резерва<br>
-      <%= f.collection_select :reztime_id, Ourtime.where(rez: true), :id, :name, include_blank: true %>
+      <%= f.date_field :reztime %>
     </th>
     <th>Безнал<br><%= f.number_field :beznal %>%</th>
     <th>
