@@ -41,7 +41,7 @@
         <td><%= order.comment %></td>
         <td><%#= link_to 'Показать', order %></td>
         <td><%= link_to 'Изменить', edit_order_path(order) %></td>
-        <% if current_user.employee.admin==true %>
+        <% if user_signed_in && current_user.employee.admin==true %>
           <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
         <% end %>
       </tr>
