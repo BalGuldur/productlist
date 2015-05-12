@@ -34,10 +34,17 @@
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
       <th><%= orderpart.pmargin %></th>
       <th><%= orderpart.comment %></th>
-      <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
-      <th><%= button_to "Закупщик", [:edit, @order, orderpart], :method => 'get' %></th>
-      <th><%= button_to "Отказ. менеджер", [:otkazm, @order, orderpart], method: 'get' %></th>
-    </tr>
+      <% if current_user.employee.department.saleright %>
+        <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
+        <th><%= button_to "Отказ. менеджер", [:otkazm, @order, orderpart], method: 'get' %></th>
+      <% end %>
+      <% if current_user.employee.department.purchaserright %>
+        <th><%= button_to "Закупщик", [:edit, @order, orderpart], :method => 'get' %></th>
+      <% end %>
+      <% if current_user.employee.admin %>
+        <th><%= button_to "Удалить", [@order, orderpart], :method => 'delete' %></th>
+      <% end %>
+   </tr>
   <% end %>
   <tr>
     <%= form_for([@order, @order.orderparts.build]) do |f| %>

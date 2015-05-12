@@ -3,11 +3,13 @@
 <%#= link_to 'Создать заявку на резерв', new_order_path %>
 <%= form_for(Order.new) do |f| %>
   <div class="field">
-    <%= f.label :Менеджер %>
-    <%= f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %>
-    <%= f.label "Номер счет" %>
-    <%= f.text_field :numbill %>
-    <%= f.submit %>
+    <%#= f.label :Менеджер %>
+    <%#= f.collection_select :manager_id, Employee.includes(:department).where("departments.saleright" => true), :id, :fio %>
+    <% if user_signed_in? %>
+      <%= f.label "Номер счет" %>
+      <%= f.text_field :numbill %>
+      <%= f.submit %>
+    <% end %>
   </div>
 <% end %>  
 
@@ -37,9 +39,11 @@
         <td><%= order.sum %></td>
         <td><%= order.pmargin %></td>
         <td><%= order.comment %></td>
-        <td><%= link_to 'Показать', order %></td>
+        <td><%#= link_to 'Показать', order %></td>
         <td><%= link_to 'Изменить', edit_order_path(order) %></td>
-        <td><%#= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% if current_user.employee.admin==true %>
+          <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

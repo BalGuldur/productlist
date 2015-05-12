@@ -51,6 +51,12 @@ class OrderpartsController < ApplicationController
     end
   end
 
+  def destroy
+    @orderpart=Orderpart.find(params[:id])
+    @orderpart.delete
+    redirect_to :back
+  end
+
   private
 
   def orderpart_params

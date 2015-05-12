@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.manager = current_user.employee
 
     respond_to do |format|
       if @order.save
@@ -57,10 +58,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.json
   def destroy
     @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
-      #format.json { head :no_content }
-    end
+    redirect_to orders_url
   end
 
   private
