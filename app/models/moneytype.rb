@@ -1,5 +1,5 @@
 class Moneytype < ActiveRecord::Base
-  def self.updatecurse
+  def self.updatecourse
     require 'open-uri'
     require 'xmlsimple'
     

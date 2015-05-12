@@ -5,6 +5,7 @@ gem 'squeel'
 gem 'mailman'
 gem 'nokogiri'
 gem 'xml-simple'
+gem 'whenever', require: false
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
