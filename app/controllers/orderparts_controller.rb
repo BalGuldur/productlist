@@ -10,13 +10,13 @@ class OrderpartsController < ApplicationController
   def show
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
-    @order.checkstate
+    @orderpart.checkstate
   end
 
   def edit
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
-    @order.checkstate
+    @orderpart.checkstate
   end
 
   def otkaz
@@ -24,6 +24,7 @@ class OrderpartsController < ApplicationController
     @orderpart = Orderpart.find(params[:id])
     @orderpart.state = Orderstate.find_by(state: "Отказ в резерве")
     @orderpart.save
+    @order.checkstate
     redirect_to edit_order_path(@order)
   end
 
@@ -32,6 +33,7 @@ class OrderpartsController < ApplicationController
     @orderpart = Orderpart.find(params[:id])
     @orderpart.state = Orderstate.find_by(state: "Удалено менеджером")
     @orderpart.save
+    @order.checkstate
     redirect_to edit_order_path(@order)
   end
 
@@ -43,6 +45,8 @@ class OrderpartsController < ApplicationController
       @order.checkstate
       redirect_to edit_order_path(@order)
     else
+      @orderpart.checkstate
+      @order.checkstate
       render :edit_order_orderpart_path
     end
   end

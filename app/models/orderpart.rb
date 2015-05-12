@@ -18,6 +18,7 @@ class Orderpart < ActiveRecord::Base
       self.save
     end
     self.updatemargin
+    self.order!=nil ? self.order.checkstate : ""
   end
 
   def updatemargin

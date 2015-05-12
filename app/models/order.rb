@@ -31,8 +31,8 @@ class Order < ActiveRecord::Base
       elsif @otkazrez>0 && @zarez==0
         self.orderstate=Orderstate.find_by(state: "Отказано во всем")
       end
-      self.save
       self.updatemarginandsum
+      self.save
   end
   
   def updatemarginandsum
