@@ -61,6 +61,35 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def addlogin
+    @employee=Employee.find(params[:id])
+    @user = User.new(:email => @employee.email)
+    @user.employee=@employee
+    @user.save
+    @user.employee.save
+    redirect_to :employees
+  end
+
+  def dellogin
+    @employee=Employee.find(params[:id])
+    @employee.user.delete
+    @employee.user=nil
+    @employee.save
+    redirect_to :employees
+  end
+
+  def changepass
+    @employee=Employee.find(params[:id])
+
+  end
+
+  def changepasses
+    @employee=Employee.find(params[:id])
+    @employee.user.password=params[:pass]
+    @employee.user.save
+    redirect_to :employees
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
@@ -69,6 +98,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:fio, :department_id, :intphone, :mobphone, :job, :email, :enable, :comment, :admin)
+      params.require(:employee).permit(:fio, :department_id, :intphone, :mobphone, :job, :email, :enable, :comment, :admin, :pass)
     end
 end

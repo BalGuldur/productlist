@@ -1,0 +1,7 @@
+<h1>Изменить пароль</h1>
+
+<%= form_for :employee, url: {:action => "changepasses", :id => @employee} do |f| %><br>
+<%= f.label :pass %><br>
+<%= f.password_field :pass %><br>
+<%= f.submit %>
+<% end %>

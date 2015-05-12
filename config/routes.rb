@@ -19,7 +19,14 @@ Rails.application.routes.draw do
 
   resources :prodtypes
 
-  resources :employees
+  resources :employees do
+    member do
+      get :addlogin
+      get :changepass
+      post :changepasses
+      get :dellogin
+    end
+  end
 
   resources :departments
 

@@ -10,6 +10,7 @@
       <th>Должность</th>
       <th>E-mail</th>
       <th>Enable?</th>
+      <th>Логин входа</th>
       <th>Комментарии</th>
       <th colspan="3"></th>
     </tr>
@@ -25,6 +26,16 @@
         <td><%= employee.job %></td>
         <td><%= employee.email %></td>
         <td><%= employee.enable %></td>
+        <% if user_signed_in? && current_user.employee.admin %>
+          <td>
+          <% if employee.user!=nil %>
+            <%= link_to('chg pass', [:changepass, employee]) %>
+            <%= link_to('del login', [:dellogin, employee]) %>
+          <% else %>
+            <%= link_to("НЕ Привязан", [:addlogin, employee]) %>
+          <% end %>
+          </td>
+        <% end %>
         <td><%= employee.comment %></td>
         <td><%#= link_to 'Показать', employee %></td>
         <% if user_signed_in? && current_user.employee.admin==true %>
