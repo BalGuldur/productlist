@@ -11,7 +11,7 @@
   <tr>
     <th>
       <%= f.label :Ответственный %><br>
-      <%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio, include_blank: true  %>
+      <%= f.collection_select :doner_id, Employee.includes(:department).where("departments.purchaserright" => true), :id, :fio, include_blank: true, :selected => current_user.employee.id  %>
     </th>
     <th>
       Статус<br>
