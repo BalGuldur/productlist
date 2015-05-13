@@ -29,7 +29,7 @@
         <% if user_signed_in? && current_user.employee.admin %>
           <td>
           <% if employee.user!=nil %>
-            <%= link_to('chg pass', [:changepass, employee]) %>
+            <%#= link_to('chg pass', [:changepass, employee]) %>
             <%= link_to('del login', [:dellogin, employee]) %>
           <% else %>
             <%= link_to("НЕ Привязан", [:addlogin, employee]) %>
