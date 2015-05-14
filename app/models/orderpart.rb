@@ -22,7 +22,7 @@ class Orderpart < ActiveRecord::Base
   end
 
   def updatemargin
-    if self.psaleprice!=nil && self.rezprice!=nil
+    if self.psaleprice!=nil && self.psaleprice!="" && self.rezprice!=nil && self.rezprice!=""
       self.beznal!=nil ? @rasbeznal=self.rezprice*self.beznal/100 : @rasbeznal=0
       self.convertion!=nil ? @rasconver=self.rezpriceinru*self.convertion/100 : @rasconver=0
       self.pmargin = (self.psaleprice-self.rezpriceinru-@rasbeznal-@rasconver)*self.qty-self.shipprice
