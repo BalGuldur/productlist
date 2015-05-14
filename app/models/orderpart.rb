@@ -11,9 +11,11 @@ class Orderpart < ActiveRecord::Base
       if self.doner_id!=nil && self.panswtime_id!=nil
         if self.distrib!=nil && self.reztime!=nil && self.beznal!=nil && self.nds!=nil && self.rezprice!=nil && self.rezpricetype_id!=nil && self.shipprice!=nil && self.pshiptime_id!=nil && self.convertion!=nil
           self.state=Orderstate.find_by(state: "Зарезервировано")
-        elsif
+        else
           self.state=Orderstate.find_by(state: "Принято в ОЗ")
         end
+      else
+        self.state=Orderstate.find_by(state: "Передано в ОЗ")
       end
       self.save
     end
@@ -25,7 +27,9 @@ class Orderpart < ActiveRecord::Base
     if self.psaleprice!=nil && self.psaleprice!="" && self.rezprice!=nil && self.rezprice!=""
       self.beznal!=nil ? @rasbeznal=self.rezprice*self.beznal/100 : @rasbeznal=0
       self.convertion!=nil ? @rasconver=self.rezpriceinru*self.convertion/100 : @rasconver=0
-      self.pmargin = (self.psaleprice-self.rezpriceinru-@rasbeznal-@rasconver)*self.qty-self.shipprice
+      if self.psaleprice!=nil && self.rezpriceinru!=nil && self.qty!=nil && self.shipprice!=nil
+        self.pmargin = (self.psaleprice-self.rezpriceinru-@rasbeznal-@rasconver)*self.qty-self.shipprice
+      end
       self.save
     end
   end
