@@ -31,7 +31,7 @@ class Orderpart < ActiveRecord::Base
   end
 
   def rezpriceinru
-    if self.rezpricetype!=nil
+    if self.rezpricetype!=nil && self.rezprice!=nil
       @rpriceinru=self.rezprice*self.rezpricetype.curse
     else
       @rpriceinru=0
