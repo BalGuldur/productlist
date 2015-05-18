@@ -43,6 +43,13 @@
       Срок доставки<br>
       <%= f.collection_select :pshiptime_id, Ourtime.where(ship: true), :id, :name, include_blank: true %>
     </th>
+  </tr>
+  <tr>
+    <th></th>  
+    <th>
+      Комментарии<br>
+      <%= f.text_field :comment %></th>
+  </tr>
   <tr>
     <th><%= f.submit %></th>
 <% end %>
