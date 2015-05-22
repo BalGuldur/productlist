@@ -50,7 +50,9 @@
 </table>
 <%= form_for([@order, @orderpart]) do |f| %>
   <%= f.label :Комментарий %>
-  <%= f.text_area :comment, cols: '40', rows: '5' %></th>
+  <%= f.text_area :comment, cols: '40', rows: '5' %>
+  <%= f.label "Предварит цена продажи" %>
+  <%= f.number_field :psaleprice %>
   <%# f.text_field :comment %>
   <%= f.submit %>
 <% end %>
