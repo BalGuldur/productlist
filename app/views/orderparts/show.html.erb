@@ -50,7 +50,8 @@
 </table>
 <%= form_for([@order, @orderpart]) do |f| %>
   <%= f.label :Комментарий %>
-  <%= f.text_field :comment %>
+  <%= f.text_area :comment, cols: '40', rows: '5' %></th>
+  <%# f.text_field :comment %>
   <%= f.submit %>
 <% end %>
 <p>
