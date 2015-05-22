@@ -44,6 +44,14 @@ class Orderpart < ActiveRecord::Base
     @rasship
   end
 
+  def pmargincolor
+    if self.pmargin!=nil
+      self.pmargin<0 ? "red" : ""
+    else
+      ""
+    end
+  end
+
   def updatemargin
     if self.psaleprice!=nil && self.psaleprice!="" && self.rezprice!=nil && self.rezprice!="" &&self.rezprice!=0
       if self.psaleprice!=nil && self.rezpriceinru!=nil && self.qty!=nil

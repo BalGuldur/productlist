@@ -36,7 +36,7 @@
       <% end %>
       <th bgcolor="<%= @bgcolreztime %>"><%= orderpart.reztime %></th>
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
-      <th bgcolor="<%= orderpart.pmargin<0 ? "red" : "" %>"><%= orderpart.pmargin %></th>
+      <th bgcolor="<%= orderpart.pmargincolor %>"><%= orderpart.pmargin %></th>
       <% if current_user.employee.department.saleright %>
         <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
         <th><%= button_to "Отказ. менеджер", [:otkazm, @order, orderpart], method: 'get' %></th>

@@ -4,6 +4,7 @@ class OrderpartsController < ApplicationController
     @orderpart = @order.orderparts.create(orderpart_params)
     @orderpart.state = Orderstate.find_by(state: "Передано в ОЗ")
     @orderpart.save
+    @order.save
     redirect_to edit_order_path(@order)
   end
 
