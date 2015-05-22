@@ -9,10 +9,10 @@ class Orderpart < ActiveRecord::Base
 
   def checkstate
     if self.state!=Orderstate.find_by(state: "Отказ в резерве")
-      if self.doner_id!=nil && self.panswtime_id!=nil
+      if self.doner_id!=nil
         if self.distributor!=nil && self.reztime!=nil && self.beznal!=nil && self.nds!=nil && self.rezprice!=nil && self.rezpricetype_id!=nil && self.shipprice!=nil && self.pshiptime_id!=nil && self.convertion!=nil
           self.state=Orderstate.find_by(state: "Зарезервировано")
-        else
+        elsif self.panswtime_id!=nil
           self.state=Orderstate.find_by(state: "Принято в ОЗ")
         end
       else

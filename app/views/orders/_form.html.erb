@@ -21,12 +21,14 @@
             <th>Номер счет</th>
             <th>Менеджер</th>
             <th>Доп. расход</th>
+            <th>ID</th>
           </tr>
 
           <tr>
             <td><div class="field"><%= f.text_field :numbill %></div></td>
             <td><%= @order.manager==nil ? "" : @order.manager.fio %></td>
             <td><div class="field"><%= f.number_field :addrate %></div></td>
+            <td><%= @order.id %></td>
           </tr>
           <tr>
             <th>Сумма расхода</th>

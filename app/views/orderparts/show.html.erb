@@ -13,7 +13,7 @@
     <td><%= @orderpart.descr %></td>
     <td><%= @orderpart.qty %></td>
     <td><%= @orderpart.psaleprice %></td>
-    <td><%= @orderpart.distributor!=nil ? @orderpart.distributor : "" %></td>
+    <td><%= @orderpart.distributor!=nil ? @orderpart.distributor.name : "" %></td>
   </tr>
   <tr>
     <th>Ответственный</th>
