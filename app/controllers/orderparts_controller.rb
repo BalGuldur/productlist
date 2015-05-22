@@ -60,6 +60,6 @@ class OrderpartsController < ApplicationController
   private
 
   def orderpart_params
-    params.require(:orderpart).permit(:partnum, :descr, :qty, :psaleprice, :distrib, :comment, :doner_id, :panswtime_id, :distrib, :reztime, :beznal, :nds, :rezprice, :rezpricetype_id, :shipprice, :pshiptime_id, :convertion)
+    params.require(:orderpart).permit(:partnum, :descr, :qty, :psaleprice, :distributor_id, :comment, :doner_id, :panswtime_id, :distrib, :reztime, :beznal, :nds, :rezprice, :rezpricetype_id, :shipprice, :pshiptime_id, :convertion)
   end
 end

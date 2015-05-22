@@ -34,7 +34,7 @@
     <th>Безнал<br><%= f.number_field :beznal %>%</th>
     <th>
       НДС<br>
-      <%= f.select :nds, options_for_select([['',nil],['18%',18],['без НДС',0]],@orderpart.nds)  %>
+      <%= f.select :nds, options_for_select([['',nil],['18%',18],['10%',10],['без НДС',0]],@orderpart.nds)  %>
     </th>
   </tr>
   <tr>

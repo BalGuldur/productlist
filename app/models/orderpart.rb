@@ -20,6 +20,9 @@ class Orderpart < ActiveRecord::Base
       end
       self.save
     end
+    if self.rezpricetype.name=="Рубли"
+      self.convertion=1
+    end
     self.updatemargin
     self.order!=nil ? self.order.checkstate : ""
   end

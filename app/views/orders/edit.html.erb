@@ -1,10 +1,12 @@
 <h1>Изменить данные заявки</h1>
+<% @wfirstcol="width:30px" %>
 
 <%= render 'form' %>
 
 <h2>Список входящих в заявку товаров</h2>
 <table>
   <tr>
+    <th style=<%= @wfirstcol %>>ID</th>
     <th>Партномер</th>
     <th>Описание</th>
     <th>Кол-во</th>
@@ -18,11 +20,12 @@
   </tr>
   <% @order.orderparts.each do |orderpart| %>
     <tr bgcolor="<%= orderpart.state!=nil ? orderpart.state.color : "" %>">
+      <th style=<%= @wfirstcol %>><%= orderpart.id %></th>
       <th><%= orderpart.partnum %></th>
       <th><%= orderpart.descr %></th>
       <th><%= orderpart.qty %></th>
       <th><%= orderpart.psaleprice %></th>
-      <th><%= orderpart.distributor==nil ? "" : orderpart.distributor %></th>
+      <th><%= orderpart.distributor==nil ? "" : orderpart.distributor.name %></th>
       <th><%= orderpart.doner==nil ? "" : orderpart.doner.fio %></th>
       <th><%= orderpart.state==nil ? "" : orderpart.state.state %></th>
       <% @bgcolreztime="" %>
@@ -46,6 +49,7 @@
   <% end %>
   <tr>
     <%= form_for([@order, @order.orderparts.build]) do |f| %>
+      <td style=<%= @wfirstcol %>></td>
       <td><%= f.text_field :partnum %></td>
       <td><%= f.text_field :descr %></td>
       <td><%= f.number_field :qty %></td>
