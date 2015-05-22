@@ -12,6 +12,7 @@
     <th>Кол-во</th>
     <th>Пред цен прод (руб)</th>
     <th>Поставщик</th>
+    <th>Цена резерва (р)</th>
     <th>Ответственный</th>
     <th>Статус</th>
     <th>Срок резерв</th>
@@ -26,6 +27,7 @@
       <th><%= orderpart.qty %></th>
       <th><%= orderpart.psaleprice %></th>
       <th><%= orderpart.distributor==nil ? "" : orderpart.distributor.name %></th>
+      <th><%= orderpart.rezpriceinru %></th>
       <th><%= orderpart.doner==nil ? "" : orderpart.doner.fio %></th>
       <th><%= orderpart.state==nil ? "" : orderpart.state.state %></th>
       <% @bgcolreztime="" %>
@@ -54,7 +56,7 @@
       <td><%= f.text_field :descr %></td>
       <td><%= f.number_field :qty %></td>
       <td><%= f.number_field :psaleprice %></td>
-      <td><%= f.collection_select :distributor_id, Distributor.all, :id, :name %></td>
+      <td><%= f.collection_select :distributor_id, Distributor.all, :id, :name, include_blank: true %></td>
       <td></td>
       <td>Передано в ОЗ</td>
       <td></td>

@@ -12,35 +12,40 @@
   <% end %>
 
 <table>
-  <thead bgcolor="<%= @order.orderstate==nil ? "" : @order.orderstate.color %>">
-    <tr>
-      <th>Номер счет</th>
-      <th>Менеджер</th>
-      <th>Доп. расход</th>
-      <th>Комментарий</th>
-    </tr>
-  </thead>
+  <tr>
+    <td>
+      <table>
 
-  <tbody>
-      <tr>
-        <td><div class="field"><%= f.text_field :numbill %></div></td>
-        <td><%= @order.manager==nil ? "" : @order.manager.fio %></td>
-        <td><div class="field"><%= f.number_field :addrate %></div></td>
-        <td><div><%= f.text_field :comment %></div></td>
-      </tr>
-      <tr>
-        <th>Сумма расхода</th>
-        <th>Ответственный закупщик</th>
-        <th>Предв. маржа</th>
-        <th>Статус</th>
-      </tr>
-      <tr>
-        <td><div><%= @order.sum %></div></td>
-        <td><%= @order.doner!=nil ? @order.doner.fio : "" %></td>
-        <td><div><%= @order.pmargin %></div></td>
-        <td><%= @order.orderstate!=nil ? @order.orderstate.state : "" %></td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="actions"><%= f.submit %></div>
+        <tbody bgcolor="<%= @order.orderstate==nil ? "" : @order.orderstate.color %>">
+          <tr>
+            <th>Номер счет</th>
+            <th>Менеджер</th>
+            <th>Доп. расход</th>
+          </tr>
+
+          <tr>
+            <td><div class="field"><%= f.text_field :numbill %></div></td>
+            <td><%= @order.manager==nil ? "" : @order.manager.fio %></td>
+            <td><div class="field"><%= f.number_field :addrate %></div></td>
+          </tr>
+          <tr>
+            <th>Сумма расхода</th>
+            <th>Ответственный закупщик</th>
+            <th>Предв. маржа</th>
+            <th>Статус</th>
+          </tr>
+          <tr>
+            <td><div><%= @order.sum %></div></td>
+            <td><%= @order.doner!=nil ? @order.doner.fio : "" %></td>
+            <td><div><%= @order.pmargin %></div></td>
+            <td><%= @order.orderstate!=nil ? @order.orderstate.state : "" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+    <th>Комментарий</th>
+    <td><%= f.text_area :comment, cols: '40', rows: '7' %></td>
+  </tr>
+</table>
+<div class="actions"><%= f.submit %></div>
 <% end %>

@@ -20,22 +20,37 @@ class Orderpart < ActiveRecord::Base
       end
       self.save
     end
-    if self.rezpricetype.name=="Рубли"
-      self.convertion=1
+    if self.rezpricetype!=nil 
+      self.rezpricetype.name=="Рубли" ? self.convertion=0 : ""
     end
     self.updatemargin
     self.order!=nil ? self.order.checkstate : ""
   end
 
+  def rashodbeznal
+    self.beznal!=nil ? @rasbeznal=self.rezprice*self.beznal/100 : @rasbeznal=0
+    @rasbeznal
+  end
+
+  def rashodconver
+    self.convertion!=nil ? @rasconver=self.rezpriceinru*self.convertion/100 : @rasconver=0
+    @rasconver
+  end
+
+  def rashodship
+    self.shipprice!=nil ? @rasship=self.shipprice : @rasship=0
+    @rasship
+  end
+
   def updatemargin
-    if self.psaleprice!=nil && self.psaleprice!="" && self.rezprice!=nil && self.rezprice!=""
-      self.beznal!=nil ? @rasbeznal=self.rezprice*self.beznal/100 : @rasbeznal=0
-      self.convertion!=nil ? @rasconver=self.rezpriceinru*self.convertion/100 : @rasconver=0
-      if self.psaleprice!=nil && self.rezpriceinru!=nil && self.qty!=nil && self.shipprice!=nil
-        self.pmargin = (self.psaleprice-self.rezpriceinru-@rasbeznal-@rasconver)*self.qty-self.shipprice
+    if self.psaleprice!=nil && self.psaleprice!="" && self.rezprice!=nil && self.rezprice!="" &&self.rezprice!=0
+      if self.psaleprice!=nil && self.rezpriceinru!=nil && self.qty!=nil
+        self.pmargin = (self.psaleprice-self.rezpriceinru-self.rashodbeznal-self.rashodconver)*self.qty-self.rashodship
       end
-      self.save
+    else
+      self.pmargin = 0
     end
+    self.save
   end
 
   def rezpriceinru
@@ -47,8 +62,14 @@ class Orderpart < ActiveRecord::Base
   end
 
   def rashod
-    self.convertion!=nil ? @rashod=self.rezpriceinru+self.rezpriceinru*self.convertion/100 : @rashod=self.rezpriceinru
-    self.shipprice!=nil ? @rashod+=self.shipprice : @rashod
+    @rashod=0
+    if self.convertion!=nil && self.convertion!=0
+      @rashod=self.rezpriceinru+self.rezpriceinru*(self.convertion/100)
+    else
+      @rashod=self.rezpriceinru
+    end
+    self.qty!=nil ? @rashod=@rashod*self.qty : ""
+    self.shipprice!=nil ? @rashod+=self.shipprice*self.qty : ""
     self.beznal!=nil ? @rashod+=self.beznal : @rashod
     @rashod
   end
