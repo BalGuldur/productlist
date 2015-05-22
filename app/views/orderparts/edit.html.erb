@@ -25,7 +25,7 @@
     </th>
   </tr>
   <tr>
-    <th><%= f.label "Поставщик" %><br><%= f.text_field :distrib %></th>
+    <th><%= f.label "Поставщик" %><br><%= f.collection_select :distributor_id, Distributor.all, :id, :name %></th>
     <th>Цена резерва|Вал|Конвертация<br><%= f.number_field :rezprice %>|<%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|<%= f.number_field :convertion, step: 0.1 %>%</th>
     <th>
       Срок резерва<br>
