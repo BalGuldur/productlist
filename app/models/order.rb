@@ -34,6 +34,14 @@ class Order < ActiveRecord::Base
       self.updatemarginandsum
       self.save
   end
+
+  def pmargincolor
+    if self.pmargin!=nil
+      self.pmargin<0 ? "red" : ""
+    else
+      ""
+    end
+  end
   
   def updatemarginandsum
     if self.orderparts!=nil
