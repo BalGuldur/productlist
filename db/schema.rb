@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512205329) do
+ActiveRecord::Schema.define(version: 20150522170602) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
     t.boolean  "saleright"
     t.boolean  "purchaserright"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "distributors", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +65,6 @@ ActiveRecord::Schema.define(version: 20150512205329) do
     t.text     "descr"
     t.integer  "qty"
     t.integer  "psaleprice"
-    t.string   "distrib"
     t.integer  "doner_id"
     t.integer  "state_id"
     t.integer  "panswtime_id"
@@ -76,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150512205329) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "reztime"
+    t.integer  "distributor_id"
   end
 
   add_index "orderparts", ["order_id"], name: "index_orderparts_on_order_id", using: :btree

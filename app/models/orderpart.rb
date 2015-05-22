@@ -5,6 +5,7 @@ class Orderpart < ActiveRecord::Base
   belongs_to :panswtime, class_name: "Ourtime"
   belongs_to :pshiptime, class_name: "Ourtime"
   belongs_to :rezpricetype, class_name: "Moneytype"
+  belongs_to :distributor
 
   def checkstate
     if self.state!=Orderstate.find_by(state: "Отказ в резерве")

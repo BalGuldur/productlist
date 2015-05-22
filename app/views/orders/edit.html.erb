@@ -15,7 +15,6 @@
     <th>Срок резерв</th>
     <th>Пр срок достав</th>
     <th>Пред маржа</th>
-    <th>Комментарии</th>
   </tr>
   <% @order.orderparts.each do |orderpart| %>
     <tr bgcolor="<%= orderpart.state!=nil ? orderpart.state.color : "" %>">
@@ -23,7 +22,7 @@
       <th><%= orderpart.descr %></th>
       <th><%= orderpart.qty %></th>
       <th><%= orderpart.psaleprice %></th>
-      <th><%= orderpart.distrib %></th>
+      <th><%= orderpart.distributor==nil ? "" : orderpart.distributor %></th>
       <th><%= orderpart.doner==nil ? "" : orderpart.doner.fio %></th>
       <th><%= orderpart.state==nil ? "" : orderpart.state.state %></th>
       <% @bgcolreztime="" %>
@@ -33,7 +32,6 @@
       <th bgcolor="<%= @bgcolreztime %>"><%= orderpart.reztime %></th>
       <th><%= orderpart.pshiptime==nil ? "" : orderpart.pshiptime.name %></th>
       <th><%= orderpart.pmargin %></th>
-      <th><%= orderpart.comment %></th>
       <% if current_user.employee.department.saleright %>
         <th><%= button_to "Менеджер", [@order, orderpart], :method => 'get' %></th>
         <th><%= button_to "Отказ. менеджер", [:otkazm, @order, orderpart], method: 'get' %></th>
@@ -52,13 +50,12 @@
       <td><%= f.text_field :descr %></td>
       <td><%= f.number_field :qty %></td>
       <td><%= f.number_field :psaleprice %></td>
-      <td><%= f.text_field :distrib %></td>
+      <td><%= f.collection_select :distributor_id, Distributor.all, :id, :name %></td>
       <td></td>
       <td>Передано в ОЗ</td>
       <td></td>
       <td></td>
       <td></td>
-      <td><%= f.text_field :comment %></td>
       <td><%= f.submit "Добавить товар" %></td>
     <% end %>
   </tr>
