@@ -45,7 +45,7 @@
     <td><%= @orderpart.shipprice %></td>
     <td><%= @orderpart.pshiptime!=nil ? @orderpart.pshiptime.name : "" %></td>
     <td><%= @orderpart.convertion %></td>
-    <td><%= @orderpart.pmargin %></td>
+    <td bgcolor="<%= @orderpart.pmargin<0 ? "red" : "" %>"><%= @orderpart.pmargin %></td>
   </tr>
 </table>
 <%= form_for([@order, @orderpart]) do |f| %>

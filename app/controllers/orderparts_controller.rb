@@ -51,7 +51,7 @@ class OrderpartsController < ApplicationController
   def update
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
-    if @orderpart.update(orderpart_params) && @orderpart.state==Orderstate.find_by(state: "Удалено менеджером")
+    if @orderpart.update(orderpart_params)
       @orderpart.checkstate
       @order.checkstate
       redirect_to edit_order_path(@order)

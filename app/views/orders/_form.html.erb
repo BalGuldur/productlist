@@ -39,7 +39,7 @@
           <tr>
             <td><div><%= @order.sum %></div></td>
             <td><%= @order.doner!=nil ? @order.doner.fio : "" %></td>
-            <td><div><%= @order.pmargin %></div></td>
+            <td bgcolor="<%= @order.pmargin<0 ? "red" : "" %>"><div %><%= @order.pmargin %></div></td>
             <td><%= @order.orderstate!=nil ? @order.orderstate.state : "" %></td>
           </tr>
         </tbody>
