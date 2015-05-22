@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       member do
         get 'otkaz'
         get 'otkazm'
+        get 'inwork'
       end
     end
   end

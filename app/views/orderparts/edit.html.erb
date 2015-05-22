@@ -43,6 +43,7 @@
       Срок доставки<br>
       <%= f.collection_select :pshiptime_id, Ourtime.where(ship: true), :id, :name, include_blank: true %>
     </th>
+    <th>Номер поставщика<br><%= f.text_field :idorddistrib %></th>
   </tr>
   <tr>
     <th></th>
@@ -55,5 +56,6 @@
     <th><%= f.submit %></th>
 <% end %>
     <th><%= button_to "Отказать в резерве", [:otkaz, @order, @orderpart], method: 'get' %></th>
+    <th><%= button_to "Вернуть в резерв", [:inwork, @order, @orderpart], method: 'get' %></th>
   </tr>
 </table>

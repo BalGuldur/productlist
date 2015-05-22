@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522170602) do
+ActiveRecord::Schema.define(version: 20150522185316) do
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150522170602) do
     t.datetime "updated_at"
     t.date     "reztime"
     t.integer  "distributor_id"
+    t.string   "idorddistrib"
   end
 
   add_index "orderparts", ["order_id"], name: "index_orderparts_on_order_id", using: :btree

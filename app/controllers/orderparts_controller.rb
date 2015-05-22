@@ -28,6 +28,17 @@ class OrderpartsController < ApplicationController
     redirect_to edit_order_path(@order)
   end
 
+  def inwork
+    @order = Order.find(params[:order_id])
+    @orderpart = Orderpart.find(params[:id])
+    @orderpart.state = Orderstate.find_by(state: "Передано в ОЗ")
+    @orderpart.checkstate
+    @orderpart.save
+    @order.checkstate
+    @order.save
+    redirect_to edit_order_path(@order)
+  end
+
   def otkazm
     @order = Order.find(params[:order_id])
     @orderpart = Orderpart.find(params[:id])
@@ -60,6 +71,6 @@ class OrderpartsController < ApplicationController
   private
 
   def orderpart_params
-    params.require(:orderpart).permit(:partnum, :descr, :qty, :psaleprice, :distributor_id, :comment, :doner_id, :panswtime_id, :distrib, :reztime, :beznal, :nds, :rezprice, :rezpricetype_id, :shipprice, :pshiptime_id, :convertion)
+    params.require(:orderpart).permit(:idorddistrib, :partnum, :descr, :qty, :psaleprice, :distributor_id, :comment, :doner_id, :panswtime_id, :distrib, :reztime, :beznal, :nds, :rezprice, :rezpricetype_id, :shipprice, :pshiptime_id, :convertion)
   end
 end
