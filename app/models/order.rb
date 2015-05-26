@@ -31,8 +31,19 @@ class Order < ActiveRecord::Base
       elsif @otkazrez>0 && @zarez==0
         self.orderstate=Orderstate.find_by(state: "Отказано во всем")
       end
+      self.updatedoner
       self.updatemarginandsum
       self.save
+  end
+
+  def updatedoner
+    if self.orderparts!=nil
+      self.orderparts.each do |orderpart|
+        if orderpart.doner!=nil && self.doner==nil
+          self.doner=orderpart.doner
+        end
+      end
+    end
   end
 
   def pmargincolor
