@@ -1,0 +1,45 @@
+<%= form_for(@reestrprihodov) do |f| %>
+  <% if @reestrprihodov.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reestrprihodov.errors.count, "error") %> prohibited this reestrprihodov from being saved:</h2>
+
+      <ul>
+      <% @reestrprihodov.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kontragent %><br>
+    <%= f.text_field :kontragent %>
+  </div>
+  <div class="field">
+    <%= f.label :numbill %><br>
+    <%= f.text_field :numbill %>
+  </div>
+  <div class="field">
+    <%= f.label :numprihoddoc %><br>
+    <%= f.text_field :numprihoddoc %>
+  </div>
+  <div class="field">
+    <%= f.label :prihoddate %><br>
+    <%= f.date_select :prihoddate %>
+  </div>
+  <div class="field">
+    <%= f.label :sendwithpech %><br>
+    <%= f.date_select :sendwithpech %>
+  </div>
+  <div class="field">
+    <%= f.label :givetoruk %><br>
+    <%= f.date_select :givetoruk %>
+  </div>
+  <div class="field">
+    <%= f.label :givetobuh %><br>
+    <%= f.date_select :givetobuh %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

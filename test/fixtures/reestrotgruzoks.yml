@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kontragent: MyString
+  numbill: MyString
+  numotgruzdoc: MyString
+  sendtoclient: 2015-05-28
+  resievedate: 2015-05-28
+  sendtobuh: 2015-05-28
+
+two:
+  kontragent: MyString
+  numbill: MyString
+  numotgruzdoc: MyString
+  sendtoclient: 2015-05-28
+  resievedate: 2015-05-28
+  sendtobuh: 2015-05-28

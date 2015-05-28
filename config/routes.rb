@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :reestrprihodovs
+
+  resources :reestrotgruzoks
+
   resources :distributors
 
   devise_for :users

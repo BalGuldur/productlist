@@ -1,0 +1,41 @@
+<%= form_for(@reestrotgruzok) do |f| %>
+  <% if @reestrotgruzok.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reestrotgruzok.errors.count, "error") %> prohibited this reestrotgruzok from being saved:</h2>
+
+      <ul>
+      <% @reestrotgruzok.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kontragent %><br>
+    <%= f.text_field :kontragent %>
+  </div>
+  <div class="field">
+    <%= f.label :numbill %><br>
+    <%= f.text_field :numbill %>
+  </div>
+  <div class="field">
+    <%= f.label :numotgruzdoc %><br>
+    <%= f.text_field :numotgruzdoc %>
+  </div>
+  <div class="field">
+    <%= f.label :sendtoclient %><br>
+    <%= f.date_select :sendtoclient %>
+  </div>
+  <div class="field">
+    <%= f.label :resievedate %><br>
+    <%= f.date_select :resievedate %>
+  </div>
+  <div class="field">
+    <%= f.label :sendtobuh %><br>
+    <%= f.date_select :sendtobuh %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
