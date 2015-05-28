@@ -1,4 +1,4 @@
-<h1>Listing reestrotgruzoks</h1>
+<h1>Реестр отгрузочных документов</h1>
 
 <table>
   <thead>
@@ -15,17 +15,20 @@
 
   <tbody>
     <% @reestrotgruzoks.each do |reestrotgruzok| %>
+      <%= form_for(reestrotgruzok) do |f1| %>
       <tr>
-        <td><%= reestrotgruzok.kontragent %></td>
-        <td><%= reestrotgruzok.numbill %></td>
-        <td><%= reestrotgruzok.numotgruzdoc %></td>
-        <td><%= reestrotgruzok.sendtoclient %></td>
-        <td><%= reestrotgruzok.resievedate %></td>
-        <td><%= reestrotgruzok.sendtobuh %></td>
-        <td><%= link_to 'Show', reestrotgruzok %></td>
-        <td><%= link_to 'Edit', edit_reestrotgruzok_path(reestrotgruzok) %></td>
+        <td><%= reestrotgruzok.kontragent!="" ? reestrotgruzok.kontragent : f1.text_field("kontragent") %></td>
+        <td><%= reestrotgruzok.numbill!="" ? reestrotgruzok.numbill : f1.text_field("numbill") %></td>
+        <td><%= reestrotgruzok.numotgruzdoc!="" ? reestrotgruzok.numotgruzdoc : f1.text_field("numotgruzdoc") %></td>
+        <td><%= reestrotgruzok.sendtoclient!=nil ? reestrotgruzok.sendtoclient : f1.date_field("sendtoclient") %></td>
+        <td><%= reestrotgruzok.resievedate!=nil ? reestrotgruzok.resievedate : f1.date_field("resievedate") %></td>
+        <td><%= reestrotgruzok.sendtobuh!=nil ? reestrotgruzok.sendtobuh : f1.date_field("sendtobuh") %></td>
+        <td><%= f1.submit %></td>
+        <% if user_signed_in? && current_user.employee.admin %>
         <td><%= link_to 'Destroy', reestrotgruzok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
+      <% end %>
     <% end %>
     <tr>
       <%= form_for(Reestrotgruzok.new) do |f| %>
@@ -87,5 +90,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Reestrotgruzok', new_reestrotgruzok_path %>
