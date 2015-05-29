@@ -22,6 +22,8 @@
     <div style="display:inline-block;"><%= button_to "Сотрудники", :employees, method: 'get' %></div>
     <% if user_signed_in? && current_user.employee.admin %>
       <div style="display:inline-block;"><%= button_to "Дистрибьюторы", :distributors, method: 'get' %></div>
+    <% end %>
+    <% if user_signed_in? && current_user.employee.reestrright %>
       <div style="display:inline-block;"><%= button_to "Реестр отгрузочных док", :reestrotgruzoks, method: 'get' %></div>
       <div style="display:inline-block;"><%= button_to "Реестр приходных док", :reestrprihodovs, method: 'get' %></div>
     <% end %>
