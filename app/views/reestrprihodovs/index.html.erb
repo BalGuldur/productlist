@@ -3,31 +3,69 @@
 <table>
   <thead>
     <tr>
-      <th>Kontragent</th>
-      <th>Numbill</th>
-      <th>Numprihoddoc</th>
-      <th>Prihoddate</th>
-      <th>Sendwithpech</th>
-      <th>Givetoruk</th>
-      <th>Givetobuh</th>
+      <th>Контрагент</th>
+      <th>№ счета</th>
+      <th>№ приходных документов</th>
+      <th>Дата прихода</th>
+      <th>Дата отправки с печатью</th>
+      <th>Дата передачи рук.</th>
+      <th>Дата отправки бухгалтеру</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @reestrprihodovs.each do |reestrprihodov| %>
-      <tr>
-        <td><%= reestrprihodov.kontragent %></td>
-        <td><%= reestrprihodov.numbill %></td>
-        <td><%= reestrprihodov.numprihoddoc %></td>
-        <td><%= reestrprihodov.prihoddate %></td>
-        <td><%= reestrprihodov.sendwithpech %></td>
-        <td><%= reestrprihodov.givetoruk %></td>
-        <td><%= reestrprihodov.givetobuh %></td>
-        <td><%= link_to 'Show', reestrprihodov %></td>
-        <td><%= link_to 'Edit', edit_reestrprihodov_path(reestrprihodov) %></td>
-        <td><%= link_to 'Destroy', reestrprihodov, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% @reestrprihodovs.each do |repri| %>
+      <%= form_for(repri) do |f1| %>
+        <tr>
+          <td><%= repri.kontragent!="" ? repri.kontragent : f1.text_field("kontragent") %></td>
+          <td><%= repri.numbill!="" ? repri.numbill : f1.text_field("numbill") %></td>
+          <td><%= repri.numprihoddoc!="" ? repri.numprihoddoc : f1.text_field("numprihoddoc") %></td>
+          <td><%= repri.prihoddate!=nil ? repri.prihoddate : f1.date_field("prihoddate") %></td>
+          <td><%= repri.sendwithpech!=nil ? repri.sendwithpech : f1.date_field("sendwithpech") %></td>
+          <td><%= repri.givetoruk!=nil ? repri.givetoruk : f1.date_field("givetoruk") %></td>
+          <td><%= repri.givetobuh!=nil ? repri.givetobuh : f1.date_field("givetobuh") %></td>
+          <td><%= f1.submit %></td>
+          <% if user_signed_in? && current_user.employee.admin %>
+            <td><%= link_to 'Destroy', repri, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        <% end %>
       </tr>
+    <% end %>
+    <%= form_for(Reestrprihodov.new) do |f| %>
+      <tr><td>
+        <div class="field">
+          <%= f.text_field :kontragent %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.text_field :numbill %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.text_field :numprihoddoc %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.date_field :prihoddate %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.date_field :sendwithpech %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.date_field :givetoruk %>
+        </div>
+      </td><td>
+        <div class="field">
+          <%= f.date_field :givetobuh %>
+        </div>
+      </td><td>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </td></tr>
     <% end %>
   </tbody>
 </table>

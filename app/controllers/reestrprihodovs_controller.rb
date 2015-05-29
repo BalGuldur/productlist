@@ -23,12 +23,14 @@ class ReestrprihodovsController < ApplicationController
   def create
     @reestrprihodov = Reestrprihodov.new(reestrprihodov_params)
     @reestrprihodov.save
-    respond_with(@reestrprihodov)
+    redirect_to :reestrprihodovs
+    #respond_with(@reestrprihodov)
   end
 
   def update
     @reestrprihodov.update(reestrprihodov_params)
-    respond_with(@reestrprihodov)
+    redirect_to :reestrprihodovs
+    #respond_with(@reestrprihodov)
   end
 
   def destroy
