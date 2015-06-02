@@ -6,6 +6,7 @@
       <th>Контрагент</th>
       <th>№ счета</th>
       <th>№ приходных документов</th>
+      <th>№ счет-фактуры</th>
       <th>Дата прихода</th>
       <th>Дата отправки с печатью</th>
       <th>Дата передачи рук.</th>
@@ -21,7 +22,7 @@
           <td><%= repri.kontragent!="" ? repri.kontragent : f1.text_field("kontragent") %></td>
           <td><%= repri.numbill!="" ? repri.numbill : f1.text_field("numbill") %></td>
           <td><%= repri.numprihoddoc!="" ? repri.numprihoddoc : f1.text_field("numprihoddoc") %></td>
-          <td><%= repri.numsfaktur!="" ? repri.numsfaktur : f1.text_field("numsfaktur") %></td>
+          <td><%= repri.numsfaktur!="" && repri.numsfaktur!=nil ? repri.numsfaktur : f1.text_field("numsfaktur") %></td>
           <td><%= repri.prihoddate!=nil ? repri.prihoddate : f1.date_field("prihoddate") %></td>
           <td><%= repri.sendwithpech!=nil ? repri.sendwithpech : f1.date_field("sendwithpech") %></td>
           <td><%= repri.givetoruk!=nil ? repri.givetoruk : f1.date_field("givetoruk") %></td>

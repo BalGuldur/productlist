@@ -6,6 +6,7 @@
       <th>Контрагент</th>
       <th>№ счета</th>
       <th>№ отгрузочных док</th>
+      <th>№ счет-фактуры</th>
       <th>Дата отправки клиенту</th>
       <th>Дата получения от клиента</th>
       <th>Дата отправки бухгалтеру</th>
@@ -14,19 +15,19 @@
   </thead>
 
   <tbody>
-    <% @reestrotgruzoks.each do |reestrotgruzok| %>
-      <%= form_for(reestrotgruzok) do |f1| %>
+    <% @reestrotgruzoks.each do |reotgr| %>
+      <%= form_for(reotgr) do |f1| %>
       <tr>
-        <td><%= reestrotgruzok.kontragent!="" ? reestrotgruzok.kontragent : f1.text_field("kontragent") %></td>
-        <td><%= reestrotgruzok.numbill!="" ? reestrotgruzok.numbill : f1.text_field("numbill") %></td>
-        <td><%= reestrotgruzok.numotgruzdoc!="" ? reestrotgruzok.numotgruzdoc : f1.text_field("numotgruzdoc") %></td>
-        <td><%= reestrotgruzok.numsfaktur!="" ? reestrotgruzok.numsfaktur : f1.text_field("numsfaktur") %></td>
-        <td><%= reestrotgruzok.sendtoclient!=nil ? reestrotgruzok.sendtoclient : f1.date_field("sendtoclient") %></td>
-        <td><%= reestrotgruzok.resievedate!=nil ? reestrotgruzok.resievedate : f1.date_field("resievedate") %></td>
-        <td><%= reestrotgruzok.sendtobuh!=nil ? reestrotgruzok.sendtobuh : f1.date_field("sendtobuh") %></td>
+        <td><%= reotgr.kontragent!="" ? reotgr.kontragent : f1.text_field("kontragent") %></td>
+        <td><%= reotgr.numbill!="" ? reotgr.numbill : f1.text_field("numbill") %></td>
+        <td><%= reotgr.numotgruzdoc!="" ? reotgr.numotgruzdoc : f1.text_field("numotgruzdoc") %></td>
+        <td><%= reotgr.numsfaktur!="" && reotgr.numsfaktur!=nil ? reotgr.numsfaktur : f1.text_field("numsfaktur") %></td>
+        <td><%= reotgr.sendtoclient!=nil ? reotgr.sendtoclient : f1.date_field("sendtoclient") %></td>
+        <td><%= reotgr.resievedate!=nil ? reotgr.resievedate : f1.date_field("resievedate") %></td>
+        <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
         <td><%= f1.submit %></td>
         <% if user_signed_in? && current_user.employee.admin %>
-        <td><%= link_to 'Destroy', reestrotgruzok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', reotgr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
       <% end %>
@@ -64,7 +65,7 @@
         </td>
         <td>
           <div class="field">
-            <%= f.text_field :numsfaktur %>
+            <br><%= f.text_field :numsfaktur %>
           </div>
         </td>
         <td>
