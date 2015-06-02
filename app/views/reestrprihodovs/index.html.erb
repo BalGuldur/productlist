@@ -21,6 +21,7 @@
           <td><%= repri.kontragent!="" ? repri.kontragent : f1.text_field("kontragent") %></td>
           <td><%= repri.numbill!="" ? repri.numbill : f1.text_field("numbill") %></td>
           <td><%= repri.numprihoddoc!="" ? repri.numprihoddoc : f1.text_field("numprihoddoc") %></td>
+          <td><%= repri.numsfaktur!="" ? repri.numsfaktur : f1.text_field("numsfaktur") %></td>
           <td><%= repri.prihoddate!=nil ? repri.prihoddate : f1.date_field("prihoddate") %></td>
           <td><%= repri.sendwithpech!=nil ? repri.sendwithpech : f1.date_field("sendwithpech") %></td>
           <td><%= repri.givetoruk!=nil ? repri.givetoruk : f1.date_field("givetoruk") %></td>
@@ -45,7 +46,11 @@
         <div class="field">
           <%= f.text_field :numprihoddoc %>
         </div>
-      </td><td>
+      </td>
+      <td>
+        <div class="field"><%= f.text_field :numsfaktur %></div>
+      </td>
+      <td>
         <div class="field">
           <%= f.date_field :prihoddate %>
         </div>

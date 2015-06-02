@@ -44,6 +44,6 @@ class ReestrotgruzoksController < ApplicationController
     end
 
     def reestrotgruzok_params
-      params.require(:reestrotgruzok).permit(:kontragent, :numbill, :numotgruzdoc, :sendtoclient, :resievedate, :sendtobuh)
+      params.require(:reestrotgruzok).permit(:kontragent, :numbill, :numotgruzdoc, :sendtoclient, :resievedate, :sendtobuh, :numsfaktur)
     end
 end

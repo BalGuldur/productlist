@@ -20,6 +20,7 @@
         <td><%= reestrotgruzok.kontragent!="" ? reestrotgruzok.kontragent : f1.text_field("kontragent") %></td>
         <td><%= reestrotgruzok.numbill!="" ? reestrotgruzok.numbill : f1.text_field("numbill") %></td>
         <td><%= reestrotgruzok.numotgruzdoc!="" ? reestrotgruzok.numotgruzdoc : f1.text_field("numotgruzdoc") %></td>
+        <td><%= reestrotgruzok.numsfaktur!="" ? reestrotgruzok.numsfaktur : f1.text_field("numsfaktur") %></td>
         <td><%= reestrotgruzok.sendtoclient!=nil ? reestrotgruzok.sendtoclient : f1.date_field("sendtoclient") %></td>
         <td><%= reestrotgruzok.resievedate!=nil ? reestrotgruzok.resievedate : f1.date_field("resievedate") %></td>
         <td><%= reestrotgruzok.sendtobuh!=nil ? reestrotgruzok.sendtobuh : f1.date_field("sendtobuh") %></td>
@@ -59,6 +60,11 @@
           <div class="field">
             <%# f.label :numotgruzdoc %><br>
             <%= f.text_field :numotgruzdoc %>
+          </div>
+        </td>
+        <td>
+          <div class="field">
+            <%= f.text_field :numsfaktur %>
           </div>
         </td>
         <td>

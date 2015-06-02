@@ -44,6 +44,6 @@ class ReestrprihodovsController < ApplicationController
     end
 
     def reestrprihodov_params
-      params.require(:reestrprihodov).permit(:kontragent, :numbill, :numprihoddoc, :prihoddate, :sendwithpech, :givetoruk, :givetobuh)
+      params.require(:reestrprihodov).permit(:kontragent, :numbill, :numprihoddoc, :prihoddate, :sendwithpech, :givetoruk, :givetobuh, :numsfaktur)
     end
 end
