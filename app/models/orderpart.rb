@@ -74,14 +74,16 @@ class Orderpart < ActiveRecord::Base
 
   def rashod
     @rashod=0
-    if self.convertion!=nil && self.convertion!=0
-      @rashod=self.rezpriceinru+self.rezpriceinru*(self.convertion/100)
-    else
-      @rashod=self.rezpriceinru
+    if self.qty!=nil && self.qty!=0
+      if self.convertion!=nil && self.convertion!=0
+        @rashod=self.rezpriceinru+self.rezpriceinru*(self.convertion/100)
+      else
+        @rashod=self.rezpriceinru
+      end
+      self.qty!=nil ? @rashod=@rashod*self.qty : ""
+      self.shipprice!=nil ? @rashod+=self.shipprice*self.qty : ""
+      self.beznal!=nil ? @rashod+=self.beznal : @rashod
     end
-    self.qty!=nil ? @rashod=@rashod*self.qty : ""
-    self.shipprice!=nil ? @rashod+=self.shipprice*self.qty : ""
-    self.beznal!=nil ? @rashod+=self.beznal : @rashod
     @rashod
   end
 end
