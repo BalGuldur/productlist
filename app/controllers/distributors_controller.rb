@@ -4,7 +4,7 @@ class DistributorsController < ApplicationController
   respond_to :html
 
   def index
-    @distributors = Distributor.all
+    @distributors = Distributor.order(:name)
     respond_with(@distributors)
   end
 
