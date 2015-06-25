@@ -23,6 +23,17 @@ class OrdersController < ApplicationController
     @order.checkstate
   end
 
+  def priemall
+    @order=Order.find(params[:id])
+    @orderparts=@order.orderparts
+    @orderparts.each do |orderpart|
+      orderpart.doner = current_user.employee
+      orderpart.panswtime_id = params[:panswtimeid]
+      orderpart.save
+    end
+    redirect_to edit_order_path(@order)
+  end
+
   # POST /orders
   # POST /orders.json
   def create

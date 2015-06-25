@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :ourtimes
 
   resources :orders do
+    member do
+      get 'priemall'
+    end
     resources :orderparts do
       member do
         get 'otkaz'

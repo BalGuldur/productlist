@@ -4,6 +4,12 @@
 
 <%= render 'form' %>
 
+<%= form_tag(priemall_order_path(@order), method: "get") do %>
+  <%= label_tag "срок ответа" %>
+  <%= select_tag :panswtimeid, options_from_collection_for_select(Ourtime.where(answ: true), "id", "name") %>
+  <%= submit_tag "Принять все" %>
+<% end %>
+
 <h2>Список входящих в заявку товаров</h2>
 <table>
   <tr>
