@@ -34,8 +34,8 @@
     <% @orders.each do |order| %>
       <tr bgcolor="<%= order.orderstate==nil ? "" : order.orderstate.color %>">
         <td><%= order.numbill %></td>
-        <td><%= order.created_at.strftime('%v') %></td>
-        <td><%= order.timeanswer %></td>
+        <td><%= order.created_at.strftime('%T %v') %></td>
+        <td><%= order.timeanswer.strftime('%T %v') %></td>
         <td><%= order.manager==nil ? "" : order.manager.fio %></td>
         <td><%= order.doner==nil ? "" : order.doner.fio %></td>
         <td><%= order.orderstate==nil ? "" : order.orderstate.state %></td>

@@ -1,5 +1,6 @@
 <h1>Изменить данные заявки</h1>
 <% @wfirstcol="width:30px" %>
+<% @wcol="width:50px" %>
 
 <%= render 'form' %>
 
@@ -9,7 +10,7 @@
     <th style=<%= @wfirstcol %>>ID</th>
     <th>Партномер</th>
     <th>Описание</th>
-    <th>Кол-во</th>
+    <th style=<%= @wcol %>>Кол-во</th>
     <th>Пред цен прод (руб)</th>
     <th>Поставщик</th>
     <th>Цена резерва (р)</th>
@@ -24,7 +25,7 @@
       <th style=<%= @wfirstcol %>><%= orderpart.id %></th>
       <th><%= orderpart.partnum %></th>
       <th><%= orderpart.descr %></th>
-      <th><%= orderpart.qty %></th>
+      <th style=<%= @wcol %>><%= orderpart.qty %></th>
       <th><%= orderpart.psaleprice %></th>
       <th><%= orderpart.distributor==nil ? "" : orderpart.distributor.name %></th>
       <th><%= orderpart.rezpriceinru %></th>
@@ -54,7 +55,7 @@
       <td style=<%= @wfirstcol %>></td>
       <td><%= f.text_field :partnum %></td>
       <td><%= f.text_field :descr %></td>
-      <td><%= f.number_field :qty %></td>
+      <td style=<%= @wcol %>><%= f.number_field :qty, :style => @wcol %></td>
       <td><%= f.number_field :psaleprice %></td>
       <td><%= f.collection_select :distributor_id, Distributor.order('name ASC').all, :id, :name, include_blank: true %></td>
       <td></td>
