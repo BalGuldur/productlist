@@ -4,7 +4,15 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    current_user!=nil ? usr=current_user.employee : ""
+    if usr==nil
+      @orders = Order.where(id: "1")
+    elsif usr.department.viewallord
+      @orders = Order.all
+    else
+      @orders = Order.where(manager_id: usr.id)
+    end
+#    @orders = Order.all
   end
 
   # GET /orders/1
