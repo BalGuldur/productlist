@@ -42,6 +42,14 @@
             <td bgcolor="<%= @order.pmargincolor %>"><div %><%= @order.pmargin %></div></td>
             <td><%= @order.orderstate!=nil ? @order.orderstate.state : "" %></td>
           </tr>
+          <tr>
+            <th>Дата созд</th>
+            <th>Время ответа</th>
+          </tr>
+          <tr>
+            <td><%= @order.created_at.strftime('%T %v') %></td>
+            <td><%= @order.timeanswer.strftime('%T %v') %></td>
+          </tr>
         </tbody>
       </table>
     </td>

@@ -16,8 +16,10 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>№ счета</th>
       <th>Дата созд</th>
+      <th>Время ответа</th>
       <th>Менеджер</th>
       <th>Ответ. закупщик</th>
       <th>Статус</th>
@@ -32,8 +34,10 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr bgcolor="<%= order.orderstate==nil ? "" : order.orderstate.color %>">
+        <td><%= order.id %></td>
         <td><%= order.numbill %></td>
         <td><%= order.created_at.strftime('%v') %></td>
+        <td><%= order.timeanswer.strftime('%T %v') %></td>
         <td><%= order.manager==nil ? "" : order.manager.fio %></td>
         <td><%= order.doner==nil ? "" : order.doner.fio %></td>
         <td><%= order.orderstate==nil ? "" : order.orderstate.state %></td>

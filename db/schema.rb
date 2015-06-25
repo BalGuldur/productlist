@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150625190557) do
   create_table "colors", force: true do |t|
     t.string   "name"
     t.string   "hex"
+    t.string   "if"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

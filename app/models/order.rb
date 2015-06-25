@@ -70,4 +70,9 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def timeanswer
+    #переделать на разницу с последним ответом в orderparts
+    self.updated_at
+  end
+
 end

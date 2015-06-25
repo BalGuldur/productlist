@@ -19,31 +19,40 @@
       <%#= f.label :Статус %><br>
       <%#= f.collection_select :state_id, Orderstate.all, :id, :fio %>
     </th>
-    <th>
+      <th bgcolor="<%= Color.attcheck(@orderpart.panswtime) %>">
       Предв время ответа<br>
       <%= f.collection_select :panswtime_id, Ourtime.where(:answ => true), :id, :name, include_blank: true %>
     </th>
   </tr>
   <tr>
-    <th><%= f.label "Поставщик" %><br><%= f.collection_select :distributor_id, Distributor.order(:name), :id, :name %></th>
-    <th>Цена резерва|Вал|Конвертация<br><%= f.number_field :rezprice %>|<%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|<%= f.number_field :convertion, step: 0.1 %>%</th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.distributor) %>">
+      <%= f.label "Поставщик" %><br><%= f.collection_select :distributor_id, Distributor.order(:name), :id, :name %>
+    </th>
     <th>
+      <span style="background-color: #<%= Color.attcheck(@orderpart.rezprice) %>">Цена резерва</span>|
+      <span style="background-color: #<%= Color.attcheck(@orderpart.rezpricetype) %>">Вал</span>|
+      <span style="background-color: #<%= Color.attcheck(@orderpart.convertion) %>">Конвертация</span><br>
+      <%= f.number_field :rezprice %>|
+      <%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|
+      <%= f.number_field :convertion, step: 0.1 %>%
+    </th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.reztime) %>">
       Срок резерва<br>
       <%= f.date_field :reztime %>
     </th>
-    <th>Безнал<br><%= f.number_field :beznal %>%</th>
-    <th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.beznal) %>">Безнал<br><%= f.number_field :beznal %>%</th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.nds) %>">
       НДС<br>
       <%= f.select :nds, options_for_select([['',nil],['18%',18],['10%',10],['без НДС',0]],@orderpart.nds)  %>
     </th>
   </tr>
   <tr>
-    <th>Цена доставки<br><%= f.number_field :shipprice %></th>
-    <th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.shipprice) %>">Цена доставки<br><%= f.number_field :shipprice %></th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.pshiptime) %>">
       Срок доставки<br>
       <%= f.collection_select :pshiptime_id, Ourtime.where(ship: true), :id, :name, include_blank: true %>
     </th>
-    <th>Номер поставщика<br><%= f.text_field :idorddistrib %></th>
+    <th bgcolor="<%= Color.attcheck(@orderpart.idorddistrib) %>">Номер поставщика<br><%= f.text_field :idorddistrib %></th>
   </tr>
   <tr>
     <th></th>
