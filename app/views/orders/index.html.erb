@@ -16,6 +16,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>№ счета</th>
       <th>Дата созд</th>
       <th>Время ответа</th>
@@ -33,6 +34,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr bgcolor="<%= order.orderstate==nil ? "" : order.orderstate.color %>">
+        <td><%= order.id %></td>
         <td><%= order.numbill %></td>
         <td><%= order.created_at.strftime('%T %v') %></td>
         <td><%= order.timeanswer.strftime('%T %v') %></td>
