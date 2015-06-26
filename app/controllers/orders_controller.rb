@@ -38,8 +38,10 @@ class OrdersController < ApplicationController
         @orderpart.distributor = Distributor.find_by(name: linehash[4])
         @orderpart.order = @order
         @orderpart.save
+        @orderpart.checkstate
       end
       @order.save
+      @order.checkstate
     end
     redirect_to edit_order_path(@order)
   end
