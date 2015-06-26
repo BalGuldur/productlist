@@ -20,6 +20,30 @@ class OrdersController < ApplicationController
   def show
   end
 
+  def uploadfromexcel
+    @order=Order.find(params[:id])
+    upllink = params[:uplfile]
+    @file = upllink.tempfile
+    @file.each do |line|
+      line.encode!('UTF-8', invalid: :replace, undef: :replace, replace: '')
+      line.chomp!
+      linehash = line.split(';')
+      if linehash[0]!=nil && linehash[0]!=""
+        @orderpart = Orderpart.new
+        @orderpart.state = Orderstate.find_by(state: "Передано в ОЗ")
+        @orderpart.partnum = linehash[0]
+        @orderpart.descr = linehash[1]
+        @orderpart.qty = linehash[2]
+        @orderpart.psaleprice = linehash[3]
+        @orderpart.distributor = Distributor.find_by(name: linehash[4])
+        @orderpart.order = @order
+        @orderpart.save
+      end
+      @order.save
+    end
+    redirect_to edit_order_path(@order)
+  end
+
   # GET /orders/new
   def new
     @order = Order.new
