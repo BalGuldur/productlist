@@ -25,8 +25,8 @@
         <td><%= reotgr.sendtoclient!=nil ? reotgr.sendtoclient : f1.date_field("sendtoclient") %></td>
         <td><%= reotgr.resievedate!=nil ? reotgr.resievedate : f1.date_field("resievedate") %></td>
         <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
-        <td><%= link_to 'file', reotgr.reestrfile_url if reeotgr.reestrfile? %></td>
-        <td><%= reotgr.file_field :reestrfile %></td>
+        <td><%= link_to 'file', reotgr.reestrfile_url if reotgr.reestrfile? %></td>
+        <td><%= f1.file_field :reestrfile %></td>
         <td><%= f1.submit %></td>
         <% if user_signed_in? && current_user.employee.admin %>
         <td><%= link_to 'Destroy', reotgr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
