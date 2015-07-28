@@ -10,7 +10,7 @@
       <th>Дата отправки клиенту</th>
       <th>Дата получения от клиента</th>
       <th>Дата отправки бухгалтеру</th>
-      <th colspan="3"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -26,6 +26,8 @@
         <td><%= reotgr.resievedate!=nil ? reotgr.resievedate : f1.date_field("resievedate") %></td>
         <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
         <td><%= f1.submit %></td>
+        <td><%= link_to 'file', reotgr.reestrfile_url if reeotgr.reestrfile? %></td>
+        <td><%= reotgr.file_field :reestrfile %></td>
         <% if user_signed_in? && current_user.employee.admin %>
         <td><%= link_to 'Destroy', reotgr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

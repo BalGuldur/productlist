@@ -7,6 +7,7 @@ gem 'nokogiri'
 gem 'xml-simple'
 gem 'whenever', require: false
 gem 'devise'
+gem 'carrierwave'
 #
 # Полнотекстовый поиск (ferret как)
 # parse xls
