@@ -17,6 +17,7 @@
 /bak/*
 /bak/PriceLists/*.*
 /bak/log/*.*
+/public/uploads/*
 
 # Ignore prices from distributors
 /PriceLists
