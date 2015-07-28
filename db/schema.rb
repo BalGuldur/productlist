@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728165933) do
+ActiveRecord::Schema.define(version: 20150728200613) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150728165933) do
     t.integer  "doner_id"
     t.integer  "state_id"
     t.integer  "panswtime_id"
-    t.integer  "rezprice"
+    t.float    "rezprice",        limit: 24
     t.integer  "rezpricetype_id"
     t.integer  "nds"
     t.integer  "beznal"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20150728165933) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "purchaser"
+    t.boolean  "arhive"
   end
 
   create_table "orderstates", force: true do |t|

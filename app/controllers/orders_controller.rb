@@ -8,9 +8,10 @@ class OrdersController < ApplicationController
     if usr==nil
       @orders = Order.where(id: "1")
     elsif usr.department.viewallord
-      @orders = Order.all
+      @orders = Order.where.not(arhive: true) + Order.where(arhive: nil)
     else
       @orders = Order.where(manager_id: usr.id)
+      @orders = @orders.where.not(arhive: true) + @orders.where(arhive: nil)
     end
 #    @orders = Order.all
   end
@@ -18,6 +19,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+  end
+
+  def arhive
+    @order=Order.find(params[:id])
+    @order.arhive=true
+    @order.save
+    redirect_to orders_url
   end
 
   def uploadfromexcel
@@ -115,6 +123,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:numbill, :manager_id, :doner_id, :orderstate_id, :addrate, :sum, :pmargin, :comment)
+      params.require(:order).permit(:arhive, :numbill, :manager_id, :doner_id, :orderstate_id, :addrate, :sum, :pmargin, :comment)
     end
 end

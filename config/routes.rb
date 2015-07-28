@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       get 'priemall'
       post 'uploadfromexcel'
+      get 'arhive'
     end
     resources :orderparts do
       member do
