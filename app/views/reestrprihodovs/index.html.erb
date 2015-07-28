@@ -27,6 +27,8 @@
           <td><%= repri.sendwithpech!=nil ? repri.sendwithpech : f1.date_field("sendwithpech") %></td>
           <td><%= repri.givetoruk!=nil ? repri.givetoruk : f1.date_field("givetoruk") %></td>
           <td><%= repri.givetobuh!=nil ? repri.givetobuh : f1.date_field("givetobuh") %></td>
+          <td><%= link_to "file", repri.reestrfile_url if repri.reestrfile? %></td>
+          <td><%= repri.file_field :reestrfile %></td>
           <td><%= f1.submit %></td>
           <% if user_signed_in? && current_user.employee.admin %>
             <td><%= link_to 'Destroy', repri, method: :delete, data: { confirm: 'Are you sure?' } %></td>
