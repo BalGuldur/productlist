@@ -48,4 +48,6 @@ class ReestrfileUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  CarrierWave::SanitizedFile.sanitize_regexp = /[^a-zA-Zа-яА-ЯёЁ0-9\.\_\-\+\s\:^]/
+
 end
