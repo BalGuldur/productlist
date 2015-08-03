@@ -10,7 +10,11 @@
       <th>Дата отправки клиенту</th>
       <th>Дата получения от клиента</th>
       <th>Дата отправки бухгалтеру</th>
-      <th colspan="5"></th>
+      <th>Счет</th>
+      <th>СчетФактура</th>
+      <th>Накл без печ</th>
+      <th>Накл с печ</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -25,8 +29,22 @@
         <td><%= reotgr.sendtoclient!=nil ? reotgr.sendtoclient : f1.date_field("sendtoclient") %></td>
         <td><%= reotgr.resievedate!=nil ? reotgr.resievedate : f1.date_field("resievedate") %></td>
         <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
-        <td><%= link_to 'file', reotgr.reestrfile_url if reotgr.reestrfile? %></td>
-        <td><%= f1.file_field :reestrfile %></td>
+        <td>
+          <%= link_to 'schet', reotgr.scrschet_url if reotgr.scrschet? %>
+          <%= f1.file_field :scrschet %>
+        </td>
+        <td>
+          <%= link_to 'schetfaktura', reotgr.scrschetfaktura_url if reotgr.scrschetfaktura? %>
+          <%= f1.file_field :scrschetfaktura %>
+        </td>
+        <td>
+          <%= link_to 'nakladnaia', reotgr.scrnakladnaia_url if reotgr.scrnakladnaia? %>
+          <%= f1.file_field :scrnakladnaia %>
+        </td>
+        <td>
+          <%= link_to 'nakladnaia with shtamp', reotgr.scrnakladnaiawshtamp_url if reotgr.scrnakladnaiawshtamp? %>
+          <%= f1.file_field :scrnakladnaiawshtamp %>
+        </td>
         <td><%= f1.submit %></td>
         <% if user_signed_in? && current_user.employee.admin %>
         <td><%= link_to 'Destroy', reotgr, method: :delete, data: { confirm: 'Are you sure?' } %></td>

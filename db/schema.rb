@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728200613) do
+ActiveRecord::Schema.define(version: 20150729200006) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
@@ -156,7 +156,10 @@ ActiveRecord::Schema.define(version: 20150728200613) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "numsfaktur"
-    t.string   "reestrfile"
+    t.string   "scrschet"
+    t.string   "scrschetfaktura"
+    t.string   "scrnakladnaia"
+    t.string   "scrnakladnaiawshtamp"
   end
 
   create_table "reestrprihodovs", force: true do |t|
@@ -170,7 +173,10 @@ ActiveRecord::Schema.define(version: 20150728200613) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "numsfaktur"
-    t.string   "reestrfile"
+    t.string   "scrschet"
+    t.string   "scrschetfaktura"
+    t.string   "scrnakladnaia"
+    t.string   "scrnakladnaiawshtamp"
   end
 
   create_table "users", force: true do |t|

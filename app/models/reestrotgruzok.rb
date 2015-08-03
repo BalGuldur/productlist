@@ -1,3 +1,6 @@
 class Reestrotgruzok < ActiveRecord::Base
-  mount_uploader :reestrfile, ReestrfileUploader
+  mount_uploader :scrschet, ReestrfileUploader
+  mount_uploader :scrschetfaktura, ReestrfileUploader
+  mount_uploader :scrnakladnaia, ReestrfileUploader
+  mount_uploader :scrnakladnaiawshtamp, ReestrfileUploader
 end
