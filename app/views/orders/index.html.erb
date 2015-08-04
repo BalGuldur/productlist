@@ -49,7 +49,7 @@
         <% if user_signed_in? %>
           <td><%= link_to 'Изменить', edit_order_path(order) %></td>
         <% end %>
-        <% if user_singed_in? && current_user.employee.department.purchaseright==true %>
+        <% if user_signed_in? && current_user.employee.department.purchaseright==true %>
           <td><%= link_to 'Архивировать', arhive_order_path(order) %></td>
         <% end %>
         <% if user_signed_in? && current_user.employee.admin==true %>
