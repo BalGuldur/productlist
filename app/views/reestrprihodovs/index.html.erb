@@ -27,8 +27,25 @@
           <td><%= repri.sendwithpech!=nil ? repri.sendwithpech : f1.date_field("sendwithpech") %></td>
           <td><%= repri.givetoruk!=nil ? repri.givetoruk : f1.date_field("givetoruk") %></td>
           <td><%= repri.givetobuh!=nil ? repri.givetobuh : f1.date_field("givetobuh") %></td>
-          <td><%= link_to "file", repri.reestrfile_url if repri.reestrfile? %></td>
-          <td><%= f1.file_field :reestrfile %></td>
+          </tr><tr>
+          <td></td><td></td>
+          <td>
+            <%= repri.scrschet? ? link_to('Счет', repri.scrschet_url) : 'Счет' %><br>
+            <%= f1.file_field :scrschet %>
+          </td>
+          <td>
+            <%= repri.scrschetfaktura? ? link_to('Счетфактура', repri.scrschetfaktura_url) : 'Счетфактура'%><br>
+            <%= f1.file_field :scrschetfaktura %>
+          </td>
+          <td>
+            <%= repri.scrnakladnaia? ? link_to('Накладная', repri.scrnakladnaia_url) : 'Накладная' %><br>
+            <%= f1.file_field :scrnakladnaia %>
+          </td>
+          <td>
+            <%= repri.scrnakladnaiawshtamp? ? link_to('nakladnaia with shtamp', repri.scrnakladnaiawshtamp_url) : 'Наклад с печ'%><br>
+            <%= f1.file_field :scrnakladnaiawshtamp %>
+          </td>
+          <td></td><td></td>
           <td><%= f1.submit %></td>
           <% if user_signed_in? && current_user.employee.admin %>
             <td><%= link_to 'Destroy', repri, method: :delete, data: { confirm: 'Are you sure?' } %></td>

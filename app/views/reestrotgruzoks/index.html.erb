@@ -10,10 +10,6 @@
       <th>Дата отправки клиенту</th>
       <th>Дата получения от клиента</th>
       <th>Дата отправки бухгалтеру</th>
-      <th>Счет</th>
-      <th>СчетФактура</th>
-      <th>Накл без печ</th>
-      <th>Накл с печ</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -29,22 +25,25 @@
         <td><%= reotgr.sendtoclient!=nil ? reotgr.sendtoclient : f1.date_field("sendtoclient") %></td>
         <td><%= reotgr.resievedate!=nil ? reotgr.resievedate : f1.date_field("resievedate") %></td>
         <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
+      </tr><tr>
+        <td></td><td></td>
         <td>
-          <%= link_to 'schet', reotgr.scrschet_url if reotgr.scrschet? %>
+          <%= reotgr.scrschet? ? link_to('Счет', reotgr.scrschet_url) : "Счет" %><br>
           <%= f1.file_field :scrschet %>
         </td>
         <td>
-          <%= link_to 'schetfaktura', reotgr.scrschetfaktura_url if reotgr.scrschetfaktura? %>
+          <%= reotgr.scrschetfaktura? ? link_to('Счетфактура', reotgr.scrschetfaktura_url) : "Счетфактура" %><br>
           <%= f1.file_field :scrschetfaktura %>
         </td>
         <td>
-          <%= link_to 'nakladnaia', reotgr.scrnakladnaia_url if reotgr.scrnakladnaia? %>
+          <%= reotgr.scrnakladnaia? ? link_to('Накладная', reotgr.scrnakladnaia_url) : "Накладная" %><br>
           <%= f1.file_field :scrnakladnaia %>
         </td>
         <td>
-          <%= link_to 'nakladnaia with shtamp', reotgr.scrnakladnaiawshtamp_url if reotgr.scrnakladnaiawshtamp? %>
+          <%= reotgr.scrnakladnaiawshtamp? ? link_to('Наклад с печ', reotgr.scrnakladnaiawshtamp_url) : "Наклад с печ" %><br>
           <%= f1.file_field :scrnakladnaiawshtamp %>
         </td>
+        <td></td>
         <td><%= f1.submit %></td>
         <% if user_signed_in? && current_user.employee.admin %>
         <td><%= link_to 'Destroy', reotgr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
