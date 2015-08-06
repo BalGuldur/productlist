@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729200006) do
+ActiveRecord::Schema.define(version: 20150804203024) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
@@ -193,5 +193,20 @@ ActiveRecord::Schema.define(version: 20150729200006) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "zakupkas", force: true do |t|
+    t.string   "numbill"
+    t.integer  "manager_id"
+    t.integer  "doner_id"
+    t.integer  "zakupkastate_id"
+    t.integer  "addrate"
+    t.integer  "sum"
+    t.integer  "margin"
+    t.text     "comment"
+    t.string   "purchaser"
+    t.boolean  "arhive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   resources :ourtimes
 
+  resources :zakupkas do
+    resources :zakupkaparts do
+    end
+  end
+
   resources :orders do
     member do
       get 'priemall'

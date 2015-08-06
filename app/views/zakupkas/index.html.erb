@@ -1,0 +1,52 @@
+<h1>Заявки на закупку у поставщиков</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>№ счета</th>
+      <th>Дата созд</th>
+      <th>Время ответа</th>
+      <th>Менеджер</th>
+      <th>Ответ. закупщик</th>
+      <th>Статус</th>
+      <th>Доп. расход</th>
+      <th>Сумма зак.</th>
+      <th>Пред. маржа</th>
+      <th>Комментарии</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @zakupkas!=nil %>
+    <% @zakupkas.each do |zak| %>
+      <tr bgcolor="<%= zak.zakstate==nil ? "" : zak.zakstate.color %>">
+        <td><%= zak.id %></td>
+        <td><%= zak.numbill %></td>
+        <td><%= zak.created_at.strftime('%v') %></td>
+        <td><%= zak.timeanswer.strftime('%T %v') %></td>
+        <td><%= zak.manager==nil ? "" : zak.manager.fio %></td>
+        <td><%= zak.doner==nil ? "" : zak.doner.fio %></td>
+        <td><%= zak.zakstate==nil ? "" : zak.zakstate.state %></td>
+        <td><%= zak.addrate %></td>
+        <td><%= zak.sum %></td>
+        <td bgcolor="<%= zak.margincolor %>"><%= zak.pmargin %></td>
+        <td><%= zak.comment!=nil ? zak.comment[0..40] : "" %></td>
+        <td><%#= link_to 'Показать', zak %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Изменить', edit_zak_path(zak) %></td>
+        <% end %>
+        <% if user_signed_in? && current_user.employee.department.purchaserright==true %>
+          <td><%= link_to 'Архивировать', arhive_zak_path(zak) %></td>
+        <% end %>
+        <% if user_signed_in? && current_user.employee.admin==true %>
+          <td><%= link_to 'Удалить', zak, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
