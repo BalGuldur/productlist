@@ -1,0 +1,48 @@
+<h1>Заявки на резервирование (Архив)</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>№ счета</th>
+      <th>Дата созд</th>
+      <th>Время ответа</th>
+      <th>Менеджер</th>
+      <th>Ответ. закупщик</th>
+      <th>Статус</th>
+      <th>Доп. расход</th>
+      <th>Сумма зак.</th>
+      <th>Пред. маржа</th>
+      <th>Комментарии</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr bgcolor="<%= order.orderstate==nil ? "" : order.orderstate.color %>">
+        <td><%= order.id %></td>
+        <td><%= order.numbill %></td>
+        <td><%= order.created_at.strftime('%v') %></td>
+        <td><%= order.timeanswer.strftime('%T %v') %></td>
+        <td><%= order.manager==nil ? "" : order.manager.fio %></td>
+        <td><%= order.doner==nil ? "" : order.doner.fio %></td>
+        <td><%= order.orderstate==nil ? "" : order.orderstate.state %></td>
+        <td><%= order.addrate %></td>
+        <td><%= order.sum %></td>
+        <td bgcolor="<%= order.pmargincolor %>"><%= order.pmargin %></td>
+        <td><%= order.comment!=nil ? order.comment[0..40] : "" %></td>
+        <td><%#= link_to 'Показать', order %></td>
+        <% if user_signed_in? && current_user.employee.department.purchaserright==true %>
+          <td><%= link_to 'Восстановить', desarhive_order_path(order) %></td>
+        <% end %>
+        <% if user_signed_in? && current_user.employee.admin==true %>
+          <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

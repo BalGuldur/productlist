@@ -21,11 +21,22 @@ class OrdersController < ApplicationController
   def show
   end
 
+  def arhives
+    @orders=Order.where(arhive: true)
+  end
+
   def arhive
     @order=Order.find(params[:id])
     @order.arhive=true
     @order.save
     redirect_to orders_url
+  end
+
+  def desarhive
+    @order=Order.find(params[:id])
+    @order.arhive=nil
+    @order.save
+    redirect_to arhives_orders_url
   end
 
   def uploadfromexcel

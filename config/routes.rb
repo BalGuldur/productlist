@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       get 'priemall'
       post 'uploadfromexcel'
       get 'arhive'
+      get 'desarhive'
+    end
+    collection do
+      get 'arhives'
     end
     resources :orderparts do
       member do

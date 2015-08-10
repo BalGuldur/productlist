@@ -19,6 +19,9 @@
   <th>
     <div style="display:inline-block;"><%= button_to "Главная", :root, method: 'get' %></div>
     <div style="display:inline-block;"><%= button_to "Резервирование", :orders, method: 'get' %></div>
+    <% if user_signed_in? && (current_user.employee.department.purchaserright || current_user.employee.admin) %>
+      <div style="display:inline-block;"><%= button_to "Архив Резерв", arhives_orders_url, method: 'get' %></div>
+    <% end %>
     <div style="display:inline-block;"><%= button_to "Сотрудники", :employees, method: 'get' %></div>
     <% if user_signed_in? && current_user.employee.admin %>
       <div style="display:inline-block;"><%= button_to "Дистрибьюторы", :distributors, method: 'get' %></div>
