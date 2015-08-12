@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numbill:</strong>
+  <%= @zakupka.numbill %>
+</p>
+
+<p>
+  <strong>Manager:</strong>
+  <%= @zakupka.manager_id %>
+</p>
+
+<p>
+  <strong>Doner:</strong>
+  <%= @zakupka.doner_id %>
+</p>
+
+<p>
+  <strong>Zakupkastate:</strong>
+  <%= @zakupka.zakupkastate_id %>
+</p>
+
+<p>
+  <strong>Addrate:</strong>
+  <%= @zakupka.addrate %>
+</p>
+
+<p>
+  <strong>Sum:</strong>
+  <%= @zakupka.sum %>
+</p>
+
+<p>
+  <strong>Margin:</strong>
+  <%= @zakupka.margin %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @zakupka.comment %>
+</p>
+
+<p>
+  <strong>Arhive:</strong>
+  <%= @zakupka.arhive %>
+</p>
+
+<%= link_to 'Edit', edit_zakupka_path(@zakupka) %> |
+<%= link_to 'Back', zakupkas_path %>

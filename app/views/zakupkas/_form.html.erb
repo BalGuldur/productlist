@@ -1,0 +1,53 @@
+<%= form_for(@zakupka) do |f| %>
+  <% if @zakupka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zakupka.errors.count, "error") %> prohibited this zakupka from being saved:</h2>
+
+      <ul>
+      <% @zakupka.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numbill %><br>
+    <%= f.text_field :numbill %>
+  </div>
+  <div class="field">
+    <%= f.label :manager_id %><br>
+    <%= f.number_field :manager_id %>
+  </div>
+  <div class="field">
+    <%= f.label :doner_id %><br>
+    <%= f.number_field :doner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :zakupkastate_id %><br>
+    <%= f.number_field :zakupkastate_id %>
+  </div>
+  <div class="field">
+    <%= f.label :addrate %><br>
+    <%= f.number_field :addrate %>
+  </div>
+  <div class="field">
+    <%= f.label :sum %><br>
+    <%= f.number_field :sum %>
+  </div>
+  <div class="field">
+    <%= f.label :margin %><br>
+    <%= f.number_field :margin %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :arhive %><br>
+    <%= f.check_box :arhive %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

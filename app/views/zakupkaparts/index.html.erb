@@ -1,0 +1,59 @@
+<h1>Listing zakupkaparts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partnum</th>
+      <th>Descr</th>
+      <th>Qty</th>
+      <th>Psaleprice</th>
+      <th>Doner</th>
+      <th>State</th>
+      <th>Rezprice</th>
+      <th>Rezpricetype</th>
+      <th>Nds</th>
+      <th>Beznal</th>
+      <th>Pshiptime</th>
+      <th>Shipprice</th>
+      <th>Convertion</th>
+      <th>Pmargin</th>
+      <th>Comment</th>
+      <th>Order</th>
+      <th>Distributor</th>
+      <th>Idorddistrib</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zakupkaparts.each do |zakupkapart| %>
+      <tr>
+        <td><%= zakupkapart.partnum %></td>
+        <td><%= zakupkapart.descr %></td>
+        <td><%= zakupkapart.qty %></td>
+        <td><%= zakupkapart.psaleprice %></td>
+        <td><%= zakupkapart.doner_id %></td>
+        <td><%= zakupkapart.state_id %></td>
+        <td><%= zakupkapart.rezprice %></td>
+        <td><%= zakupkapart.rezpricetype_id %></td>
+        <td><%= zakupkapart.nds %></td>
+        <td><%= zakupkapart.beznal %></td>
+        <td><%= zakupkapart.pshiptime_id %></td>
+        <td><%= zakupkapart.shipprice %></td>
+        <td><%= zakupkapart.convertion %></td>
+        <td><%= zakupkapart.pmargin %></td>
+        <td><%= zakupkapart.comment %></td>
+        <td><%= zakupkapart.order_id %></td>
+        <td><%= zakupkapart.distributor_id %></td>
+        <td><%= zakupkapart.idorddistrib %></td>
+        <td><%= link_to 'Show', zakupkapart %></td>
+        <td><%= link_to 'Edit', edit_zakupkapart_path(zakupkapart) %></td>
+        <td><%= link_to 'Destroy', zakupkapart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zakupkapart', new_zakupkapart_path %>

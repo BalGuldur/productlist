@@ -1,0 +1,1 @@
+json.extract! @zakupkapart, :id, :partnum, :descr, :qty, :psaleprice, :doner_id, :state_id, :rezprice, :rezpricetype_id, :nds, :beznal, :pshiptime_id, :shipprice, :convertion, :pmargin, :comment, :order_id, :distributor_id, :idorddistrib, :created_at, :updated_at

@@ -1,0 +1,2 @@
+module ZakupkasHelper
+end

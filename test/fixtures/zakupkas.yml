@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numbill: MyString
+  manager_id: 1
+  doner_id: 1
+  zakupkastate_id: 1
+  addrate: 1
+  sum: 1
+  margin: 1
+  comment: 
+  arhive: false
+
+two:
+  numbill: MyString
+  manager_id: 1
+  doner_id: 1
+  zakupkastate_id: 1
+  addrate: 1
+  sum: 1
+  margin: 1
+  comment: 
+  arhive: false

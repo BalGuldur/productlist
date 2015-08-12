@@ -1,0 +1,41 @@
+<h1>Listing zakupkas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numbill</th>
+      <th>Manager</th>
+      <th>Doner</th>
+      <th>Zakupkastate</th>
+      <th>Addrate</th>
+      <th>Sum</th>
+      <th>Margin</th>
+      <th>Comment</th>
+      <th>Arhive</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zakupkas.each do |zakupka| %>
+      <tr>
+        <td><%= zakupka.numbill %></td>
+        <td><%= zakupka.manager_id %></td>
+        <td><%= zakupka.doner_id %></td>
+        <td><%= zakupka.zakupkastate_id %></td>
+        <td><%= zakupka.addrate %></td>
+        <td><%= zakupka.sum %></td>
+        <td><%= zakupka.margin %></td>
+        <td><%= zakupka.comment %></td>
+        <td><%= zakupka.arhive %></td>
+        <td><%= link_to 'Show', zakupka %></td>
+        <td><%= link_to 'Edit', edit_zakupka_path(zakupka) %></td>
+        <td><%= link_to 'Destroy', zakupka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zakupka', new_zakupka_path %>
