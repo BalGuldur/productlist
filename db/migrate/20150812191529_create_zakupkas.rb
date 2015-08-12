@@ -8,7 +8,7 @@ class CreateZakupkas < ActiveRecord::Migration
       t.integer :addrate
       t.integer :sum
       t.integer :margin
-      t.tex :comment
+      t.text :comment
       t.boolean :arhive
 
       t.timestamps

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :zakupkaparts
-
-  resources :zakupkas
+  resources :zakupkas do
+    resources :zakupkaparts do
+    end
+  end
 
   resources :colors
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729200006) do
+ActiveRecord::Schema.define(version: 20150812192103) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
@@ -193,5 +193,42 @@ ActiveRecord::Schema.define(version: 20150729200006) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "zakupkaparts", force: true do |t|
+    t.string   "partnum"
+    t.text     "descr"
+    t.integer  "qty"
+    t.integer  "psaleprice"
+    t.integer  "doner_id"
+    t.integer  "state_id"
+    t.float    "rezprice",        limit: 24
+    t.integer  "rezpricetype_id"
+    t.integer  "nds"
+    t.integer  "beznal"
+    t.integer  "pshiptime_id"
+    t.integer  "shipprice"
+    t.float    "convertion",      limit: 24
+    t.integer  "pmargin"
+    t.text     "comment"
+    t.integer  "order_id"
+    t.integer  "distributor_id"
+    t.string   "idorddistrib"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "zakupkas", force: true do |t|
+    t.string   "numbill"
+    t.integer  "manager_id"
+    t.integer  "doner_id"
+    t.integer  "zakupkastate_id"
+    t.integer  "addrate"
+    t.integer  "sum"
+    t.integer  "margin"
+    t.text     "comment"
+    t.boolean  "arhive"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
