@@ -83,6 +83,8 @@ class OrdersController < ApplicationController
       orderpart.doner = current_user.employee
       orderpart.panswtime_id = params[:panswtimeid]
       orderpart.save
+      orderpart.checkstate
+      orderpart.save
     end
     redirect_to edit_order_path(@order)
   end
