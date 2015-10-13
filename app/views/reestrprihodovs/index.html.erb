@@ -29,19 +29,19 @@
           <td><%= repri.givetobuh!=nil ? repri.givetobuh : f1.date_field("givetobuh") %></td>
           </tr><tr>
           <td></td><td></td>
-          <td>
+          <td <%= repri.scrschet? ? 'bgcolor="green"' : nil %> >
             <%= repri.scrschet? ? link_to('Счет', repri.scrschet_url) : 'Счет' %><br>
             <%= f1.file_field :scrschet %>
           </td>
-          <td>
+          <td <%= repri.scrschetfaktura? ? 'bgcolor="green"' : nil %> >
             <%= repri.scrschetfaktura? ? link_to('Счетфактура', repri.scrschetfaktura_url) : 'Счетфактура'%><br>
             <%= f1.file_field :scrschetfaktura %>
           </td>
-          <td>
+          <td <%= repri.scrnakladnaia? ? 'bgcolor="green"' : nil %> >
             <%= repri.scrnakladnaia? ? link_to('Накладная', repri.scrnakladnaia_url) : 'Накладная' %><br>
             <%= f1.file_field :scrnakladnaia %>
           </td>
-          <td>
+          <td <%= repri.scrnakladnaiawshtamp? ? 'bgcolor="green"' : nil %> >
             <%= repri.scrnakladnaiawshtamp? ? link_to('nakladnaia with shtamp', repri.scrnakladnaiawshtamp_url) : 'Наклад с печ'%><br>
             <%= f1.file_field :scrnakladnaiawshtamp %>
           </td>

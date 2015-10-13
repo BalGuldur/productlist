@@ -27,19 +27,19 @@
         <td><%= reotgr.sendtobuh!=nil ? reotgr.sendtobuh : f1.date_field("sendtobuh") %></td>
       </tr><tr>
         <td></td><td></td>
-        <td>
+        <td <%= reotgr.scrschet? ? 'bgcolor="green"' : nil %> >
           <%= reotgr.scrschet? ? link_to('Счет', reotgr.scrschet_url) : "Счет" %><br>
           <%= f1.file_field :scrschet %>
         </td>
-        <td>
+        <td <%= reotgr.scrschetfaktura? ? 'bgcolor="green"' : nil %> >
           <%= reotgr.scrschetfaktura? ? link_to('Счетфактура', reotgr.scrschetfaktura_url) : "Счетфактура" %><br>
           <%= f1.file_field :scrschetfaktura %>
         </td>
-        <td>
+        <td <%= reotgr.scrnakladnaia? ? 'bgcolor="green"' : nil %> >
           <%= reotgr.scrnakladnaia? ? link_to('Накладная', reotgr.scrnakladnaia_url) : "Накладная" %><br>
           <%= f1.file_field :scrnakladnaia %>
         </td>
-        <td>
+        <td <%= reotgr.scrnakladnaiawshtamp? ? 'bgcolor="green"' : nil %> >
           <%= reotgr.scrnakladnaiawshtamp? ? link_to('Наклад с печ', reotgr.scrnakladnaiawshtamp_url) : "Наклад с печ" %><br>
           <%= f1.file_field :scrnakladnaiawshtamp %>
         </td>
