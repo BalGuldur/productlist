@@ -1,9 +1,9 @@
 <h1>Изменить данные заявки</h1>
 <% @wfirstcol="width:30px" %>
 <% @wcol="width:50px" %>
+<%= render 'form' %>
 
 <% if current_user.employee.department.purchaserright %>
-  <%= render 'form' %>
   <%= form_tag(priemall_order_path(@order), method: "get") do %>
     <%= label_tag "срок ответа" %>
     <%= select_tag :panswtimeid, options_from_collection_for_select(Ourtime.where(answ: true), "id", "name") %>
