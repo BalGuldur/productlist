@@ -79,7 +79,7 @@ class Orderpart < ActiveRecord::Base
     else
       @rpriceinru=0
     end
-    @rpriceinru.to_int
+    @rpriceinru
   end
 
   def rashod

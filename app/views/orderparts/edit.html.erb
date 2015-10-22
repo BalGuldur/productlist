@@ -32,7 +32,7 @@
       <span style="background-color: #<%= Color.attcheck(@orderpart.rezprice) %>">Цена резерва</span>|
       <span style="background-color: #<%= Color.attcheck(@orderpart.rezpricetype) %>">Вал</span>|
       <span style="background-color: #<%= Color.attcheck(@orderpart.convertion) %>">Конвертация</span><br>
-      <%= f.number_field :rezprice %>|
+      <%= f.number_field :rezprice, class: "text_field", step: 0.01 %>|
       <%= f.collection_select :rezpricetype_id, Moneytype.all, :id, :name %>|
       <%= f.number_field :convertion, step: 0.1 %>%
     </th>
