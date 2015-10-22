@@ -16,6 +16,7 @@
   <%= submit_tag "Загрузить позиции из файла" %>
 <% end %>
 <%= link_to "образец", "/uploadorderpartsdef.csv", :class => "themed_text" %>
+<%= link_to "экспорт", polymorphic_path(@order, :action => :edit, :format => :csv ) %>
 
 <h2>Список входящих в заявку товаров</h2>
 <table>

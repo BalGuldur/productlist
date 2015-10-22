@@ -7,6 +7,16 @@ class Orderpart < ActiveRecord::Base
   belongs_to :rezpricetype, class_name: "Moneytype"
   belongs_to :distributor
 
+  def self.to_csv(options = {})
+    #Метод генерирующий csv файл с помощью библиотеки используется в respond_to
+    CSV.generate(options) do |csv|
+      #csv << column_names
+      all.each do |orderpart|
+        csv << orderpart.attributes.values_at("partnum","descr","qty")
+      end
+    end
+  end
+
   def checkstate
     if self.state!=Orderstate.find_by(state: "Отказ в резерве") && self.state!=Orderstate.find_by(state: "Удалено менеджером")
       if self.doner_id!=nil

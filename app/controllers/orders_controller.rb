@@ -74,6 +74,16 @@ class OrdersController < ApplicationController
   def edit
     @orderparts = @order.orderparts
     @order.checkstate
+    respond_to do |format|
+      format.html
+      format.csv { send_data @orderparts.to_csv(col_sep: ";"), :filename => 'order' + @order.id.to_s + '.csv'}
+      #Генерируем в csv список деталей заказа
+    end
+
+  end
+
+  def export
+    @order=Order.find(params[:id])
   end
 
   def priemall

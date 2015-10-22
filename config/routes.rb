@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       post 'uploadfromexcel'
       get 'arhive'
       get 'desarhive'
+      get 'export'
     end
     collection do
       get 'arhives'
