@@ -76,7 +76,7 @@ class OrdersController < ApplicationController
     @order.checkstate
     respond_to do |format|
       format.html
-      format.csv { send_data @orderparts.to_csv(col_sep: ";"), :filename => 'order' + @order.id.to_s + '.csv'}
+      format.csv { send_data @orderparts.to_csv(col_sep: ";").encode('Windows-1251'), :filename => 'order' + @order.id.to_s + '.csv'}
       #Генерируем в csv список деталей заказа
     end
 
