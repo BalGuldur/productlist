@@ -76,6 +76,9 @@ class Orderpart < ActiveRecord::Base
   def rezpriceinru
     if self.rezpricetype!=nil && self.rezprice!=nil
       @rpriceinru=self.rezprice*self.rezpricetype.curse
+      if self.convertion!=nil
+        @rpriceinru=@rpriceinru+@rpriceinru*self.convertion/100
+      end
     else
       @rpriceinru=0
     end
